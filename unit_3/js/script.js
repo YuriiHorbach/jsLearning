@@ -146,14 +146,14 @@ let inp_t11 = document.querySelector('.inp_t11');
 let btn_t11 = document.querySelector('.btn_t11');
 let out_t11 = document.querySelector('.out_t11');
 
-inp_t11 = inp_t11.value.trim();
-
 btn_t11.onclick = () => {
+    trimInput = inp_t11.value.trim();
+
     if (inp_t11.value == '') {
         out_t11.innerHTML = 'Enter data';
     }
     else {
-        out_t11.innerHTML = inp_t11.value;
+        out_t11.innerHTML = trimInput;
     }
 }
 
