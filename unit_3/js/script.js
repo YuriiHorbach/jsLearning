@@ -157,7 +157,208 @@ btn_t11.onclick = () => {
     }
 }
 
+//task_13
+let inp_t13 = document.querySelector('.inp_t13');
+let btn_t13 = document.querySelector('.btn_t13');
+let out_t13 = document.querySelector('.out_t13');
 
+btn_t13.onclick = () => {
+    let houseNum = +inp_t13.value;
+    if (houseNum >= 1 && houseNum <= 5) {
+        out_t13.innerHTML = 'Street 1';
+    }
+    else if (houseNum >= 6 && houseNum <= 11) {
+        out_t13.innerHTML = 'Street 2';
+
+    }
+    else if (houseNum >= 11 && houseNum <= 20) {
+        out_t13.innerHTML = 'Street 3';
+    }
+    else {
+        out_t13.innerHTML = 'There is no such street';
+    }
+}
+
+//task_14
+let inp_t14 = document.querySelector('.inp_t14');
+let btn_t14 = document.querySelector('.btn_t14');
+let out_t14 = document.querySelector('.out_t14');
+
+btn_t14.onclick = () => {
+    let levelRentgen = +inp_t14.value;
+    if (levelRentgen >= 0 && levelRentgen <= 25) {
+        out_t14.innerHTML = 'не обнаруживается';
+    }
+    else if (levelRentgen >= 26 && levelRentgen <= 50) {
+        out_t14.innerHTML = 'снижение числа лимфоцитов';
+
+    }
+    else if (levelRentgen >= 51 && levelRentgen <= 100) {
+        out_t14.innerHTML = 'вялость, рвота';
+    }
+    else if (levelRentgen >= 101 && levelRentgen <= 150) {
+        out_t14.innerHTML = 'смертность 5%';
+    }
+    else if (levelRentgen >= 151 && levelRentgen <= 350) {
+        out_t14.innerHTML = 'смертность 50% за 30 суток';
+    }
+    else if (levelRentgen >= 351 && levelRentgen <= 600) {
+        out_t14.innerHTML = '90% смертность за 2 недели';
+    }
+    else {
+        out_t14.innerHTML = 'Вы уверенны?';
+    }
+}
+
+//task_15
+let x = 1;
+let y = 0;
+
+console.log(x && y);
+console.log(x || y);
+
+//task_16
+let inp_t16 = document.querySelector('.inp_t16');
+let btn_t16 = document.querySelector('.btn_t16');
+let out_t16 = document.querySelector('.out_t16');
+
+btn_t16.onclick = () => {
+    let engineCapacity = +inp_t16.value;
+    if (engineCapacity == 500) {
+        out_t16.innerHTML = 'Your tax is 2525 tenge';
+    }
+    else if (engineCapacity == 1200) {
+        out_t16.innerHTML = 'Your tax is 5050 tenge';
+    }
+    else if (engineCapacity == 1600) {
+        out_t16.innerHTML = 'Your tax is 8275 tenge';
+    }
+    else if (engineCapacity == 1900) {
+        out_t16.innerHTML = 'Your tax is 9675 tenge';
+    }
+    else if (engineCapacity == 2000) {
+        out_t16.innerHTML = 'Your tax is 11075 tenge';
+    }
+    else {
+        out_t16.innerHTML = 'That is Your car? Enter again';
+    }
+}
+
+//task_17
+let inp_t171 = document.querySelector('.inp_t171');
+let inp_t172 = document.querySelector('.inp_t172');
+let btn_t17 = document.querySelector('.btn_t17');
+let out_t17 = document.querySelector('.out_t17');
+
+let uah = 24.915288;
+let euro = 1.0975;
+let rub = 66.9072;
+
+btn_t17.onclick = () => {
+
+    let currensy = +inp_t171.value;
+
+    if (inp_t172.value == 'uah') {
+        out_t17.innerHTML = currensy + '$ = ' + currensy * uah + ' uah';
+    }
+    else if (inp_t172.value == 'euro') {
+        out_t17.innerHTML = currensy + '$ = ' + currensy * euro + ' euro';
+    }
+    else if (inp_t172.value == 'rub') {
+        out_t17.innerHTML = currensy + '$ = ' + currensy * rub + ' rub';
+    }
+}
+
+
+//task_18
+let inp_t181 = document.querySelector('.inp_t181');
+let inp_t182 = document.querySelector('.inp_t182');
+let btn_t18 = document.querySelector('.btn_t18');
+let out_t18 = document.querySelector('.out_t18');
+
+btn_t18.onclick = () => {
+
+    let currensy = +inp_t181.value;
+
+    switch (inp_t182.value) {
+        case 'uah':
+            out_t18.innerHTML = currensy + '$ = ' + currensy * uah + ' uah';
+            break;
+        case 'euro':
+            out_t18.innerHTML = currensy + '$ = ' + currensy * euro + ' euro';
+            break;
+        case 'rub':
+            out_t18.innerHTML = currensy + '$ = ' + currensy * rub + ' rub';
+            break;
+        default:
+            out_t18.innerHTML = 'Enter correct currency';
+            break;
+    }
+}
+
+//task_19
+let inp_t191 = document.querySelector('.inp_t191');
+let inp_t192 = document.querySelector('.inp_t192');
+let inp_t193 = document.querySelector('.inp_t193');
+let btn_t19 = document.querySelector('.btn_t19');
+let out_t19 = document.querySelector('.out_t19');
+
+btn_t19.onclick = () => {
+
+    let num19_1 = +inp_t191.value;
+    let num19_2 = +inp_t192.value;
+
+    if (inp_t193.value == '+') {
+        out_t19.innerHTML = num19_1 + num19_2;
+    }
+    if (inp_t193.value == '-') {
+        out_t19.innerHTML = num19_1 - num19_2;
+    }
+    if (inp_t193.value == '*') {
+        out_t19.innerHTML = num19_1 * num19_2;
+    }
+    if (inp_t193.value == '/') {
+        if (num19_2 == 0) {
+            out_t19.innerHTML = 'Error. Division by 0';
+        }
+        else {
+            out_t19.innerHTML = num19_1 / num19_2;
+        }
+    }
+}
+
+//task_20
+let inp_t201 = document.querySelector('.inp_t201');
+let inp_t202 = document.querySelector('.inp_t202');
+let inp_t203 = document.querySelector('.inp_t203');
+let btn_t20 = document.querySelector('.btn_t20');
+let out_t20 = document.querySelector('.out_t20');
+
+btn_t20.onclick = () => {
+
+    let num20_1 = +inp_t201.value;
+    let num20_2 = +inp_t202.value;
+
+    switch (inp_t203.value) {
+        case '+':
+            out_t20.innerHTML = num20_1 + num20_2;
+            break;
+        case '-':
+            out_t20.innerHTML = num20_1 - num20_2;
+            break;
+        case '*':
+            out_t20.innerHTML = num20_1 * num20_2;
+            break;
+        case '/':
+            if (num20_2 == 0) {
+                out_t20.innerHTML = 'Error. Division by 0';
+            }
+            else {
+                out_t20.innerHTML = num20_1 / num20_2;
+            }
+            break;
+    }
+}
 
 
 
