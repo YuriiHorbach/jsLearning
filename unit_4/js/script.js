@@ -181,15 +181,13 @@ btn_t19.onclick = (event) => {
 
 //task_20
 
-let btn_t20 = document.querySelector('.btn_t20');
-
-btn_t20.onclick = (event) => {
+document.querySelector('#btn_t20').onclick = (event) => {
     event.preventDefault();
-    let inp_t201 = document.querySelector('#inp_t201');
-    let inp_t202 = document.querySelector('#inp_t202');
-    let form = document.querySelector('form');
-    console.log(form.elements.inp_t201.value);
-    console.log(form.elements.inp_t202.value);
+
+    let form = document.querySelector('.form');
+    console.log(form);
+    console.log(form.elements.one.value);
+    console.log(form.elements.two.value);
 }
 
 
