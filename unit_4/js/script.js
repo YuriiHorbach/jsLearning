@@ -96,3 +96,105 @@ let out_t10 = document.querySelector('.out_t10');
 btn_t10.onclick = () => {
     out_t10.style.backgroundColor = inp_t10.value;
 }
+
+//task_11
+let inp_t111 = document.querySelector('.inp_t111');
+let inp_t112 = document.querySelector('.inp_t112');
+let btn_t11 = document.querySelector('.btn_t11');
+
+btn_t11.onclick = () => {
+    inp_t112.value = inp_t111.value;
+}
+
+
+//task_12
+let inp_t12 = document.querySelector('.inp_t12');
+let btn_t12 = document.querySelector('.btn_t12');
+let out_t12 = document.querySelector('.out_t12');
+
+btn_t12.onclick = () => {
+    out_t12.innerHTML = inp_t12.value;
+}
+
+//task_13
+let inp_t13 = document.querySelector('.inp_t13');
+let btn_t13 = document.querySelector('.btn_t13');
+let out_t131 = document.querySelector('.out_t131');
+let out_t132 = document.querySelector('.out_t132');
+
+btn_t13.onclick = () => {
+    out_t131.innerHTML = inp_t13.value;
+}
+
+inp_t13.oninput = () => {
+    out_t132.innerHTML = inp_t13.value;
+}
+
+//task_14
+let txtar_t14 = document.querySelector('.txtar_t14');
+let btn_t14 = document.querySelector('.btn_t14');
+let out_t14 = document.querySelector('.out_t14');
+
+btn_t14.onclick = () => {
+    out_t14.innerHTML = txtar_t14.value;
+}
+
+//task_15
+let txtar_t15 = document.querySelector('.txtar_t15');
+let inp_t15 = document.querySelector('.inp_t15');
+let btn_t15 = document.querySelector('.btn_t15');
+let out_t15 = document.querySelector('.out_t15');
+
+btn_t15.onclick = () => {
+    txtar_t15.innerHTML = inp_t15.value;
+}
+
+//task_16
+let sel_t16 = document.querySelector('.sel_t16');
+let btn_t16 = document.querySelector('.btn_t16');
+let out_t16 = document.querySelector('.out_t16');
+
+btn_t16.onclick = () => {
+    out_t16.innerHTML = sel_t16.value;
+}
+
+//task_18
+let sel_t18 = document.querySelector('.sel_t18');
+let out_t18 = document.querySelector('.out_t18');
+
+sel_t18.onchange = () => {
+    out_t18.innerHTML = sel_t18.value;
+}
+
+//task_19
+
+let btn_t19 = document.querySelector('.btn_t19');
+let inp_t191 = document.querySelector('#inp_t191');
+let inp_t192 = document.querySelector('#inp_t192');
+
+btn_t19.onclick = (event) => {
+    event.preventDefault();
+    let form = document.querySelector('form');
+    console.log(inp_t191.value);
+    console.log(inp_t192.value);
+}
+
+//task_20
+
+let btn_t20 = document.querySelector('.btn_t20');
+
+btn_t20.onclick = (event) => {
+    event.preventDefault();
+    let inp_t201 = document.querySelector('#inp_t201');
+    let inp_t202 = document.querySelector('#inp_t202');
+    let form = document.querySelector('form');
+    console.log(form.elements.inp_t201.value);
+    console.log(form.elements.inp_t202.value);
+}
+
+
+
+
+
+
+
