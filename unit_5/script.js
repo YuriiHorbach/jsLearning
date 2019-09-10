@@ -42,7 +42,7 @@ for (let i = 21; i >= 0; i -= 3) {
 
 let out_t6 = document.querySelector('.out_t6');
 
-for (let i = 0; i <= 5; i++ ) {
+for (let i = 0; i <= 5; i++) {
     out_t6.innerHTML += '****** <br>';
 }
 
@@ -52,7 +52,7 @@ let out_t7 = document.querySelector('.out_t7');
 let btn_t7 = document.querySelector('.btn_t7');
 
 btn_t7.onclick = () => {
-    for(let i = inp_t7.value; i >= 0; i--){
+    for (let i = inp_t7.value; i >= 0; i--) {
         out_t7.innerHTML += i + ' ';
     }
 }
@@ -64,7 +64,7 @@ let out_t8 = document.querySelector('.out_t8');
 let btn_t8 = document.querySelector('.btn_t8');
 
 btn_t8.onclick = () => {
-    for(let i = inp_t81.value; i <= inp_t82.value ; i++){
+    for (let i = inp_t81.value; i <= inp_t82.value; i++) {
         out_t8.innerHTML += i + ' ';
     }
 }
@@ -77,23 +77,23 @@ let btn_t9 = document.querySelector('.btn_t9');
 
 btn_t9.onclick = () => {
 
-    if (inp_t92.value > inp_t91.value){
-        for(let i = inp_t91.value; i <= inp_t92.value ; i++){
+    if (inp_t92.value > inp_t91.value) {
+        for (let i = inp_t91.value; i <= inp_t92.value; i++) {
             out_t9.innerHTML += i + ' ';
         }
     }
-    else{
+    else {
         alert('Error');
     }
 }
 
 //task_10
 let out_t10 = document.querySelector('.out_t10');
-    for(let i = 1901; i <= 1950; i ++){
-        if(i % 2==0){
-            out_t10.innerHTML += i + " ";
-        }
+for (let i = 1901; i <= 1950; i++) {
+    if (i % 2 == 0) {
+        out_t10.innerHTML += i + " ";
     }
+}
 
 //task_11
 let out_t11 = document.querySelector('.out_t11');
@@ -102,9 +102,9 @@ out_t11.innerHTML = 'Quantity of div.one: ' + one_t11.length;
 
 //task_12
 let btn_t12 = document.querySelector('.btn_t12');
-  
-function backColor(){
-    for(let i = 0; i < one_t11.length; i++){
+
+function backColor() {
+    for (let i = 0; i < one_t11.length; i++) {
         one_t11[i].style.background = 'yellow';
     }
 }
@@ -113,9 +113,9 @@ btn_t12.onclick = backColor;
 
 //task_13
 let btn_t13 = document.querySelector('.btn_t13');
-  
-function getAllInfo(){
-    for(let i = 0; i < one_t11.length; i++){
+
+function getAllInfo() {
+    for (let i = 0; i < one_t11.length; i++) {
         console.log(one_t11[i].innerHTML);
     }
 }
@@ -125,9 +125,9 @@ btn_t13.onclick = getAllInfo;
 //task_14
 let btn_t14 = document.querySelector('.btn_t14');
 let inputs = document.querySelectorAll('input[type="text"]');
-  
-function setPlaceHolder(){
-    for(let i = 0; i < inputs.length; i++){
+
+function setPlaceHolder() {
+    for (let i = 0; i < inputs.length; i++) {
         inputs[i].placeholder = 'Введите данные';
     }
 }
@@ -137,8 +137,8 @@ btn_t14.onclick = setPlaceHolder;
 //task_15
 let btn_t15 = document.querySelector('.btn_t15');
 let inputsAll = document.querySelectorAll('input[type="text"]');
-  
-function getQuantity(){
+
+function getQuantity() {
     console.log('Quantity of inputs ' + inputsAll.length);
 }
 
@@ -147,10 +147,32 @@ btn_t15.onclick = getQuantity;
 //task_16
 let radioInp = document.querySelectorAll('input[type="radio"]');
 let out_t16 = document.querySelector('.out_t16');
-  
-for(let i = 0; i < radioInp.length; i++){
-    if(radioInp[i].checked){
-        out_t16.innerHTML = radioInp[i].value;
+let btn_16 = document.querySelector('.btn_16');
+
+btn_16.onclick = () => {
+    for (let i = 0; i < radioInp.length; i++) {
+        if (radioInp[i].checked) {
+            console.log(radioInp[i].value);
+            out_t16.innerHTML = radioInp[i].value;
+        }
     }
 }
+
+//task_17
+let btn_17 = document.querySelector('.btn_17');
+
+btn_17.onclick = () => {
+    radioInp[0].checked;
+    console.log(radioInp[0].checked);
+
+}
+//task_18
+let radioButtons = document.querySelectorAll('input[name="p1"]');
+console.log(radioButtons);
+
+for(let i = 0; i < radioButtons.length; i++){
+    radioButtons[i].value = i++;
+}
+
+
 
