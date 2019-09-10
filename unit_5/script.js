@@ -174,5 +174,38 @@ for(let i = 0; i < radioButtons.length; i++){
     radioButtons[i].value = i++;
 }
 
+//task_19
+let btn_19t = document.querySelector('.btn_19t');
+let radio19 = document.querySelectorAll('input[name="p2"]');
+let out_t19 = document.querySelector('.out_t19');
+
+btn_19t.onclick = () => {
+    for(let i = 0; i < radio19.length; i++){
+        if(radio19[i].checked && +radio19[i].value == 6 ){
+            out_t19.innerHTML = true;
+        }
+        else{
+            out_t19.innerHTML = false;
+        }
+    }
+}
+
+//task_20
+let radio20 = document.querySelectorAll('input[name="p2"]');
+console.log(+radio19[2].value);
+
+radio20.oninput= () => {
+    for(let i = 0; i < radio20.length; i++){
+        if(radio19[i].checked && +radio19[i].value == 6 ){
+            out_t19.innerHTML = true;
+        }
+        else{
+            out_t19.innerHTML = false;
+        }
+    }
+}
+
+
+
 
 
