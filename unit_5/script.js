@@ -1,4 +1,3 @@
-
 /*
 Task 1. Выведите в консоль с помощью цикла числа от 1 до 10.
 */
@@ -7,7 +6,6 @@ for (let i = 1; i < 11; i++) {
 }
 
 //task_2
-
 let out_t2 = document.querySelector('.out_t2');
 
 for (let i = 1; i < 11; i++) {
@@ -15,7 +13,6 @@ for (let i = 1; i < 11; i++) {
 }
 
 //task_3
-
 let out_t3 = document.querySelector('.out_t3');
 
 for (let i = 10; i >= 0; i--) {
@@ -23,7 +20,6 @@ for (let i = 10; i >= 0; i--) {
 }
 
 //task_4
-
 let out_t4 = document.querySelector('.out_t4');
 
 for (let i = 0; i <= 10; i += 2) {
@@ -31,7 +27,6 @@ for (let i = 0; i <= 10; i += 2) {
 }
 
 //task_5
-
 let out_t5 = document.querySelector('.out_t5');
 
 for (let i = 21; i >= 0; i -= 3) {
@@ -39,7 +34,6 @@ for (let i = 21; i >= 0; i -= 3) {
 }
 
 //task_6
-
 let out_t6 = document.querySelector('.out_t6');
 
 for (let i = 0; i <= 5; i++) {
@@ -76,7 +70,6 @@ let out_t9 = document.querySelector('.out_t9');
 let btn_t9 = document.querySelector('.btn_t9');
 
 btn_t9.onclick = () => {
-
     if (inp_t92.value > inp_t91.value) {
         for (let i = inp_t91.value; i <= inp_t92.value; i++) {
             out_t9.innerHTML += i + ' ';
@@ -98,6 +91,7 @@ for (let i = 1901; i <= 1950; i++) {
 //task_11
 let out_t11 = document.querySelector('.out_t11');
 let one_t11 = document.querySelectorAll('.one');
+
 out_t11.innerHTML = 'Quantity of div.one: ' + one_t11.length;
 
 //task_12
@@ -164,7 +158,6 @@ let btn_17 = document.querySelector('.btn_17');
 btn_17.onclick = () => {
     radioInp[0].checked;
     console.log(radioInp[0].checked);
-
 }
 //task_18
 let radioButtons = document.querySelectorAll('input[name="p1"]');
@@ -191,19 +184,15 @@ btn_19t.onclick = () => {
 }
 
 //task_20
-let radio20 = document.querySelectorAll('input[name="p2"]');
-console.log(+radio19[2].value);
-
-radio20.oninput= () => {
-    for(let i = 0; i < radio20.length; i++){
-        if(radio19[i].checked && +radio19[i].value == 6 ){
-            out_t19.innerHTML = true;
-        }
-        else{
-            out_t19.innerHTML = false;
+let radio20 = document.querySelectorAll('input[name="p3"]');
+for(let i = 0; i < radio20.length; i++){
+    radio20[i].oninput = () => {
+        if(radio20[i].checked){
+            console.log("был изменен input");
         }
     }
 }
+
 
 
 
