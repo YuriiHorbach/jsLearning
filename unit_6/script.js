@@ -77,18 +77,18 @@ for (let i = 0; i < 5; i++) {
 
 //task7
 let out_t7 = document.querySelector('.out_t7');
-let sp = '&nbsp';
 
-for (let i = 0; i < 3; i++) {
-    console.log(sp);
+let count3 = 4;
+for (let i = 0; i <= 3; i++) {
     for(let k = 0; k < 6; k++){
-      out_t7.innerHTML += '*'; 
-      console.log('*');
+      out_t7.innerHTML +='*'; 
     }
-    sp+=sp;
-    console.log(out_t7);
+    
     out_t7.innerHTML +='<br>';
-    out_t7.innerHTML +=sp;
+    for(let j = count3 ; j > 0; j--){
+        out_t7.innerHTML+='&nbsp';
+    }
+    count3--;
 }
 
 
