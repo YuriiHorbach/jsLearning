@@ -186,13 +186,17 @@ for (let i = 1; i < 7; i++) {
     out_t12.innerHTML += `<br>`;
 }
 
-//task12
+//task13
 let out_t13 = document.querySelector('.out_t13');
-
-for (let i = 0; i < 5; i++) {
-    for(k = 0; k < 0; k++){
-        out_t13.innerHTML += k + ' ' + i;
+let space = '&nbsp';
+for (let i = 1; i <= 4 ; i++) {
+    for(let j = 1; j < 10; j++){
+        out_t13.innerHTML += j;
     }
+    for(let k = 1; k <= 2; k++){
+        out_t13.innerHTML += k + space + i;
+    }
+    // out_t13.innerHTML += i;
     out_t13.innerHTML += `<br>`;
 }
 
