@@ -186,5 +186,15 @@ for (let i = 1; i < 7; i++) {
     out_t12.innerHTML += `<br>`;
 }
 
+//task12
+let out_t13 = document.querySelector('.out_t13');
+
+for (let i = 0; i < 5; i++) {
+    for(k = 0; k < 0; k++){
+        out_t13.innerHTML += k + ' ' + i;
+    }
+    out_t13.innerHTML += `<br>`;
+}
+
 
 
