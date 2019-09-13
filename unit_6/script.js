@@ -78,17 +78,113 @@ for (let i = 0; i < 5; i++) {
 //task7
 let out_t7 = document.querySelector('.out_t7');
 
-let count3 = 4;
-for (let i = 0; i <= 3; i++) {
+let count3 = 3;
+for (let i = 0; i < 3; i++) {
+   for(let j = count3 ; j > 0; j--){
+        out_t7.innerHTML+='&nbsp';
+    }
     for(let k = 0; k < 6; k++){
       out_t7.innerHTML +='*'; 
     }
     
     out_t7.innerHTML +='<br>';
-    for(let j = count3 ; j > 0; j--){
-        out_t7.innerHTML+='&nbsp';
-    }
+   
     count3--;
 }
+
+//task8
+let out_t8 = document.querySelector('.out_t8');
+
+let count81 = 1;
+for (let i = 0; i < 3; i++) {
+    for (let k = 0; k < i; k++) {
+        out_t8.innerHTML += '*';
+    }
+    out_t8.innerHTML += '<br> ';
+count81++;
+
+}
+let count82 = 3;
+for (let i = 0; i < 3; i++) {
+    for (let k = count82; k > 0; k--) {
+        out_t8.innerHTML += '*';
+    }
+    out_t8.innerHTML += '<br> ';
+    count82--;
+}
+
+//task9
+let out_t9 = document.querySelector('.out_t9');
+let horizontalCount = 6;  
+let verticalCount = 5;    
+let star = '*';       
+let whitespace = '&nbsp '; 
+
+for (let i = 0; i < verticalCount; ++i) {
+    let str = '';
+    if (i == 0 || i == verticalCount - 1) {    
+      for (let j = 0; j < horizontalCount; ++j) {
+        str += star;
+      }    
+    } else {
+      str = star;
+      for (let j = 0; j < horizontalCount -2 ; ++j) {
+        str += whitespace;
+      }    
+      str += star;
+    }
+    out_t9.innerHTML += '<br> ';;
+    out_t9.innerHTML += str;
+    
+}
+
+//task10
+let out_t10 = document.querySelector('.out_t10');
+let horizontalCount2 = 6;  
+let verticalCount2 = 5;    
+let symbol = document.querySelector('.inp_t10');       
+let whitespace2 = '&nbsp '; 
+let btn_t10 = document.querySelector('.btn_t10'); 
+
+btn_t10.onclick = () => {
+    for (let i = 0; i < verticalCount2; ++i) {
+        let str2 = '';
+        if (i == 0 || i == verticalCount2 - 1) {    
+        for (let j = 0; j < horizontalCount2; ++j) {
+            str2 += symbol.value;
+        }    
+        } else {
+        str2 = symbol.value;
+        for (let j = 0; j < horizontalCount2 -2 ; ++j) {
+            str2 += whitespace2;
+        }    
+        str2 += symbol.value;
+        }
+        out_t10.innerHTML += '<br> ';;
+        out_t10.innerHTML += str2;
+        console.log(str2);   
+    }
+}
+
+//task11
+let out_t11 = document.querySelector('.out_t11');
+
+for (let i = 6; i < 8; i++) {
+    for(let k = 1; k < 10; k++){
+        out_t11.innerHTML += `${i} * ${k} = ${k * i}<br>`;
+    }
+    out_t11.innerHTML += `<br>`;
+}
+
+//task12
+let out_t12 = document.querySelector('.out_t12');
+
+for (let i = 1; i < 7; i++) {
+    for(k = 1; k < i ; k++){
+        out_t12.innerHTML += k + " ";
+    }
+    out_t12.innerHTML += `<br>`;
+}
+
 
 
