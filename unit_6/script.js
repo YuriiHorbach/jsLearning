@@ -189,14 +189,27 @@ for (let i = 1; i < 7; i++) {
 //task13
 let out_t13 = document.querySelector('.out_t13');
 let space = '&nbsp';
-for (let i = 1; i <= 4 ; i++) {
-    for(let j = 1; j < 10; j++){
-        out_t13.innerHTML += j;
-    }
-    for(let k = 1; k <= 2; k++){
-        out_t13.innerHTML += k + space + i;
-    }
-    // out_t13.innerHTML += i;
+let someVal = '0';
+for (let i = 0; i <= 4 ; i++) {
+    out_t13.innerHTML += space;
+       for(let k = 0; k <=10; k++){
+        // if(k >= 9 ){
+           
+        //     i+=10;
+        //     console.log(i);
+        //     console.log(k);
+        // //    for(let j = 1; j <=10; j++){
+        // //     console.log(i);
+        // //     out_t13.innerHTML += ' ';
+        // //    }
+           
+         out_t13.innerHTML += k + ' '+ i;
+       
+        }
+        out_t13.innerHTML += k + ' '+ i;
+        
+        
+         
     out_t13.innerHTML += `<br>`;
 }
 
