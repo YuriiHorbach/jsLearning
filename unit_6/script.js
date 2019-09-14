@@ -213,5 +213,73 @@ for (let i = 0; i <= 4 ; i++) {
     out_t13.innerHTML += `<br>`;
 }
 
+//task14
+let out_t14 = document.querySelector('.out_t14');
+
+for (let i = 5; i > 0; i--) {
+     for(let j = i; j >= 1; j--){
+        out_t14.innerHTML += j;
+     }
+       out_t14.innerHTML += '<br>';
+    }
+
+//task15
+let out_t15 = document.querySelector('.out_t15');
+let change = 1;
+
+for (let i = 1; i <=5 ; i++) {
+     for(let j = 5; j >= 1; j--){
+        // out_t15.innerHTML += j;
+        if(j > change){
+            out_t15.innerHTML += 'x';
+        }
+        else {
+            out_t15.innerHTML += j;
+        }
+     }
+       out_t15.innerHTML += '<br>';
+       change++;
+}
+
+//task16
+let out_t16 = document.querySelector('.out_t16');
+
+for (let i = 1; i <=5 ; i++) {
+    for(let j =1; j < i; j++){
+        out_t16.innerHTML += i + ' ';
+    }
+    out_t16.innerHTML += i;
+    out_t16.innerHTML += '<br>';
+}
+
+//task17
+let out_t17 = document.querySelector('.out_t17');
+
+for (let i = 5; i > 0 ; i--) {
+    for(let j =5; j > i; j--){
+        out_t17.innerHTML += i + ' ';
+    }
+    out_t17.innerHTML += i;
+    out_t17.innerHTML += '<br>';
+}
+
+//task18
+let out_t18 = document.querySelector('.out_t18');
+
+let num1_18 = 4; 
+for (let i = 5; i > 0 ; i--) {
+    for(let j = 5; j > 0; j--){
+        if ((i == 4 || i == 2) ){
+            out_t18.innerHTML += 'x ';
+        }
+        else{
+            out_t18.innerHTML += i + ' ';
+        }
+        
+    }
+     out_t18.innerHTML += i;
+    out_t18.innerHTML += '<br>';
+}
+
 
 
