@@ -189,27 +189,12 @@ for (let i = 1; i < 7; i++) {
 //task13
 let out_t13 = document.querySelector('.out_t13');
 let space = '&nbsp';
-let someVal = '0';
+// let someVal = 8;
 for (let i = 0; i <= 4 ; i++) {
-    out_t13.innerHTML += space;
-       for(let k = 0; k <=10; k++){
-        // if(k >= 9 ){
-           
-        //     i+=10;
-        //     console.log(i);
-        //     console.log(k);
-        // //    for(let j = 1; j <=10; j++){
-        // //     console.log(i);
-        // //     out_t13.innerHTML += ' ';
-        // //    }
-           
-         out_t13.innerHTML += k + ' '+ i;
-       
-        }
-        out_t13.innerHTML += k + ' '+ i;
-        
-        
-         
+    for(let k = 1; k <=9; k++){
+       out_t13.innerHTML += k + ' '+ i;
+    }
+    // someVal++;
     out_t13.innerHTML += `<br>`;
 }
 
@@ -268,18 +253,36 @@ let out_t18 = document.querySelector('.out_t18');
 
 let num1_18 = 4; 
 for (let i = 5; i > 0 ; i--) {
-    for(let j = 5; j > 0; j--){
+    for(let j = 6; j > i; j--){
         if ((i == 4 || i == 2) ){
             out_t18.innerHTML += 'x ';
         }
         else{
             out_t18.innerHTML += i + ' ';
         }
-        
     }
-     out_t18.innerHTML += i;
     out_t18.innerHTML += '<br>';
 }
+
+//task19
+let out_t19 = document.querySelector('.out_t19');
+
+let n = 12;
+    
+    for (var i = 1; i <= n; i++) {
+        if(i %2 == 0){
+            
+         }
+         else{
+            for(let k = 1; k <= n-i; k++) {
+                out_t19.innerHTML += "&nbsp;";
+            }
+            for(let j = 2; j <= i; j++) {
+                out_t19.innerHTML += "*";
+            }
+         }
+        out_t19.innerHTML +="<br>";
+    }
 
 
 
