@@ -8,7 +8,7 @@ body {
     margin: 10px 0;
 }
 
-.out_t10{
+.out_t10, .out_t15, .out_t16, .out_t17, .out_t18, .out_t19{
     border: 1px solid black;
     margin-top: 20px;
     width: 100px;

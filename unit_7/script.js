@@ -134,7 +134,6 @@ let inp_t13 = document.querySelector('.inp_t13');
 let btn_t13 = document.querySelector('.btn_t13');
 let out_t13 = document.querySelector('.out_t13');
 
-
 function emptyInput(inp){
   let res13 = ' ';
   let str = inp.trim();
@@ -152,3 +151,60 @@ btn_t13.onclick = () => {
   out_t13.innerHTML = emptyInput(inp_t13.value);
 }
 
+
+// task 14
+
+function oddEven(num){
+  let res14 = 0;
+  if(num % 2==0){
+    res14 = true;
+  }
+  else{
+    res14 = false;
+  }
+  return res14;
+}
+console.log(oddEven(3));
+
+// task 15
+let out_t15 = document.querySelector('.out_t15');
+
+out_t15.onmousemove = () => {
+  console.log('move');
+}
+
+// task 16
+let out_t16 = document.querySelector('.out_t16');
+
+out_t16.onmouseenter = () => {
+  console.log('enter');
+}
+
+// task 17
+let out_t17 = document.querySelector('.out_t17');
+
+out_t17.onmouseleave = () => {
+  console.log('leave');
+}
+
+// task 18
+let out_t18 = document.querySelector('.out_t18');
+
+out_t18.onclick = function(){
+  this.style.background = 'red';
+}
+
+// task 19
+let out_t19 = document.querySelector('.out_t19');
+
+out_t19.onclick = () => {
+  this.style.background = 'red';
+}
+// task 20
+let go = document.querySelectorAll('.go');
+
+for(let i = 0; i < go.length ; i++ ){
+  go[i].onclick = function(){
+    this.style.background = 'red';
+  }
+}
