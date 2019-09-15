@@ -7,3 +7,10 @@ body {
 .block{
     margin: 10px 0;
 }
+
+.out_t10{
+    border: 1px solid black;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
