@@ -186,7 +186,7 @@ for (let i = 1; i < 7; i++) {
     out_t12.innerHTML += `<br>`;
 }
 
-//task13
+//task13 //эту задачу не понял как сделать. прошу пояснить.
 let out_t13 = document.querySelector('.out_t13');
 let space = '&nbsp';
 // let someVal = 8;
@@ -267,22 +267,39 @@ for (let i = 5; i > 0 ; i--) {
 //task19
 let out_t19 = document.querySelector('.out_t19');
 
-let n = 12;
+let n = 10;
     
-    for (var i = 1; i <= n; i++) {
-        if(i %2 == 0){
-            
-         }
-         else{
-            for(let k = 1; k <= n-i; k++) {
+    for (var i = 0; i < 3; i++) {
+        for(let k = 1; k <= n-(i*2+4); k++) {
                 out_t19.innerHTML += "&nbsp;";
             }
-            for(let j = 2; j <= i; j++) {
-                out_t19.innerHTML += "*";
-            }
-         }
+        for(let j = 0; j <= i*2+4; j++) {
+            out_t19.innerHTML += "*";
+        }
         out_t19.innerHTML +="<br>";
     }
 
+//task20
+let out_t20 = document.querySelector('.out_t20');
 
+let n2 = 10;
+    
+    for (var i = 0; i < 3; i++) {
+        for(let k = 1; k <= n2-i*2; k++) {
+                out_t20.innerHTML += "&nbsp;";
+            }
+        for(let j = 0; j <= i*2+1; j++) {
+            out_t20.innerHTML += "*";
+        }
+        out_t20.innerHTML +="<br>";
+    }
 
+    for (var i = 2; i > 0; i--) {
+        for(let k = 1; k <= n2-i*2+2; k++) {
+                out_t20.innerHTML += "&nbsp;";
+            }
+        for(let j = 0; j <i*2; j++) {
+            out_t20.innerHTML += "*";
+        }
+        out_t20.innerHTML +="<br>";
+    }
