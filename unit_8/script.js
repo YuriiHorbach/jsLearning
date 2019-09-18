@@ -4,20 +4,24 @@
 // задание сделать с помощью while
 
 let out1 = document.querySelector('.out1');
-function func_1() {
+
+function func_1(){
     p = 0;
-    while(p < 5){
-        p += ' ';
+    let outStr = '';
+    let flag = 4;
+
+    while (p < 1) {
+        let p1 = 0;
+        while (p1 <= 100) {
+            outStr += p1 + "&nbsp;";
+            p1++;
+        }
         p++;
     }
-    
+    return outStr;
 }
-// out1.innerHTML = func_1();
 
-for(let i = 0; i < 5; i++){
-    out1[i].innerHTML = i;
-}
-// func_1();
+out1.innerHTML = func_1();
 
 
 
@@ -27,9 +31,19 @@ for(let i = 0; i < 5; i++){
 // 5 6 7
 // считаем что второе число всегда больше первого. Решаем с помощью while
 
-function func_2(a, b) {
+let out2 = document.querySelector('.out2');
 
+function func_2(a, b) {
+    let str2 = '';
+    while(a <= b){
+        str2 += a + " ";
+        a++;
+    }
+    return str2;
 }
+
+out2.innerHTML = func_2(5,7);
+
 
 // Task 3
 // Создайте функцию func_3, которая принимает от пользователя 2 параметра числа и возращает строку от большего числа меньшего с шагом 1. Разделитель пробел.
@@ -37,9 +51,20 @@ function func_2(a, b) {
 // 7 6 5
 // Решаем с помощью while
 
-function func_3(a, b) {
 
+let out3 = document.querySelector('.out3');
+
+function func_3(a, b) {
+    let str3 = '';
+    while(b >= a){
+        str3 += b + " ";
+        b--;
+    }
+    return str3;
 }
+
+out3.innerHTML = func_3(5,7);
+
 
 // Task 4
 // Создайте функцию func_4, которая принимает от пользователя 3 параметра(число, число и шаг) и возращает строку от большего числа меньшего с заданным. Разделитель пробел.
@@ -47,33 +72,87 @@ function func_3(a, b) {
 // 5 3 1
 // Решаем с помощью while
 
-function func_4(a, b, c) {
+let out4 = document.querySelector('.out4');
 
+function func_4(a, b, c) {
+    let str4 = '';
+    while(b >= a){
+        str4 += b + " ";
+        b -= c;
+    }
+    return str4;
 }
+
+out4.innerHTML = func_4(1,5,2);
+
 
 // Task5
 // С помощью цикла
 // while создайте функцию func_5, считает и возвращает сумму чисел от 0 до 20.
 
-function func_5() {
+let out5 = document.querySelector('.out5');
 
+function func_5() {
+    p = 0;
+    let sum = 0;
+    while(p <= 20){
+        sum += p;
+        p++;
+    }
+    return sum;
 }
+
+out5.innerHTML = func_5();
+
+
 
 // Task 6
 // C помощью цикла
 // while создайте функцию func_6, которая принимает 2 параметра, и если второй параметр больше первого, то возвращает сумму чисел от первого до второго включительно. Если нет - то false.Считаем, что пользователь может ввести только числа.
 
-function func_6(a, b) {
+let out6 = document.querySelector('.out6');
 
+function func_6(a, b) {
+    let p = a;
+    let sum = 0;
+    if(b > a){
+        while(p <= b){
+            sum += p;
+            p++;
+        }
+    }
+    else{
+        sum = false;
+    }
+    return sum;
 }
+
+out6.innerHTML = func_6(1,3);
+
+
 
 // Task 7
 // C помощью цикла
 // while создайте функцию func_7, которая принимает 2 параметра, и если второй параметр больше первого, то возвращает произведение чисел от первого до второго включительно.Если нет - то false.Считаем, что пользователь может ввести только числа.
 
-function func_7(a, b) {
+let out7 = document.querySelector('.out7');
 
+function func_7(a, b) {
+    let p = a;
+    let sum = 1;
+    if(b > a){
+        while(p <= b){
+            sum *= p;
+            p++;
+        }
+    }
+    else{
+        sum = false;
+    }
+    return sum;
 }
+
+out7.innerHTML = func_7(1,4);
 
 // Task 8
 // У пользователя есть 333 монеты в кармане.Каждый день, начиная с первого количество монет увеличиваетя в 2 раза. Напишите функцию func_8, которая вернет день, в который количество монет станет больше или равно 1 000 000.
