@@ -157,16 +157,60 @@ out7.innerHTML = func_7(1,4);
 // Task 8
 // У пользователя есть 333 монеты в кармане.Каждый день, начиная с первого количество монет увеличиваетя в 2 раза. Напишите функцию func_8, которая вернет день, в который количество монет станет больше или равно 1 000 000.
 
-function func_8() {
+let out8 = document.querySelector('.out8');
 
+function func_8() {
+    let coins = 333;
+    let days = 1;
+    let allCoins = 1000000;
+
+    while( coins <= allCoins){
+        coins = coins * 2;
+        days++;
+        // console.log(days + ' ' + coins);
+        
+    }
+    return days;
 }
+
+out8.innerHTML = func_8();
 
 // Task 9
 // Создайте функцию func_9, которая принимает 2 параметра и возращает строку от первого до второго введенного параграфа, где все четные числа заменены на символ нуля(0).
 
-function func_9(a, b) {
+ let out9 = document.querySelector('.out9');
 
+// let str9 = "";
+// p = 0;    
+// while(p <= 5){
+//     if(p % 2 == 0){
+//         p = '-';
+//     }
+//     str9 += p + ' ';
+//     p++;
+// }
+
+// out9.innerHTML = str9;
+
+function func_9(a, b){
+    let str9 = '';
+    let p9 = a;
+   
+    while(p9 <= b){
+        if(p9 % 2 == 0){
+            str9 += "0 ";
+        }
+        else{
+            str9 += p9 + " ";
+        }
+        p9++;
+    }
+    return str9;
 }
+
+    out9.innerHTML = func_9(1,10);
+    
+
 
 // Task 10
 // Cоздайте функцию func_10, которая вернет строку(решаем через
@@ -177,18 +221,37 @@ function func_9(a, b) {
 //     *
 //     **
 //     *
+let out10 = document.querySelector('.out10');
 
-function func_10() {
-
+function func_10(){
+    let p10 = 0;
+    let str10 = '';
+    while(p10 < 3){
+        let p10_2 = 0;
+        while(p10_2 < 3){
+            let p10_3 = 2;
+            while(p10_3 > p10_2 ){
+                str10 += '*';
+                p10_3--;
+            }
+            str10 += '<br>';
+            p10_2++;
+        }  
+        p10++;    
+    }
+    return str10;
 }
 
-// Task 11
-// Создайте функцию func_11, которая вернет следующую строку: 10 1 9 2 8 3. . 1 10. Решаем через
-// while.
+out10.innerHTML = func_10();
 
-function func_11() {
 
-}
+// // Task 11
+// // Создайте функцию func_11, которая вернет следующую строку: 10 1 9 2 8 3. . 1 10. Решаем через
+// // while.
+
+// function func_11() {
+
+// }
 
 // Task 12
 // Прочитайте о цикле <a href = "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/do...while"
