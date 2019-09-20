@@ -248,6 +248,30 @@ out10.innerHTML = func_10();
 // // Task 11
 // // Создайте функцию func_11, которая вернет следующую строку: 10 1 9 2 8 3. . 1 10. Решаем через
 // // while.
+let out11 = document.querySelector('.out11');
+// for(i = 0; i < 10; i++) {
+
+//     console.log(`%d %d`, 10 - i, 1 + i);
+//    num1 = `%d %d`, 10 - i, 1 + i;
+// }
+
+// out11.innerHTML = num1;
+
+let i = 10;
+let num1= '';
+let num2 = "";
+let num3 = '0';
+let j = 1;
+while(i > 0){
+    num1 += i + ' ';
+    num3 = num1 += j + ' ';
+    i--;
+    j++;
+    
+}
+
+out11.innerHTML = num3;
+// out112.innerHTML = num2;
 
 // function func_11() {
 
