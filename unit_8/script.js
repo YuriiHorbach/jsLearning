@@ -180,17 +180,6 @@ out8.innerHTML = func_8();
 
  let out9 = document.querySelector('.out9');
 
-// let str9 = "";
-// p = 0;    
-// while(p <= 5){
-//     if(p % 2 == 0){
-//         p = '-';
-//     }
-//     str9 += p + ' ';
-//     p++;
-// }
-
-// out9.innerHTML = str9;
 
 function func_9(a, b){
     let str9 = '';
@@ -280,15 +269,15 @@ out11.innerHTML = num3;
 // Task 12
 // Прочитайте о цикле <a href = "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/do...while"
 // target = "_blank" >do while</a>. Напишите код:
-// let a = 0;
-// do
-//     console.log('do while work');
-// while (a < 0);
+let a = 0;
+do
+    console.log('do while work');
+while (a < 0);
 
-// let b = 0;
-// while (b < 0) {
-//     console.log('while work');
-// }
+let b = 0;
+while (b < 0) {
+    console.log('while work');
+}
 
 // изучите вывод.Как видите, цикл do while срабатывает минимум один раз в любом случае.Т.е.вначале идет срабатывание, а потом проверка.
 
@@ -299,53 +288,172 @@ function func_12() {
 // Task 13
 // Напишите функцию func_13 которая возвращает строку, от 100 до 0 включительно.Используем цикл do while.
 
-function func_13() {
+let out13 = document.querySelector('.out13');
 
+
+function func_13() {
+    
+    let i13 = 100;
+    let str = '';
+    do{
+        str += i13 + ' ';
+        i13--;
+    }
+    while(i13 > 0);
+
+    return str + " ";
 }
+
+out13.innerHTML = func_13();
+
+
 
 // Task 14
 // Стаханов в первый день своей работы добыл 5 тонн угля.Во второй - на 30 % больше от предыдущего дня .Напишите функцию func_14 которая вернет день, когда Стаханова побьют все, кто с ним работает, этот день наступит тогда, когда Стаханов в день добудет 132 тонны угля.Используйте для решения do while. Считаем, что каждый день Стаханов дает угля на 30% больше предыдущего.
 
-function func_14() {
+let out14 = document.querySelector('.out14');
 
+function func_14() {
+    let aim = 5;
+    let dayend = 0;
+
+    do{
+        aim = aim * 1.3;
+        dayend++;
+
+    }
+    while(aim < 132);
+
+    return dayend - 1;
 }
+
+out14.innerHTML = func_14();
 
 // Task 15
 // Гермиона Грейнджер в первый день наварила 1.1 литра зелья.Во второй день на 0.3 литра зелья больше.Напишите функцию func_15, которая вернет день, когда в Хоргвардсе не останется пустых котлов(суммарный объем котлов в замке 568 литров).Обратите внимание, что вам нужно найти суммарных объем сваренного зелья, а не дневной объем.Используем do while.
 
-function func_15() {
+let out15 = document.querySelector('.out15');
 
+    
+
+function func_15() {
+    let aim = 568;
+    let dayend = 0;
+
+    do{
+        aim = aim * 0.3;
+       
+        dayend++;
+
+    }
+    while(parseInt(aim) > 0);
+
+    return dayend - 1;
 }
+
+out15.innerHTML = func_15();
 
 // Task 16
 // На странице есть четыре параграфа p.task-16. Используя цикл do ..while посчитайте количество параграфов p.task-16 и если число четное - верните значение, если нет - верните false.Код напишите в функции func_16.
+let task_16 = document.querySelectorAll('.task-16'); 
+let out16 = document.querySelector('.out16');
 
 function func_16() {
+    let task_16Length = task_16.length;
+    let i16 = 0;
+    str = '';
+    do{
+        i16++;
+    }
+    while(i16 < task_16Length);
 
+    if(i16 % 2 == 0 ){
+        str += 'even';
+    }
+    else{
+        str += 'odd';
+    }
+    return str;
 }
+
+out16.innerHTML = func_16();
+
 
 // Task 17
 // На странице есть четыре параграфа p.task-16. Используя цикл do ..while выведите в первый p.task-16 - число 1, во второй 2 и т.д.Решение оформите в виде функции func_17.
+let out17 = document.querySelector('.out17');
+let task_17 = document.querySelectorAll('.task-16'); 
 
 function func_17() {
-
+    
+    
+    let i17 = 1;
+    do{
+        task_17[i17].innerHTML = i17;
+        i17++; 
+    }
+    while(i17 < task_17.length);
+    return task_17.value;
 }
+
+func_17(); //ответ вывелся в параграфах в задаче 16: 1,2,3
 
 
 // Task 18
 // На странице есть три параграфа p.task-18. Используя цикл do ..while выведите в первый p.task-18 - число равное количеству параграфов p.task - 18, во второй на единицу меньше и т.д.Решение оформите в виде функции func_18.
+let task_18 = document.querySelectorAll('.task-18'); 
+let out18 = document.querySelectorAll('.task-18'); 
 
 function func_18() {
+    let len = task_18.length;
+    // console.log(len);
+    let i18 = 0;
+    let str = '';
 
+    do{
+        // console.log(task_18[i18].innerHTML);
+        task_18[i18].innerHTML = len;
+        str += task_18[i18].innerHTML;
+        i18++;
+        len--;
+        // console.log(i18);
+    }
+    while(i18 < task_18.length);
+
+    return str;
 }
+
+func_18();
 
 
 // Task 19
 // Напишите функцию func_19, которая возвращает строку вида: 1*3*5*7*9*11*13*15*17*19. Решите с помощью do while.
 
-function func_19() {
+let out19 = document.querySelector('.out19');
 
+function func_19(){
+    let str19 = '';
+    let p19 = 1;
+
+    do{
+        if(p19 % 2 == 0){
+            str19 += "* ";
+        }
+        else{
+            str19 += p19 + " ";
+        }
+        p19++;
+    }
+   
+    while(p19 < 20){
+        
+    }
+    return str19;
 }
+
+    out19.innerHTML = func_19();
+
+
 
 // Task 20
 // Напишите функцию func_20, которая возвращает строку вида:
@@ -353,7 +461,31 @@ function func_19() {
 //     * 1 * *
 //     * * 1 *
 //     * * * 1
+let out20 = document.querySelector('.out20');
 
 function func_20() {
+    let p20 = 0;
+    str = '';
+    do{ 
+        let k20 = 0;
+        do{
+            if (k20 == p20){
+                out20.innerHTML += '1 ';
+            }
+            else{
+                out20.innerHTML += '* ';
+            }
+            k20++;
+        
+        }
+        while(k20 < 5);
+        out20.innerHTML += '<br>';
+        p20++;
+        str += out20.innerHTML
+    }
+    while(p20 < 5);
 
+    return str;
 }
+
+func_20();
