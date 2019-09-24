@@ -21,6 +21,7 @@ console.log(document.querySelectorAll('link')[1].getAttribute('href'));
 one.setAttribute('data-num', 6);
 
 let gas = document.querySelectorAll('.gas');
+
 for (let i = 0; i < gas.length; i++) {
     gas[i].onclick = function () {
         let gallons = document.querySelector('.gallons').value;
@@ -28,6 +29,13 @@ for (let i = 0; i < gas.length; i++) {
         console.log(gallons * amount);
     }
 }
+
+let out9 = document.querySelectorAll('.out9');
+
+out9.innerHTML = amount;
+
+
+
 
 let a = document.createElement('div');
 a.innerHTML = 'Hello!';

@@ -110,7 +110,7 @@ function func_9(elem) {
         elem[i].onclick = function(){
             let val = '';
             val = this.getAttribute('data');
-            console.log(val);
+            document.querySelector('.out9').innerHTML = val;
         }
     }
 }
