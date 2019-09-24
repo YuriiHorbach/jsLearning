@@ -78,32 +78,48 @@ func_6(u_6);
 let css3 = document.querySelectorAll('.css-3');
 let out7 = document.querySelector('.out7');
 
-// function func_7(elem) {
-//     let s = 0;
-//     for(let i = 0; i < elem.length; i++){
-//         if(elem.classList.contains('css-3')){
-//             s++;
-//         }
-//     }
-//     return s;
-// }
-
-let s = 0;
-    for(let i = 0; i < css3.length; i++){
-        if(css3.classList.contains('css-3')){
+function func_7(elem) {
+    let s = 0;
+    for(let i = 0; i < elem.length; i++){
+        if(elem[i].classList.contains('css-3')){
             s++;
         }
     }
-console.log(s);
+    return s;
+}
+
 out7.innerHTML = func_7(css3);
 
 // TASK 8. Напишите функцию func - 8, которая будучи запущенной, присваивает всем элементам p.u - 1 атрибут title со значением test - data.
+let u_1_8 = document.querySelector('.u-1');
 
-function func_8() { }
+function func_8(elem) { 
+   elem.setAttribute('title', 'test-data');
+   return elem;
+}
+
+func_8(u_1_8);
 
 // TASK 9. С помощью цикла получите кнопки.u - 9. Добавьте на них событие onclick которое запускает функцию func - 9. Функция возращает data атрибут элемента, по которому кликнули.
 
-function func_9() { }
+let btn9 = document.querySelectorAll('.u-9');
+let out9 = document.querySelector('.out9');
+
+function func_9(elem) {
+    for(let i = 0; i < elem.length; i++){
+        elem[i].onclick = function(){
+            let val = '';
+            val = this.getAttribute('data');
+            console.log(val);
+        }
+    }
+}
+
+func_9(btn9);
+
+
+
+
 
 // TASK 10. Напишите функцию func - 10, которая при клике на кнопке.u -10__button читает атрибут валюты data - currency и на основании этого выводит в p.u -10__out коэффициент данной валюты по отношению к доллару.Коэффициент возьмите приблизительно из интернета.Считается, что пользователь всегда вводит валюту в долларах.
 
