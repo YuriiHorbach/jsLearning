@@ -175,19 +175,65 @@ func_13();
 
 // TASK  14. Создайте функцию func - 14, которая создает элемент span.span - 14 с текстом 14 через createElement и вставляет его в p.u - 14(prepend).
 
-function func_14() { }
+let u_14 = document.querySelector('.u-14');
+
+function func_14() { 
+    let span = document.createElement('span');
+    span.classList.add('span-14');
+    span.innerHTML = '14';
+    u_14.prepend(span);
+}
+
+func_14();
+
 
 // TASK 15. Создайте функцию func - 15, которая создает элемент span.span - 15 с текстом 15 через createElement и вставляет его в p.u - 15(before)
+let u_15 = document.querySelector('.u-15');
 
-function func_15() { }
+function func_15() { 
+    let span = document.createElement('span');
+    span.classList.add('span-15');
+    span.innerHTML = '15';
+    u_15.before(span);
+}
+
+func_15();
+
 
 // TASK    16. Создайте функцию funct - 16, которая создает элемент button.u - 16 c текстом Push.Повесьте на данный элемент событие onclick со стрелочной функцией, которая в консоль выводит текст u - 16. И после добавления события добавьте данный элемент на страницу в div.u -16__out.Проверьте работоспособность события.
 
-function func_16() { }
+let u_16out = document.querySelector('.u-16__out');
+
+function func_16(elem) { 
+    let btn = document.createElement('button');
+    btn.classList.add('u-16');
+    btn.innerHTML = 'Push';
+    btn.onclick = () => {
+        console.log('u-16');
+    }
+    elem.appendChild(btn);
+}
+
+func_16(u_16out);
+
 
 // TASK 17. Создайте функцию, funct - 17, которая при запуске создаст элемент p c текстом 17 и заменит этим элементом div.u - 17
 
-function func_17() { }
+let u_17out = document.querySelector('.u-17');
+
+function func_17(elem) { 
+    elem.parentNode.removeChild(elem);
+    let p = document.createElement("p");
+    console.log(p);
+    p.innerHTML = '17';
+    console.log(elem);
+    elem.appendChild(p);
+
+    
+}
+
+func_17(u_17out);
+
 
 // TASK 19. C помощью цикла повесьте на div.out - 18 функцию func - 18. Данная функция дожна удалять элемент, на котором произошел клик из DOM.Функция должна возвращать удаленный элемент
 
