@@ -478,12 +478,12 @@ function func_20() {
             k20++;
         
         }
-        while(k20 < 5);
+        while(k20 < 4);
         out20.innerHTML += '<br>';
         p20++;
         str += out20.innerHTML
     }
-    while(p20 < 5);
+    while(p20 < 4);
 
     return str;
 }

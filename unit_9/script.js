@@ -117,25 +117,61 @@ function func_9(elem) {
 
 func_9(btn9);
 
-
-
-
-
 // TASK 10. Напишите функцию func - 10, которая при клике на кнопке.u -10__button читает атрибут валюты data - currency и на основании этого выводит в p.u -10__out коэффициент данной валюты по отношению к доллару.Коэффициент возьмите приблизительно из интернета.Считается, что пользователь всегда вводит валюту в долларах.
+let btn10 = document.querySelectorAll('.u-10__button');
+let out10 = document.querySelector('.u-10__out');
 
-function func_10() { }
+function func_10(elem) {
+    for(let i = 0; i < elem.length; i++){
+        elem[i].onclick = function(){
+            let val = this.getAttribute('data-currency');
+            document.querySelector('.u-10__out').innerHTML = val;
+        }
+    }
+}
+
+func_10(btn10);
 
 // TASK 11.Напишите функцию func - 11, которая при клике на кнопке.u -11__button читает атрибут валюты data - currency и на основании этого выводит в p.u -11__out перевод валюты введенной пользователем в input.u -11__input в указанную валюту.Считается, что пользователь всегда вводит валюту в долларах. 
+let btn11 = document.querySelectorAll('.u-11__button');
 
-function func_11() { }
+function func_11(currency){
+    for(let i = 0; i < currency.length; i++){
+        currency[i].onclick = function(){
+            let val = this.getAttribute('data-currency');
+            input = document.querySelector('.u-11__input').value;
+            let res = val * input;
+            document.querySelector('.u-11__out').innerHTML = res;
+        }
+    }
+}
+
+func_11(btn11);
 
 // TASK  12. Создайте функцию func - 12, которая создает через createElement элемент div, присваивает ему класс css - 4 и возвращает данный элемент
 
-function func_12() { }
+
+test12 = document.querySelector('.test12');
+
+function func_12(elem) { 
+    let div12 = document.createElement('div');
+    div12.classList.add('css-4');
+    elem.appendChild(div12);
+}
+
+func_12(test12);
 
 // TASK  13.Создайте функцию func - 13, которая создает элемент span.span - 13 с текстом 13 через createElement и вставляет его в p.u - 13(append).
+let u_13 = document.querySelector('.u-13');
 
-function func_13() { }
+function func_13() { 
+    let span = document.createElement('span');
+    span.classList.add('span-13');
+    span.innerHTML = '13';
+    u_13.appendChild(span);
+}
+
+func_13();
 
 // TASK  14. Создайте функцию func - 14, которая создает элемент span.span - 14 с текстом 14 через createElement и вставляет его в p.u - 14(prepend).
 
