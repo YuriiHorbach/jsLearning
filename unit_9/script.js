@@ -219,31 +219,70 @@ func_16(u_16out);
 
 // TASK 17. Создайте функцию, funct - 17, которая при запуске создаст элемент p c текстом 17 и заменит этим элементом div.u - 17
 
-let u_17out = document.querySelector('.u-17');
 
-function func_17(elem) { 
-    elem.parentNode.removeChild(elem);
+
+function func_17() { 
+    let task17 = document.querySelector('.task17');
+    let u_17out = document.querySelector('.u-17');
     let p = document.createElement("p");
-    console.log(p);
+    p.classList.add('u-17');
     p.innerHTML = '17';
-    console.log(elem);
-    elem.appendChild(p);
-
-    
+    u_17out.replaceWith(p);
 }
 
-func_17(u_17out);
+func_17();
 
 
-// TASK 19. C помощью цикла повесьте на div.out - 18 функцию func - 18. Данная функция дожна удалять элемент, на котором произошел клик из DOM.Функция должна возвращать удаленный элемент
+// TASK 18. C помощью цикла повесьте на div.out - 18 функцию func - 18. Данная функция дожна удалять элемент, на котором произошел клик из DOM.Функция должна возвращать удаленный элемент
+let out18 = document.querySelectorAll('.out-18');
 
-function func_18() { }
+function func_18(elem){
+    for(let i = 0; i < elem.length; i++){
+        elem[i].onclick = function(){
+            this.remove();
+        }
+    }
+}
+
+func_18(out18);
+
 // TASK   19. Создайте функцию func - 19, которая принимает параметр текст.Создает элемент li, вставляет в него указанный текст, и добавляет на страницу в ul.u - 19 в конец списка.
 
-function func_19() { }
-// TASK 20. Доработайте предыдущее задание.Допишите функцию func - 20 которая может принимать текст от пользователя и вставлять в список ul.u - 20. Также добавьте checkbox - важное, при этом созданный li получает класс.css - 5.
+function func_19(text) {
+    let ul = document.querySelector('.u-19');
+    let li = document.createElement('li');
+    li.innerHTML = text;
+    ul.append(li);
+}
 
-function func_20() { }
+func_19('aaaa');
+
+// TASK 20. Доработайте предыдущее задание.Допишите функцию func - 20 которая может принимать текст от пользователя и вставлять в список ul.u - 20. Также добавьте checkbox - важное, при этом созданный li получает класс.css - 5.
+let inp20 = document.querySelector('.inp20');
+
+let btn20 = document.querySelector('.btn20');
+let check20 = document.querySelector('.check20');
+
+function func_20(text) {
+    let check20 = document.querySelector('.check20');
+    let ul = document.querySelector('.u-20');
+    let li = document.createElement('li');
+    li.innerHTML = text;
+    
+    if(check20){
+        ul.append(li);
+        li.classList.add('css-5');
+    }else{
+        ul.append(li);
+    }
+}
+
+console.log(inp20.value);
+
+btn20.onclick = () => {
+    func_20(inp20.value);
+}
+
 
 
 
