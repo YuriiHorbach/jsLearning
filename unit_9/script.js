@@ -259,9 +259,8 @@ func_19('aaaa');
 
 // TASK 20. Доработайте предыдущее задание.Допишите функцию func - 20 которая может принимать текст от пользователя и вставлять в список ul.u - 20. Также добавьте checkbox - важное, при этом созданный li получает класс.css - 5.
 let inp20 = document.querySelector('.inp20');
-
 let btn20 = document.querySelector('.btn20');
-let check20 = document.querySelector('.check20');
+let check20 = document.querySelector('input[type=checkbox]');
 
 function func_20(text) {
     let check20 = document.querySelector('.check20');
@@ -269,15 +268,13 @@ function func_20(text) {
     let li = document.createElement('li');
     li.innerHTML = text;
     
-    if(check20){
+    if(check20.checked){
         ul.append(li);
         li.classList.add('css-5');
     }else{
         ul.append(li);
     }
 }
-
-console.log(inp20.value);
 
 btn20.onclick = () => {
     func_20(inp20.value);
