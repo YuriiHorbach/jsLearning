@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+html,
+body {
+    font-family: serif;
+    padding: 10px;
+}
+
+body {
+    margin: 20px auto;
+}
+
+.css-2 {
+    background:/* #c0c0c0;*/ red;
+}
+
+.css-3 {
+    background: yellow;
+}
+
+.css-4 {
+    background: orange;
+}
+
+.css-5 {
+    background: red;
+}
+
+.active {
+    border: 2px solid black;
+=======
+html, body {
+    font-family: serif;
+}
+body {
+    margin: 20px;
+>>>>>>> 6e69861c452a29be2c9ad3bfac0bcffc253acb3a
+}
