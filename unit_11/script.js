@@ -119,7 +119,7 @@ function funcPop(){
     arr7 = arr7.slice(0, -1);
     out7.innerHTML = arr7;
 }
-
+   
 btn7.onclick = funcPush;
 btnPop.onclick = funcPop;
 
