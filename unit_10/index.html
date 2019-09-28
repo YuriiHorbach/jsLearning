@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Unit 11</title>
+</head>
+
+<body>
+    <p>
+        Task 1.
+        Создайте пустой массив arr1, input.u-1, кнопку button.u-2__push. При нажатии кнопки, функция читает содержимое input и добавляет содержимое в массив, после чего выводит содержимое массива в div.out-1.
+    </p>
+    <input type="text" class="u-11-1">
+    <button class="u-11-1__push">Push</button>
+    <button class="u-2__pop">Pop</button>
+    <button class="u-3__shift">Shift</button>
+    <button class="u-4__unshift">Unshift</button>
+    <div class="out-11-1"></div>
+    <hr>
+
+    <p>
+        Task 2.
+        Добавьте к предыдущему заданию кнопку button.u-2__pop, при нажатии которой, к массиву arr1 применяется метод pop, после чего массив выводится в div.out-1
+    </p>
+    <hr>
+
+    <p>
+        Task 3.
+        Добавьте к заданию 1 кнопку button.u-3__shift, которая применяет к массиву arr1 метод shift ( читать за метод shift). После применения shift, массив arr1 выподится в div.out-1.
+    </p>
+    <hr>
+
+    <p>
+        Task 4.
+        Добавьте к заданию 1 кнопку button.u-4__unshift, которая применяет к массиву arr1 метод unshift ( читать за метод unshift). После применения unshift, массив arr1 выподится в div.out-1. Надеюсь, вы догадаетесь проверять input на пустоту перед применением unshift. Надеюсь, вы это сделали и в первой задаче?
+    </p>
+    <hr>
+
+    <p>
+        Task 5.
+        Обьявите массив arr5, добате два элемента input, в первый пользователь может ввести индекс элемента, во второй - количество. Добавьте кнопку, по нажатию на которую к массиву arr5 применяется метод splice. Результат применения выводите в div.out-5.
+        <pre>
+            let arr5 = [3,14, 15, 92, 6, 54, 123, 87, 66, 43, 12, 90, 'hello'];
+        </pre>
+
+        <input type="text" class="inp5_1">
+        <input type="text" class="inp5_2">
+        <button class="btn5">Push</button>
+        <div class="out-5"></div>
+
+    </p>
+    <hr>
+
+    <p>
+        Task 6.
+        Напишите функцию funcPush, которая эмулирует работу метода push, функция, по нажатию кнопки:
+
+        читает содержимое input в переменную
+        вычисляет длину массива
+        присваивает массиву новый элемент, а в качестве индекса указывает длину массива
+        Выводит массив на страницу
+    </p>
+    <input type="text" class="inp6">
+        <button class="btn6">Push</button>
+        <div class="out-6"></div>
+    <hr>
+
+    <p>
+        Task 7.
+        Напишите функцию funcPop, которая эмулирует работу метода pop, функция, по нажатию кнопки:
+
+        удаляет последний элемент массива
+        Выводит массив на страницу
+    </p>
+    <input type="text" class="inp7">
+        <button class="btn7">Push</button>
+        <button class="btnPop">Pop</button>
+        <div class="out-7"></div>
+    <hr>
+
+   
+    <script src="script.js"></script>
+</body>
+
+</html>
