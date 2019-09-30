@@ -123,6 +123,60 @@ function funcPop(){
 btn7.onclick = funcPush;
 btnPop.onclick = funcPop;
 
+/*
+Task 8. 
+Напишите функцию funcShift, которая эмулирует работу метода shift, функция, по нажатию кнопки:
+Создает новый массив где нулевым элементом выступает первый элемент исходного массива
+Выводит массив на страницу
+*/
+
+let btnShift = document.querySelector('.btnShift');
+let out81 = document.querySelector('.out81');
+let out82 = document.querySelector('.out82');
+
+let arr81 =[1,2,3,4,5,6,7,8];
+let arr82 =[];
+
+out81.innerHTML = arr81;
+
+function funcShift(){
+    arr82[0] = arr81[0] ;
+    out82.innerHTML = arr82;
+}
+
+btnShift.onclick = funcShift;
+
+/* 
+Task 9.
+Напишите функцию funcUnShift, которая эмулирует работу метода unshift, функция, по нажатию кнопки:
+
+читает содержимое input в переменную
+создает новый массив где нулевым элементов задает считанную из input строку
+дописывает остальные значения старого массива в новый
+Выводит массив на страницу
+*/
+
+let btnUnShift = document.querySelector('.btnUnShift');
+let inp9 = document.querySelector('.inp9');
+let out91 = document.querySelector('.out91');
+let out92 = document.querySelector('.out92');
+
+let arr91 =[1,2,3,4,5,6,7];
+let arr92 =[];
+
+out91.innerHTML = arr91;
+
+function funcUnShift(){
+    inpVal = inp9.value;
+    arr92[0] = inpVal;
+    arr92 += arr91;
+    out92.innerHTML = arr92;
+}
+
+btnUnShift.onclick = funcUnShift;
+
+
+
 
 
 

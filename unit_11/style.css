@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 html,
 body {
     font-family: serif;
@@ -27,11 +26,4 @@ body {
 
 .active {
     border: 2px solid black;
-=======
-html, body {
-    font-family: serif;
-}
-body {
-    margin: 20px;
->>>>>>> 6e69861c452a29be2c9ad3bfac0bcffc253acb3a
 }
