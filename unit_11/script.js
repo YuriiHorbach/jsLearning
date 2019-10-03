@@ -175,6 +175,110 @@ function funcUnShift(){
 
 btnUnShift.onclick = funcUnShift;
 
+/* 
+Task 10.
+Создайте массив arr10, примените к массиву метод reverse ( читать за метод reverse). После применения reverse, массив arr10 выподится в div.out-10.
+
+let arr10 = [2,4, 6, 8, 10, 'hello'];
+*/
+
+let out10 = document.querySelector('.out-10');
+
+let arr10 = [2,4, 6, 8, 10, 'hello'];
+
+let newArr = arr10.reverse();
+
+out10.innerHTML += newArr;
+
+/* 
+Task 11.
+Создайте input.u-11__input и кнопку button.u-11__button. Объявите массив arr11. По нажатию на кнопку, читайте содержимое input.u-11__input в переменную u11. Потом примените к массиву arr11 метод indexOf ( читать за метод indexOf). Результат применения indexOf выводите на страницу в div.out-11. Последовательно проверьте программу вводя в input числа 1, 3, 5, 12.
+
+let arr11 = [0, 2, 3, 7, 8, 5, 11];
+*/
+
+let inp11 = document.querySelector('.u-11__input');
+let btn11 = document.querySelector('.u-11__button');
+let out11 = document.querySelector('.out-11');
+let res;
+let arr11 = [0, 2, 3, 7, 8, 5, 11];
+let u11;
+btn11.onclick = () => {
+    u11 = +inp11.value; 
+    res = arr11.indexOf(u11);
+    out11.innerHTML = res;
+} 
+
+/* 
+Task 12.
+Напишите функцию funcIndexOf, которая эмулирует работу метода indexOf. Программа должна:
+
+читает содержимое input в переменную
+Запускать цикл по массиву и сравнивать каждый элемент массива с введенным.
+Если совпадение есть - останавливать цикл и выводить номер индекса на котором произошло совпадение.
+Если совпадения нет выводить -1.
+*/
+let inp12 = document.querySelector('.u-12__input');
+let btn12 = document.querySelector('.u-12__button');
+let out12 = document.querySelector('.out-12');
+let arr12 = [0, 2, 3, 7, 8, 5, 11];
+let u12;
+
+
+function funcIndexOf(inp, arr){
+    let num;
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i] == inp){
+            num = i;
+            break;
+        }
+        else{
+            num = -1;
+        }
+    }
+    return num;
+}
+
+btn12.onclick = () => {
+    u12 = +inp12.value; 
+    out12.innerHTML = funcIndexOf(u12, arr12);
+} 
+
+/* 
+Task 13.
+Напишите функцию funcReverse, которая эмулирует работу метода reverse. Программа должна:
+
+Создать новый пустой массив
+Перебирать старый массив с конца (массив создайте сами)
+По очереди по элементу присвоить значения в новый массив.
+Вывести новый массив.
+*/
+let btn13 = document.querySelector('.u-13__button');
+let out131 = document.querySelector('.out-131');
+let out132 = document.querySelector('.out-132');
+let arr13 = [0, 2, 3, 7, 8, 5, 11];
+let u13;
+
+
+function funcReverse(arr){
+    let arr2 = [];
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i] == inp){
+            num = i;
+            break;
+        }
+        else{
+            num = -1;
+        }
+    }
+    return num;
+}
+
+btn12.onclick = () => {
+    u12 = +inp12.value; 
+    out12.innerHTML = funcIndexOf(u12, arr12);
+} 
+
 
 
 
