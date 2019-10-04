@@ -281,7 +281,6 @@ let btn14 = document.querySelector('.u-14__button');
 let inp14 = document.querySelector('.u-14__inp');
 let out14 = document.querySelector('.out-14');
 let out141 = document.querySelector('.out-141');
-console.log(inp14.value);
 
 function createArr(inp){
     let arr = [];
@@ -371,6 +370,71 @@ function concatDemo(arr1, arr2){
 
 btn17.onclick = () => {
     out17_3.innerHTML = concatDemo(arr17_1, arr17_2);
+} 
+
+/* 
+Task 18.
+Создайте button.u-18__button и input.u-18__input. Объявите массив arr18 . По нажатию на кнопку примените к массивам метод includes, который проверяет есть ли в массиве значение введенное в input. ( читать за метод includes). Результат применения includes выводите на страницу в div.out-18.
+    let arr16_1 = [3, 5, 7, 11, 12, 13, 14 ];
+*/
+
+let btn18 = document.querySelector('.u-18__button');
+let out18 = document.querySelector('.out-18');
+let inp18 = document.querySelector('.u-18__input');
+let arr18 = [3, 5, 7, 11, 12, 13, 14 ];
+
+btn18.onclick = () => {
+    out18.innerHTML = arr18.includes(parseInt(inp18.value));
+} 
+
+/* 
+Task 19.
+Напишите функцию funcIncludes, которая эмулирует работу метода includes. Программа должна:
+
+1. Перебирает второй массив и сравнивать если введенный элемент совпал с текущим - прекращать работу цикла и выводить true.
+2. Если совпадений нет - false.
+*/
+
+let btn19 = document.querySelector('.u-19__button');
+let out191 = document.querySelector('.out-191');
+let out192 = document.querySelector('.out-192');
+let inp19 = document.querySelector('.u-19__input');
+let arr19 = [3, 5, 7, 11];
+
+out191.innerHTML = arr19;
+
+function includesDemo(inp, arr){
+    let changeInpType = parseInt(inp);
+    
+    let res = false;
+    for(let i = 0; i < arr.length; i++){
+        
+        if( arr[i] == changeInpType){
+            res += true;
+        }
+        else{
+            res += false;
+        }
+    }
+    return res;
+}
+
+
+btn19.onclick = () => {
+    out192.innerHTML = includesDemo(inp19.value, arr19);
+} 
+
+/* 
+Task 20.
+Объявите массив arr20. Создайте кнопку, по нажатию которую к массиву применяется метод join ( читать за метод join). Результа выведите на страницу.
+*/
+
+let btn20 = document.querySelector('.u-20__button');
+let out20 = document.querySelector('.out-20');
+let arr20 = [3, 'zebra', 'jjjjjj', 11];
+
+btn20.onclick = () => {
+    out20.innerHTML = arr20.join('');
 } 
 
 
