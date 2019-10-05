@@ -27,3 +27,24 @@ body {
 .active {
     border: 2px solid black;
 }
+
+.out-12-12{
+    width: 400px;
+    height: 400px;
+}
+
+.black{
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    background: black;
+    float: left;
+}
+
+.white{
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    background: white;
+    float: left;
+}
