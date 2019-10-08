@@ -126,6 +126,25 @@ for (let key in a5){
 }
 
 /* 
+ Task 6.
+Создайте ассоциативный массив a6, который содержит ключи name, age, sex, height и значения любого персонажа. Выведите массив на страницу.
+*/
+let out_13_6 = document.querySelector('.out-13-6');
+
+let a6 = {
+    name: 'John',
+    age: 45,
+    sex: 'man',
+    height: 175
+}
+
+for(let key in a6){
+    out_13_6.innerHTML += a6[key] + '<br>' ;
+}
+
+
+
+/* 
 Task 7.
 Создайте ассоциативный массив a7, два input (u7-key__input, u7-value__input) и кнопку. При нажатии кнопки добавляйте в массив новое значение с соответствующим ключем. Выводите массив на страницу.
 */
@@ -136,7 +155,9 @@ let out_13_7 = document.querySelector('.out-13-7');
 let u7_btn = document.querySelector('.u7-btn');
 let  a7 = {};
 
+
 u7_btn.onclick = () => {
+    
     a7[u7_key__input.value] = u7_value__input.value;
         for(let key in a7){
         out_13_7.innerHTML += key + ' ' + a7[key] +  '<br>';
@@ -153,7 +174,44 @@ let u8_value__delete = document.querySelector('.u8-value__delete');
 let u8_btn = document.querySelector('.u8-btn');
 
 u8_btn.onclick = () => {
-    
+    delete a7[u8_value__delete.value];
+    for(let key in a7){
+        out_13_8.innerHTML += key + ' ' + a7[key] +  '<br>';
+    } 
 }
+
+
+/* 
+Task 9.
+Добавьте к предыдущей задачи input.u9-delete-value__input и кнопку. При нажатии кнопки - удаляйте записи с соответствующим значением. Выводите массив на страницу.
+*/
+
+let out_13_9 = document.querySelector('.out-13-9');
+let deleteInput = document.querySelector('.u9-delete-value__input');
+let u9_btn = document.querySelector('.u9-btn');
+
+function getKey(inpVal, arr){
+    for(let key in arr){
+        if(arr[key] ==  inpVal){
+            delete arr[key];
+        }
+    }
+    return arr;
+}
+
+u9_btn.onclick = () => {
+    console.log();
+    getKey(deleteInput.value, a7);
+    for(let key in a7){
+        out_13_9.innerHTML += key + ' ' + a7[key] +  '<br>';
+    } 
+}
+
+
+/* 
+Task 10.
+Добавьте к предыдущей задачи input.u10-has-key__input и кнопку. При нажатии кнопки - возвращайте true если такой ключ есть в массиве, и false если нет.
+*/
+
 
 
