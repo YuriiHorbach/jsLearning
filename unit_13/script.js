@@ -200,7 +200,6 @@ function getKey(inpVal, arr){
 }
 
 u9_btn.onclick = () => {
-    console.log();
     getKey(deleteInput.value, a7);
     for(let key in a7){
         out_13_9.innerHTML += key + ' ' + a7[key] +  '<br>';
@@ -213,5 +212,24 @@ Task 10.
 Добавьте к предыдущей задачи input.u10-has-key__input и кнопку. При нажатии кнопки - возвращайте true если такой ключ есть в массиве, и false если нет.
 */
 
+let out_13_10 = document.querySelector('.out-13-10');
+let inp10 = document.querySelector('.u10-has-key__input');
+let u10_btn = document.querySelector('.u10-btn');
 
+function getKeyAgain(inpVal, arr){
+    let res;
+    for(let key in arr){
+        if(key == inpVal){
+            res = true;
+        }
+        else if(key != inpVal){
+            res = false;
+        }
+    }
+    return res;
+}
+
+u10_btn.onclick = () => {
+    out_13_10.innerHTML = getKeyAgain(inp10.value, a7);
+}
 
