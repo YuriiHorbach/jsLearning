@@ -324,6 +324,28 @@ btn12.onclick = () => {
         for(let key in a11){
             if(select12[i].value == key && select12[i].selected){
                 out_13_12.innerHTML = a11[key];
+                console.log(typeof(out_13_12.innerHTML));
+            }
+        } 
+    }
+}
+
+/* 
+Task 13.
+Добавьте к предыдущей задаче кнопку button.u13-reverse которая при нажатии выводит станции ветки в обратном порядке. Внимание! Все подобные задачи не меняют массив, а меняют только вывод!!!
+*/
+let out_13_13 = document.querySelector('.out_13_13'); 
+// let select12 = document.querySelector('.u12-branch').getElementsByTagName('option'); 
+let btn13 = document.querySelector('.u13-reverse');
+
+btn13.onclick = () => {
+    for(let i = 0; i < select12.length; i++){
+        for(let key in a11){
+            let varTemp =[];
+            if(select12[i].value == key && select12[i].selected){
+                varTemp = a11[key];
+                out_13_13.innerHTML = varTemp.reverse();
+
             }
         } 
     }
@@ -335,18 +357,26 @@ Task 14.
 Добавьте к предыдущей задаче select.u14-find-station и кнопку. В select - пользователь может выбрать станцию, а вы перебирая массив - вывести ветку на которой эта станция находится.
 */
 /*???????????????????*/
-let select14 = document.querySelector('.u14-find-station').getElementsByTagName('option'); 
-let btn14 = document.querySelector('.btn-13-14');
-let out_13_14 = document.querySelector('.out_13_14');
+// let select14 = document.querySelector('.u14-find-station').getElementsByTagName('option'); 
+// let btn14 = document.querySelector('.btn-13-14');
+// let out_13_14 = document.querySelector('.out_13_14');
+// let optionOut = ' ';
 
-btn14.onclick = () => {
-    newOptions = document.createElement('option');
-        for(let key in a11){
-            let option = [];
-            option += a11[key];
-            out_13_14.innerHTML += option;
-        } 
-}
+// for(let key in a11){
+//     for(let inner in a11[key]){
+//         optionOut += `<option data = "${key}">${a11[key][inner]}</option>`;
+//     }
+// }
+// select14.innerHTML = optionOut;
+
+// btn14.onclick = () => {
+//     newOptions = document.createElement('option');
+//         for(let key in a11){
+//             let option = [];
+//             option += a11[key];
+//             out_13_14.innerHTML += option;
+//         } 
+// }
     
 
 
