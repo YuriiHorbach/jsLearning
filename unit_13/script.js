@@ -429,18 +429,6 @@ btn15.onclick = () =>{
         out15_1.innerHTML = 'on different Lines';
     }
 
-    for(let key in a11){
-        for(let i in a11[key]){
-            let arr15_1 = [];
-            arr15_1 += i; 
-            console.log(arr15_1);
-        }
-    }
-
-    for(let key in a11){
-        for(let i in a11[key]){
-            
-        }
-    }
+    
     
 }
