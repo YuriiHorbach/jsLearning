@@ -48,3 +48,18 @@ body {
     background: white;
     float: left;
 }
+
+.lineRed{
+    background: red;
+    color:white;
+}
+
+.lineBlue{
+    background: blue;
+    color:white;
+}
+
+.lineGreen{
+    background: green;
+    color:white;
+}

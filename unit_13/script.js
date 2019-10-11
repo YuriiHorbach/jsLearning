@@ -355,62 +355,39 @@ btn13.onclick = () => {
 Task 14.
 Добавьте к предыдущей задаче select.u14-find-station и кнопку. В select - пользователь может выбрать станцию, а вы перебирая массив - вывести ветку на которой эта станция находится.
 */
-/*???????????????????*/
-let select14 = document.querySelector('.u14-find-station'); 
+
+let select14 = document.querySelector('.u14-find-station');
 let btn14 = document.querySelector('.btn-13-14');
-let out_13_14 = document.querySelector('.out_13_14');
-let optionOut = ' ';
-
+let out14 = document.querySelector('.out_13_14');
+let val = ' ';
 for(let key in a11){
-    for(let inner in a11[key]){
-        optionOut += `<option value = "${key}">${a11[key][inner]}</option>`;
+    for(let i in a11[key]){
+        val += `<option value = "${key}">${a11[key][i]}</option>`
     }
-   
 }
-select14.innerHTML = optionOut;
+select14.innerHTML = val;
 
-
-btn14.onclick = () => {
-    for(let key in a11){
-        console.log(a11[key]);
-        for(let i = 0; i < a11[key].length; i++){
-            
-        }
+btn14.onclick = () =>{
+    out14.innerHTML = ' ';
+    selected14_2 = document.querySelector('.u14-find-station').value;
+    if(selected14_2 == 'red'){
+        let divRed = document.createElement('div');
+        divRed.className = 'lineRed';
+        divRed.innerHTML = 'Red Line';
+        out14.append(divRed);
     }
-       
+    else if(selected14_2 == 'blue'){
+        let divBlue = document.createElement('div');
+        divBlue.className = 'lineBlue';
+        divBlue.innerHTML = 'Blue Line';
+        out14.append(divBlue);
+    }
+    else if(selected14_2 == 'green'){
+        let divGreen = document.createElement('div');
+        divGreen.className = 'lineGreen';
+        divGreen.innerHTML = 'Green Line';
+        out14.append(divGreen);
+    }
 }
-
-
-    let selected14_2 = document.querySelector('.u14-find-station');
-        // console.log(selected14_2);
-    //    for(let i = 0 ; i < select14.length; i++){
-    //         if (select14[i] == selected14_2){
-    //             console.log(true);
-    //         }
-    //        console.log(select14[i]);
-    //    }
-    
-    // out_13_14.innerHTML = selected14_2;
-    // for (let key in a11) {
-    //     if(selected14_2 == a11[key]){
-    //         out_13_14.innerHTML = key;
-    //         console.log(selected14_2);
-    //     }
-        // console.log(key);
-        // for(let innerArr in a11){
-        //     // console.log(innerArr);
-        // }
-    //     if (selected14_2 == a11[key])
-    //     optionOut += `${key} `;
-    //     console.log(selected14_2);
-    //     console.log(selected14_2.indexOf(a11[key]));
-    // }
-    // // out_13_14.innerHTML = optionOut;
-    // }
-}  
-
-
-
-
 
 
