@@ -394,3 +394,53 @@ btn14.onclick = () =>{
 Task 15.
 Добавьте к предыдущему заданию 2 select где пользователь может выбрать 2 станции, и если они на одной ветке - то по нажатию на кнопку будет показано сколько станций между ними (сами станции не включаем. Если это соседние станции - то 0).
 */
+
+let select15_1 = document.querySelector('.u15-find-station_1');
+let select15_2 = document.querySelector('.u15-find-station_2');
+let btn15 = document.querySelector('.btn-13-15');
+let out15_1 = document.querySelector('.out15_1');
+let out15_2 = document.querySelector('.out15_2');
+
+
+let val15_1 = ' ';
+let val15_2 = ' ';
+for(let key in a11){
+    for(let i in a11[key]){
+        val15_1 += `<option value = "${key}">${a11[key][i]}</option>`
+    }
+}
+for(let key in a11){
+    for(let i in a11[key]){
+        val15_2 += `<option value = "${key}">${a11[key][i]}</option>`
+    }
+}
+select15_1.innerHTML = val15_1;
+select15_2.innerHTML = val15_2;
+
+btn15.onclick = () =>{
+    out15_1.innerHTML = ' ';
+    out15_2.innerHTML = ' ';
+    
+
+    if(select15_1.value == select15_2.value ){
+        out15_1.innerHTML = 'on same Line';
+    }
+    else{
+        out15_1.innerHTML = 'on different Lines';
+    }
+
+    for(let key in a11){
+        for(let i in a11[key]){
+            let arr15_1 = [];
+            arr15_1 += i; 
+            console.log(arr15_1);
+        }
+    }
+
+    for(let key in a11){
+        for(let i in a11[key]){
+            
+        }
+    }
+    
+}
