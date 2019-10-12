@@ -400,6 +400,9 @@ let select15_2 = document.querySelector('.u15-find-station_2');
 let btn15 = document.querySelector('.btn-13-15');
 let out15_1 = document.querySelector('.out15_1');
 let out15_2 = document.querySelector('.out15_2');
+let selectOpt15 = document.querySelector('.u15-find-station_1').getElementsByTagName('option'); 
+
+
 
 
 let val15_1 = ' ';
@@ -408,7 +411,14 @@ for(let key in a11){
     for(let i in a11[key]){
         val15_1 += `<option value = "${key}">${a11[key][i]}</option>`
     }
+    console.log(selectOpt15);
 }
+for(let key in a11){
+    for(let i in a11[key]){
+        val15_2 += `<option value = "${key}">${a11[key][i]}</option>`
+    }
+}
+
 for(let key in a11){
     for(let i in a11[key]){
         val15_2 += `<option value = "${key}">${a11[key][i]}</option>`
@@ -416,6 +426,11 @@ for(let key in a11){
 }
 select15_1.innerHTML = val15_1;
 select15_2.innerHTML = val15_2;
+
+let ura = [];
+
+console.log(typeof(ura));
+console.log(typeof(val15_1));
 
 btn15.onclick = () =>{
     out15_1.innerHTML = ' ';
