@@ -324,27 +324,6 @@ btn12.onclick = () => {
         for(let key in a11){
             if(select12[i].value == key && select12[i].selected){
                 out_13_12.innerHTML = a11[key];
-                console.log(typeof(out_13_12.innerHTML));
-            }
-        } 
-    }
-}
-
-/* 
-Task 13.
-Добавьте к предыдущей задаче кнопку button.u13-reverse которая при нажатии выводит станции ветки в обратном порядке. Внимание! Все подобные задачи не меняют массив, а меняют только вывод!!!
-*/
-let out_13_13 = document.querySelector('.out_13_13'); 
-// let select12 = document.querySelector('.u12-branch').getElementsByTagName('option'); 
-let btn13 = document.querySelector('.u13-reverse');
-
-btn13.onclick = () => {
-    for(let i = 0; i < select12.length; i++){
-        for(let key in a11){
-            let varTemp =[];
-            if(select12[i].value == key && select12[i].selected){
-                varTemp = a11[key];
-                out_13_13.innerHTML = varTemp.reverse();
             }
         } 
     }
@@ -355,114 +334,22 @@ btn13.onclick = () => {
 Task 14.
 Добавьте к предыдущей задаче select.u14-find-station и кнопку. В select - пользователь может выбрать станцию, а вы перебирая массив - вывести ветку на которой эта станция находится.
 */
-
-let select14 = document.querySelector('.u14-find-station');
+/*???????????????????*/
+let select14 = document.querySelector('.u14-find-station').getElementsByTagName('option'); 
 let btn14 = document.querySelector('.btn-13-14');
-let out14 = document.querySelector('.out_13_14');
-let val = ' ';
-for(let key in a11){
-    for(let i in a11[key]){
-        val += `<option value = "${key}">${a11[key][i]}</option>`
-    }
-}
-select14.innerHTML = val;
+let out_13_14 = document.querySelector('.out_13_14');
 
-btn14.onclick = () =>{
-    out14.innerHTML = ' ';
-    selected14_2 = document.querySelector('.u14-find-station').value;
-    if(selected14_2 == 'red'){
-        let divRed = document.createElement('div');
-        divRed.className = 'lineRed';
-        divRed.innerHTML = 'Red Line';
-        out14.append(divRed);
-    }
-    else if(selected14_2 == 'blue'){
-        let divBlue = document.createElement('div');
-        divBlue.className = 'lineBlue';
-        divBlue.innerHTML = 'Blue Line';
-        out14.append(divBlue);
-    }
-    else if(selected14_2 == 'green'){
-        let divGreen = document.createElement('div');
-        divGreen.className = 'lineGreen';
-        divGreen.innerHTML = 'Green Line';
-        out14.append(divGreen);
-    }
-}
-
-/*
-Task 15.
-Добавьте к предыдущему заданию 2 select где пользователь может выбрать 2 станции, и если они на одной ветке - то по нажатию на кнопку будет показано сколько станций между ними (сами станции не включаем. Если это соседние станции - то 0).
-*/
-
-// let select15_1 = document.querySelector('.u15-find-station_1');
-let select15_1 = document.querySelector('#u15-1');
-let select15_2 = document.querySelector('#u15-2');
-// let select15_2 = document.querySelector('.u15-find-station_2');
-let btn15 = document.querySelector('.btn-13-15');
-let out15_1 = document.querySelector('.out15_1');
-let out15_2 = document.querySelector('.out15_2');
-let selectOpt15 = document.querySelector('.u15-find-station_1').getElementsByTagName('option'); 
-
-function selectText(selector) {
-
-    let stationText = selector;
-    let stationValue = stationText.options[stationText.selectedIndex].text;
-    
-    //Setting Value
-    // document.getElementById("textFieldTextJS").value = selValue;
-    return stationValue;
-}
-
-let val15_1 = ' ';
-let val15_2 = ' ';
-for(let key in a11){
-    for(let i in a11[key]){
-        val15_1 += `<option value = "${key}">${a11[key][i]}</option>`
-    }
-}
-for(let key in a11){
-    for(let i in a11[key]){
-        val15_2 += `<option value = "${key}">${a11[key][i]}</option>`
-    }
-}
-
-select15_1.innerHTML = val15_1;
-select15_2.innerHTML = val15_2;
-
-
-
-function selectText(sel) {
-    var selStation = sel;
-    var selStationVal = selStation.options[selStation.selectedIndex].text;
-    return selStationVal;
-}
-function selectValue(sel) {
-    var selStation = sel;
-    var selStationVal = selStation.options[selStation.selectedIndex].value;
-    return selStationVal;
-}
-
-
-    btn15.onclick = () =>{
-
+btn14.onclick = () => {
+    newOptions = document.createElement('option');
         for(let key in a11){
-            let count1 = 0;
-            let count2 = 0;
-                for(let i in a11[key]){
-                   
-                }
-               
-            }
-            
-            // console.log(count1);
-            // console.log(count2);
-    }
+            let option = [];
+            option += a11[key];
+            out_13_14.innerHTML += option;
+        } 
+}
+    
 
 
 
 
-/*
-Task 16.
-Добавьте 3 radiobutton.u16-radio которые содержат value = red, green, blue - в соотвтествии с цветом веток метро. Добавьте пустой select.u16-select. При выборе radio - программа должна в select добавлять option с названиями станций метро. Т.е. выбрали radio(value="green") то внутрь select должны быть записаны option со станциями зеленой ветки. Выбрали red - select должен быть очищен и добавлены option со станциями красной ветки.
-*/
+
