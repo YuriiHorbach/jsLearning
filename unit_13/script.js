@@ -416,6 +416,7 @@ function selectText(selector) {
 
 let val15_1 = ' ';
 let val15_2 = ' ';
+
 for(let key in a11){
     for(let i in a11[key]){
         val15_1 += `<option value = "${key}">${a11[key][i]}</option>`
@@ -430,8 +431,6 @@ for(let key in a11){
 select15_1.innerHTML = val15_1;
 select15_2.innerHTML = val15_2;
 
-
-
 function selectText(sel) {
     var selStation = sel;
     var selStationVal = selStation.options[selStation.selectedIndex].text;
@@ -445,18 +444,41 @@ function selectValue(sel) {
 
 
     btn15.onclick = () =>{
+        let station1 = selectText(select15_1);
+        let station2 = selectText(select15_2);
+        let res1 = 0;
+        let res2 = 0;
+        let stationBetween=0;
 
-        for(let key in a11){
-            let count1 = 0;
-            let count2 = 0;
-                for(let i in a11[key]){
-                   
+         for(let key in a11){  
+             if(station1 == station2){
+                 console.log('0');
+             }
+             else if(selectValue(select15_1) == selectValue(select15_2)){
+                for(let i = 1; i <= a11[key].length; i++){
+                    if( a11[key][i] == station1){
+                        res1 = i;
+                    } 
                 }
-               
+                for(let j = 1; j <= a11[key].length; j++){
+                    if( a11[key][j] == station2){
+                        res2 = j;
+                    } 
+                }
+            }
+            else
+            {
+                console.log('Stations on different lines');
             }
             
-            // console.log(count1);
-            // console.log(count2);
+               
+        } 
+        
+        stationBetween = (res2 - res1)*1;
+        // console.log(stationBetween);
+        stationBetween *= -1;
+        console.log(stationBetween);
+
     }
 
 
