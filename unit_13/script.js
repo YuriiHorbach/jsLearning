@@ -395,10 +395,8 @@ Task 15.
 Добавьте к предыдущему заданию 2 select где пользователь может выбрать 2 станции, и если они на одной ветке - то по нажатию на кнопку будет показано сколько станций между ними (сами станции не включаем. Если это соседние станции - то 0).
 */
 
-// let select15_1 = document.querySelector('.u15-find-station_1');
 let select15_1 = document.querySelector('#u15-1');
 let select15_2 = document.querySelector('#u15-2');
-// let select15_2 = document.querySelector('.u15-find-station_2');
 let btn15 = document.querySelector('.btn-13-15');
 let out15_1 = document.querySelector('.out15_1');
 let out15_2 = document.querySelector('.out15_2');
@@ -409,8 +407,6 @@ function selectText(selector) {
     let stationText = selector;
     let stationValue = stationText.options[stationText.selectedIndex].text;
     
-    //Setting Value
-    // document.getElementById("textFieldTextJS").value = selValue;
     return stationValue;
 }
 
@@ -452,7 +448,7 @@ function selectValue(sel) {
 
          for(let key in a11){  
              if(station1 == station2){
-                 console.log('0');
+                 console.log('Same stations. Make your choice');
              }
              else if(selectValue(select15_1) == selectValue(select15_2)){
                 for(let i = 1; i <= a11[key].length; i++){
@@ -466,19 +462,22 @@ function selectValue(sel) {
                     } 
                 }
             }
+           
             else
             {
                 console.log('Stations on different lines');
             }
-            
-               
         } 
+        if(res2 > res1){
+            stationBetween = (res2 - res1) - 1;
+            console.log(stationBetween);
+        } 
+        else if(res1 > res2){
+            stationBetween = (res2 - res1) + 1;
+            stationBetween *= -1;
+            console.log(stationBetween);
+        }
         
-        stationBetween = (res2 - res1)*1;
-        // console.log(stationBetween);
-        stationBetween *= -1;
-        console.log(stationBetween);
-
     }
 
 
