@@ -487,5 +487,31 @@ function selectValue(sel) {
 
 /*
 Task 16.
-Добавьте 3 radiobutton.u16-radio которые содержат value = red, green, blue - в соотвтествии с цветом веток метро. Добавьте пустой select.u16-select. При выборе radio - программа должна в select добавлять option с названиями станций метро. Т.е. выбрали radio(value="green") то внутрь select должны быть записаны option со станциями зеленой ветки. Выбрали red - select должен быть очищен и добавлены option со станциями красной ветки.
+Добавьте 3 radiobutton.u16-radio которые содержат value = red, green, blue - в соответствии с цветом веток метро. Добавьте пустой select.u16-select. При выборе radio - программа должна в select добавлять option с названиями станций метро. Т.е. выбрали radio(value="green") то внутрь select должны быть записаны option со станциями зеленой ветки. Выбрали red - select должен быть очищен и добавлены option со станциями красной ветки.
 */
+
+let metro = document.getElementsByName('metro');
+let select16 = document.querySelector('.u16-select');
+
+for(let i = 0; i < metro.length; i++){
+    metro.onchange = testRadio();
+}
+
+function testRadio(){
+    let metro = document.getElementsByName('metro');
+
+    for(let i = 0; i < metro.length; i++){
+        if(metro[i].checked){
+            let option1 = document.createElement('option');
+            option1.innerHTML = this.value;
+            // option1.checked = this.value;
+            select16.appendChild(option1);
+        }
+        
+    }
+}
+
+// document.querySelector('#blue');
+// console.log(radioRed.checked);
+// console.log(radioGreen.checked);
+// console.log(radioBlue.checked);
