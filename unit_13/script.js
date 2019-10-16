@@ -448,7 +448,8 @@ function selectValue(sel) {
 
          for(let key in a11){  
              if(station1 == station2){
-                 console.log('Same stations. Make your choice');
+                out15_1.innerHTML = 'Same stations. Make your choice';
+                 console.log('Same stations. Make your choice.');
              }
              else if(selectValue(select15_1) == selectValue(select15_2)){
                 for(let i = 1; i <= a11[key].length; i++){
@@ -465,17 +466,18 @@ function selectValue(sel) {
            
             else
             {
-                console.log('Stations on different lines');
+                out15_1.innerHTML = 'Stations on different lines. Choice station in one line.';
             }
         } 
         if(res2 > res1){
             stationBetween = (res2 - res1) - 1;
+            out15_1.innerHTML = stationBetween;
             console.log(stationBetween);
         } 
         else if(res1 > res2){
             stationBetween = (res2 - res1) + 1;
             stationBetween *= -1;
-            console.log(stationBetween);
+            out15_1.innerHTML = stationBetween;
         }
         
     }
