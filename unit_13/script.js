@@ -493,25 +493,43 @@ Task 16.
 let metro = document.getElementsByName('metro');
 let select16 = document.querySelector('.u16-select');
 
+// for(let key in a11){
+//     for(let i in a11[key]){
+//         select16.innerHTML += `<option value = "${key}">${a11[key][i]}</option>`
+//     }
+// }
+
+// for(let key in a11){
+//         select16.innerHTML += `<option value = "${key}">${key}</option>`
+// }
+
+
 for(let i = 0; i < metro.length; i++){
-    metro.onchange = testRadio();
-}
-
-function testRadio(){
-    let metro = document.getElementsByName('metro');
-
-    for(let i = 0; i < metro.length; i++){
+    metro[i].onchange = function(){
         if(metro[i].checked){
             let option1 = document.createElement('option');
-            option1.innerHTML = this.value;
-            // option1.checked = this.value;
+            for(let key in a11){
+                if(key == metro[i].value){
+                    for(let i in a11[key]){
+                        select16.innerHTML += `<option value = "${key}">${a11[key][i]}</option>`
+                    }
+                }
+            }
+            
+            option1.value = metro[i];
+            option1.innerHTML = metro[i].value;
             select16.appendChild(option1);
         }
         
     }
 }
 
-// document.querySelector('#blue');
-// console.log(radioRed.checked);
-// console.log(radioGreen.checked);
-// console.log(radioBlue.checked);
+// for(let i = 0; i < metro.length; i++){
+//     metro[i].onchange = function(){
+//         if(metro[i].checked){
+//             console.log(metro[i]);
+//         }
+        
+//     }
+// }
+
