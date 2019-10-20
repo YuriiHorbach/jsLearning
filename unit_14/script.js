@@ -19,10 +19,14 @@
     let selectCountry = ' ';
 
     for(let i = 0; i < cleanCountriesArr.length; i++){
-        selectCountry = `<option>${cleanCountriesArr[i]}</option>`;
+       let option = document.createElement('option');
+       option.innerHTML = cleanCountriesArr[i];
+       country.appendChild(option); 
+
+        // selectCountry += `<option>${cleanCountriesArr[i]}</option>`;
     }
     country.innerHTML = selectCountry;
-    console.log(country.innerHTML);
+    console.log(country.textContent);
     let finalCountrySelect = country.innerText;
     // console.log(finalCountrySelect);
 
