@@ -324,7 +324,7 @@ btn12.onclick = () => {
         for(let key in a11){
             if(select12[i].value == key && select12[i].selected){
                 out_13_12.innerHTML = a11[key];
-                console.log(typeof(out_13_12.innerHTML));
+                // console.log(typeof(out_13_12.innerHTML));
             }
         } 
     }
@@ -642,5 +642,28 @@ Task 20.
 Дополните массив из задачи 19 так, чтобы пользователь мог сам выбирать страну в select, а необходимая информация подтягивалась на страницу.
 */
 
+let select20 = document.querySelector('.u20-branch');
+let val20 = ' ';
+let out20 = document.querySelector('.out_13_20');
+let btn20 = document.querySelector('.btn20');
 
 
+for(let key in asiaCountries){
+    // console.log(key);
+        val20 += `<option value = "${key}">${key}</option>`
+    
+}
+
+select20.innerHTML = val20;
+
+btn20.onclick = () =>{
+    for(let i = 0; i < select20.length; i++){
+        for(let key in asiaCountries){
+            for(let cap in asiaCountries[key]){
+                if(select20[i].value == key && select20[i].selected){
+                    out20.innerHTML = cap + ': ' + asiaCountries[key][cap];
+                }
+            }
+        } 
+    }
+}
