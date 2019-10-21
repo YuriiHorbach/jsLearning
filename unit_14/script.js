@@ -16,6 +16,11 @@
             return elem.value;
     }
 
+    function getValue2(elem){
+        select = document.querySelector();
+        return elem.value;
+}
+
     
    
     
@@ -33,16 +38,24 @@
                     //  console.log(key);
                     // for(let key in arrCountry){
                         arrCountry[key] = cities[i]['name'];
-                        console.log(arrCountry);
+                        // console.log(arrCountry);
                         // arrCountry[key].id = cities[i]['id'];
                         val14 += `<option value = "">${arrCountry[key]}</option>`;
-                         console.log(val14);
+                        //  console.log(val14);
                         // console.log(arrCountry[keyCountry].name);
                     // }
                 }
             }
         }
         sel14.innerHTML = val14;
+
+        let selOption = document.querySelector('.sel14 option');
+        console.log(selOption);
+        let valnew = selOption.innerHTML;
+        
+
     }
+
+
 
 
