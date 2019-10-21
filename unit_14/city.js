@@ -117683,4 +117683,4 @@ for(let i = 0; i < cities.length; i++){
 }
 
 let cleanCountriesArr = unique(countries);
-console.log(cleanCountriesArr);
+// console.log(cleanCountriesArr);
