@@ -14,32 +14,39 @@
 
     let country = document.querySelector('.country');
     let sel14 = document.querySelector('.sel14');
+    
 
-    let val14 = ' ';
-    let selectCountry = ' ';
 
     for(let i = 0; i < cleanCountriesArr.length; i++){
        let option = document.createElement('option');
-       option.innerHTML = cleanCountriesArr[i];
+       option.innerHTML  = cleanCountriesArr[i];
+       option.value  = cleanCountriesArr[i];
        country.appendChild(option); 
-
-        // selectCountry += `<option>${cleanCountriesArr[i]}</option>`;
     }
-    country.innerHTML = selectCountry;
-    console.log(country.textContent);
-    let finalCountrySelect = country.innerText;
-    // console.log(finalCountrySelect);
 
+    function getValue(elem){
+            return elem.value;
+    }
 
-    for(let i = 0; i < cities.length; i ++){
-        for(let key in cities[i]){
-            if(cities[i][key] == finalCountrySelect){
-                let arrCountry = {finalCountrySelect:{}};
-                for(let keyCountry in arrCountry){
-                    arrCountry[keyCountry].name = cities[i]['name'];
-                    arrCountry[keyCountry].id = cities[i]['id'];
-                    val14 += `<option value = "${key}">${arrCountry[keyCountry].name}</option>`;
-                    // console.log(arrCountry);
+    
+    let val14 = ' ';
+    
+    country.onchange = () =>{
+        
+        let countryOption = '';
+        countryOption =  getValue(country);
+        console.log(countryOption);
+        for(let i = 0; i < cities.length; i ++){
+            for(let key in cities[i]){
+                if(cities[i][key] == countryOption){
+                    let arrCountry = {countryOption:{}};
+                    for(let keyCountry in arrCountry){
+                        arrCountry[keyCountry].name = cities[i]['name'];
+                        arrCountry[keyCountry].id = cities[i]['id'];
+                        val14 += `<option value = "${key}">${arrCountry[keyCountry].name}</option>`;
+                        // console.log(val14);
+                        console.log(arrCountry);
+                    }
                 }
             }
         }
@@ -60,6 +67,7 @@
     
 
     sel14.innerHTML = val14;
+    // sel14.appendChild(val14); 
 
 
 
