@@ -27,21 +27,23 @@ let out15_5 = document.querySelector('.out15-5');
 
 let set2 = new Set();
 
-function t5(set){
-  return set.size;
-}
 
-btn2.onclick = () => {
-    set2.add(inp2.value);
-    console.log(set2);
-    out15_5.innerHTML = t5(set2);
-}
+
+/*
+Task 3.
+Добавьте к предыдущему заданию кнопку удалить. При нажатии кнопки читаете содержимое input и удаляете его из Set. Если input пустой - выводите ошибку (alert).
+*/
 
 btnDel.onclick = () => {
     set2.delete(inp2.value);
     console.log(set2);
     out15_5.innerHTML = t5(set2);
 }
+
+/*
+Task 4.
+Добавьте к предыдущему заданию кнопку проверить. При нажатии кнопки читаете содержимое input и проверяет его наличие в Set. Функция должна возвращать true или false.Действия запускаются при вызове функции t4.
+*/
 
 btnCheck.onclick = () => {
     console.log(set2.has(inp2.value));
@@ -50,23 +52,19 @@ btnCheck.onclick = () => {
 
 
 /*
-Task 3.
-Добавьте к предыдущему заданию кнопку удалить. При нажатии кнопки читаете содержимое input и удаляете его из Set. Если input пустой - выводите ошибку (alert).
-*/
-
-
-
-/*
-Task 4.
-Добавьте к предыдущему заданию кнопку проверить. При нажатии кнопки читаете содержимое input и проверяет его наличие в Set. Функция должна возвращать true или false.Действия запускаются при вызове функции t4.
-*/
-
-
-
-/*
 Task 5.
 Выведите размер полученного в результате предыдущих операций Set. Выводить на страницу и возвращать в функции. Действия должны запускаться при вызове функции t5.
 */
+
+function t5(set){
+    return set.size;
+  }
+  
+  btn2.onclick = () => {
+      set2.add(inp2.value);
+      console.log(set2);
+      out15_5.innerHTML ='Size(task 5 )' + ' ' + t5(set2);
+  }
 
 /*
 Task 6.
@@ -105,4 +103,63 @@ btn7.onclick = () => {
         out15_7.innerHTML = 'Not unique password';
     }
 
+}
+
+/*
+Task 8.
+Создайте набор set a8. Напишите функцию, которая принимает set в качестве параметра и четные элементы из набора добавляет в массив a8_res. После завершения операции - выводит a8_res на страницу. Запуск - по нажатию кнопки b-8.
+*/
+let btn8 = document.querySelector('.btn15_8');
+let out15_8 = document.querySelector('.out15_8');
+
+let a8 = new Set();
+
+a8.add(1);
+a8.add(21);
+a8.add(2);
+a8.add(4);
+a8.add('t');
+a8.add('f');
+
+// let arr = [];
+
+
+function forTask8(set){
+    let arr = [];
+    for(let item of set){
+        if(item % 2 == 0){
+            arr.push(item);
+        }
+    }
+    return arr;
+}
+
+
+btn8.onclick = () => {
+    out15_8.innerHTML = forTask8(a8);
+}
+
+/*
+Task 9.
+Создайте набор set a9. Напишите функцию, которая принимает set в качестве параметра присваивает a9_res так, что порядок элементов в a9_res обратный a9. Выведите a9_res на страницу. Действия должны запускаться при вызове функции t9.
+*/
+let btn9 = document.querySelector('.btn15_9');
+let out15_9 = document.querySelector('.out15_9');
+
+
+let a9 = new Set([1, 2, 3, 4, 5]);
+
+
+function t9(set){
+    let arr = Array.from(set);
+    let newSet = new Set(arr.reverse());
+    return newSet;
+}
+
+let a9_res;
+btn9.onclick = () => {
+    let a9_res = t9(a9);
+    for(let i of a9_res){
+        out15_9.innerHTML += i + ' ';
+    }
 }
