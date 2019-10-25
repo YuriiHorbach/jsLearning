@@ -184,7 +184,45 @@ for(let i = 0 ; i < a10.length; i++){
 
 for(let key in a10_res){
     out15_10.innerHTML += key + ' ------ ' + a10_res[key] + '<br>';
-    console.log(key + ' ' + a10_res[key]);        
+}
+
+
+/*
+Task 11.
+Эмулируем работу set. Пользователь может ввести значение в i-11. Напишите функцию, которая по нажатию b-11 запускает функцию t11. Функция получает введенное значение и добавляет его в массив a11_res. Добавление происхдит если такого значения в массиве нет. После каждой операции выводите a11_res на страницу.
+*/
+
+/*подскажите, пожалуйста, как сделать проще если можно проще сделать*/
+
+let inp11 = document.querySelector('.i-11');
+let btn11 = document.querySelector('.b-11');
+let out15_11 = document.querySelector('.out15_11');
+
+let a11_res = [];
+
+function t11(arr, input){
+
+    let temp = '';
+
+    if( arr.length === 0){
+        arr.push(input.value);
+    }else{
+        for(let i = 0 ; i < arr.length; i++){
+            if(arr[i] === input.value){
+                arr.pop(input.value);
+            }
+            else{
+                temp = input.value;
+            }
+        }
+        arr.push(temp);
+        arr = arr.filter(Boolean);
+    }
+    return arr;
+}
+
+btn11.onclick = () =>{
+    out15_11.innerHTML = t11(a11_res, inp11);
 }
 
 
