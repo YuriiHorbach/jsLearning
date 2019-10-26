@@ -243,5 +243,66 @@ a12_res = t12(mySet12);
 
 out15_12.innerHTML = a12_res;
 
+/*
+Task 13.
+Напишите функцию, которая принимает set и выводит его на страницу в указанный элемент. Элемент задавать как второй параметр. Действия должны запускаться при вызове функции t13.
+*/
+
+let mySet13 = new Set([1,2,3,4,5,'r']);
+let out15_13 = document.querySelector('.out15_13');
+
+function t13(set, elem){
+    let arr = Array.from(set);
+    return elem.innerHTML = arr;
+}
+
+t13(mySet13, out15_13);
+
+/*
+Task 14.
+Напишите функцию, которая принимает set и выводит его на страницу в указанный элемент. Элемент задавать как второй параметр. Третий параметр - разделитель. Действия должны запускаться при вызове функции t14. Т.е. ввели в качестве разделителя дефис и вывод на страницу 1-2-3- (без пробелов).
+*/
+
+let mySet14 = new Set([1,2,3,4,5,'r']);
+let out15_14 = document.querySelector('.out15_14');
+
+
+function t14(set, elem, separator){
+    let var1 = ' ';
+    let arr = Array.from(set);
+    for(let i = 0; i < arr.length; i++ ){
+        var1 += arr[i] + separator;
+    }
+    return elem.innerHTML = var1;
+}
+
+t14(mySet14, out15_14,'-');
+
+/*
+Task 15.
+Дан массив arr15 = [ [1,0], [1,0], [2,0] ] . Добавьте вложенные в него массивы в набор. Изучите результат. Результирующий набор a15_res выведите на страницу. Добавление сделайте через цикл. Действия должны запускаться при вызове функции t15. Результат операции запишите в a15_res.
+*/
+
+let arr15 = [ [1,0], [1,0], [2,0] ];
+let out15_15 = document.querySelector('.out15_15');
+
+
+function t15(arr, elem){
+    let tempVar = '';
+    let mySet = new Set();
+    for(let i = 0; i < arr.length; i++ ){
+        tempVar = mySet.add(arr[i]);
+    }
+    for(let key of tempVar ){
+        for(let i of key){
+            elem.innerHTML += i + ' ';
+        }
+        elem.innerHTML += ', ';
+    }
+}
+
+t15(arr15, out15_15);
+
+
 
 
