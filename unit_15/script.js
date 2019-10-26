@@ -225,4 +225,23 @@ btn11.onclick = () =>{
     out15_11.innerHTML = t11(a11_res, inp11);
 }
 
+/*  
+Task 12.
+Напишите функцию, которая принимает в качестве параметра набор set и преобразует его в массив, результат выводит на страницу и присваивает a12_res. Действия должны запускаться при вызове функции t12.
+*/
+
+let mySet12 = new Set([1,2,3,4,5,'r']);
+let out15_12 = document.querySelector('.out15_12');
+
+
+function t12(set){
+    let arr = Array.from(set);
+    return arr;
+}
+
+a12_res = t12(mySet12);
+
+out15_12.innerHTML = a12_res;
+
+
 
