@@ -347,30 +347,42 @@ let set18 = new Set(a18);
 
 
 
-function t18(arr){
+function t18(arr,elem){
     let count = 0;
     
-    for(let item of a18){
+    for(let item of arr){
         console.log(count +' - '+ item);
-        out15_18.innerHTML += count +' - '+ item + '<br>' ;
         count++;
+       
+        elem.innerHTML += count +' - '+ item + '<br>';
     }
-    return out15_18.innerHTML ;
+    return elem.innerHTML;
 }
 
-t18(a18);
+t18(a18, out15_18);
 
 /*
 Task 19.
 Создайте набор a19 и добавьте в него значения. Выведите на страницу каждый второй по счету элемент набора. Действия должны запускаться при вызове функции t19.
 */
-
+// let out15_19 = document.querySelector('.out15_19');
 // let a19 = new Set([1,2,3,4,5,6,7,8]);
-
 // console.log(a19);
 
-// for(let key in a19){
-//     if(key %2 ==0 ){
-//      con   
+// function t19(set,elem){
+
+//     let arr = Array.from(set);
+
+//     for(let i = 0; i < arr.length; i+2){
+//         elem.innerHTML += arr[i] + '<br>' ;
 //     }
+    
+//     // for(let key in set){
+//     //     if(key % 2 == 0){
+//     //         elem.innerHTML += set[key] + '<br>' ;
+//     //     }
+//     // }
+//     return elem.innerHTML;
 // }
+
+// t19(a19, out15_19);
