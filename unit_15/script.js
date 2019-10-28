@@ -365,24 +365,18 @@ t18(a18, out15_18);
 Task 19.
 Создайте набор a19 и добавьте в него значения. Выведите на страницу каждый второй по счету элемент набора. Действия должны запускаться при вызове функции t19.
 */
-// let out15_19 = document.querySelector('.out15_19');
-// let a19 = new Set([1,2,3,4,5,6,7,8]);
-// console.log(a19);
+let out15_19 = document.querySelector('.out15_19');
+let a19 = new Set([1,2,3,4,5,6,7,8]);
 
-// function t19(set,elem){
+function t19(set,elem){
+    let arr = Array.from(set);
 
-//     let arr = Array.from(set);
+    for(let i = 0; i < arr.length; i++){
+        if(i % 2 == 1){
+            elem.innerHTML += arr[i] + '<br>' ;
+        }
+    }
+    return elem.innerHTML;
+}
 
-//     for(let i = 0; i < arr.length; i+2){
-//         elem.innerHTML += arr[i] + '<br>' ;
-//     }
-    
-//     // for(let key in set){
-//     //     if(key % 2 == 0){
-//     //         elem.innerHTML += set[key] + '<br>' ;
-//     //     }
-//     // }
-//     return elem.innerHTML;
-// }
-
-// t19(a19, out15_19);
+t19(a19, out15_19);
