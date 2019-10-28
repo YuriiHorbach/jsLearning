@@ -341,26 +341,36 @@ console.log(t17(u17));
 Task 18.
 Переберите массив a18 = [5, 7, 9, 11, 13, 15], c помощью цикла for of. Выведите на страницу в виде ключ - значение (разделены дефисом без пробелов). В конце строки - br. Результирующую строку присвойте a18_res. Действия должны запускаться при вызове функции t18.
 */
-
+let out15_18 = document.querySelector('.out15_18');
 let a18 = [5, 7, 9, 11, 13, 15];
 let set18 = new Set(a18);
 
-for(let item of a18){
-    set18.add(a18);
-     for(let i in set18){
-         console.log()
-     }
+
+
+function t18(arr){
+    let count = 0;
     
-    // let key = i;
-    // let val = '';
-    // for(let i = 0; i < a18.length; i ++){
-    //     val = item;
-    //     // for(let item of a18){
-    //     //     val += item;
-    //     // }
-    //     console.log(val);
-    //     console.log(i + '-' + val);
-    // }
+    for(let item of a18){
+        console.log(count +' - '+ item);
+        out15_18.innerHTML += count +' - '+ item + '<br>' ;
+        count++;
+    }
+    return out15_18.innerHTML ;
 }
 
-console.log(set18);
+t18(a18);
+
+/*
+Task 19.
+Создайте набор a19 и добавьте в него значения. Выведите на страницу каждый второй по счету элемент набора. Действия должны запускаться при вызове функции t19.
+*/
+
+// let a19 = new Set([1,2,3,4,5,6,7,8]);
+
+// console.log(a19);
+
+// for(let key in a19){
+//     if(key %2 ==0 ){
+//      con   
+//     }
+// }
