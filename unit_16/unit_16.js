@@ -29,6 +29,12 @@ document.querySelector('.b-1').onclick = t1;
 /*  Переберите массив a2 = [5, 7, 9, 11, 13, 15], c помощью цикла for. Выведите на страницу в виде ключ - значение. Разделитель между ключом и значением - дефис, между строками - br. Результат присвойте переменной a2_res. Действия запускаются при вызове функции t2. */
 
 function t2() {
+    a2 = [5, 7, 9, 11, 13, 15];
+    for (let i = 0; i < a2.length; i++) {
+        a2_res += i + '-' + a2[i];
+        document.querySelector('.out-2').innerHTML = a2_res;
+    }
+    document.querySelector('.out-2').innerHTML += '<br>';
 }
 
 document.querySelector('.b-2').onclick = t2;
