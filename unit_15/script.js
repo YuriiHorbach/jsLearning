@@ -380,3 +380,50 @@ function t19(set,elem){
 }
 
 t19(a19, out15_19);
+
+/*
+Task 20. Создайте функцию, которая принимает массив и четные по индексу элементы добавляет в набор s20_res в нечетные в набор s21_res. Выводите данные наборы в консоль.
+*/
+
+let arr20 =[1,2,3,'4',5,6,7,'f','g'];
+
+function t20(arr){
+    let set1 = new Set();
+    let set2 = new Set();
+
+    for(let i = 0; i < arr.length; i++){
+        if(i % 2 == 0){
+            set1.add(arr[i]);
+        }
+        else{
+            set2.add(arr[i]);
+        }
+    } 
+    console.log(set1);
+    console.log(set2);
+}
+
+t20(arr20);
+
+
+/*
+Задачи на прокачку
+
+Task 1.
+Переберите массив a2 = [5, 7, 9, 11, 13, 15], c помощью цикла for. Выведите на страницу в виде ключ - значение. Разделение между ключем и значением пользователь может выбирать из выпадающего списка (пробел, дефис, две точки).
+*/
+
+let out15_21 = document.querySelector('.out15_21');
+let btn21 = document.querySelector('.btn21');
+let sel21 = document.getElementById("sel21");
+
+let a2 = [5, 7, 9, 11, 13, 15];
+
+btn21.onclick = () => {
+    let selectedText = sel21.options[sel21.selectedIndex].text;
+    for(let i = 1; i < a2.length; i++){
+        out15_21.innerHTML += `${i}  ${selectedText}  ${a2[i]}  <br>`;
+    } 
+}
+
+
