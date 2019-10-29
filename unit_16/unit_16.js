@@ -239,6 +239,11 @@ document.querySelector('.b-12').onclick = t12;
 
 
 function t13() {
+    let elem = document.querySelectorAll('.u-13');
+    for(let key in elem){
+        elem[key].innerHTML += 13;
+    }
+    document.querySelector('.out-13').innerHTML = '';
 
 
 }
