@@ -284,12 +284,21 @@ document.querySelector('.b-14').onclick = function () {
 let a15 = [[1, 2], [3, 4], [5, 6]];
 
 function t15(a15) {
-
+    let max = 0;
+    for(let key in a15){
+        for(let k in a15[key]){
+            if(max < a15[key][k] ){
+                max = a15[key][k]; 
+            }
+        }
+    }
+    
+    return max;
 
 }
 
 document.querySelector('.b-15').onclick = function () {
-    t15(a15);
+    document.querySelector('.out-15').innerHTML = t15(a15);
 }
 
 
@@ -301,7 +310,13 @@ document.querySelector('.b-15').onclick = function () {
 let a16 = [4, 6, 9, "hello"];
 
 function t16(a16) {
+    
 
+    for(let i in a16){
+        i = a16[i];
+        document.querySelector('.out-16').innerHTML += i + '---' + a16[i] + '<br>';
+    }
+  
 
 }
 
