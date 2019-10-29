@@ -80,12 +80,22 @@ document.querySelector('.b-4').onclick = t4;
 /*  Создайте div с помощью createElement. Получите все div.u-3 с помощью getElementsByClassName в "массив". Попробуйте добавить в "массив" созданный div с помощью метода push. В комментарии к задаче опишите результат.
 
  Действия должны запускаться при вызове функции t5. */
+ let newDiv = document.createElement('div');
+ console.log(newDiv);
+ let arr = document.getElementsByClassName('u-3');
+ console.log(arr);
+ arr.push(newDiv);
 
-function t5() {
 
-}
 
-document.querySelector('.b-5').onclick = t5;
+// function t5() {
+//     let newDiv = document.createElement('div');
+//     let arr = document.getElementsByClassName('u-3');
+//     arr.push(newDiv);
+
+// }
+
+// document.querySelector('.b-5').onclick = t5;
 
 
 // Task 6 ============================================
