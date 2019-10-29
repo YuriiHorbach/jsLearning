@@ -66,7 +66,11 @@ document.querySelector('.b-3').onclick = t3;
 */
 
 function t4() {
-
+    let elemDiv = document.querySelectorAll('.u-3');
+    for(let i = 0; i < elemDiv.length; i++){
+        elemDiv[i].innerHTML += 4;
+    }
+    document.querySelector('.out-3').innerHTML = elemDiv[i].innerHTML;
 }
 
 document.querySelector('.b-4').onclick = t4;
