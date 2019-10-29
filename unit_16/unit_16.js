@@ -139,11 +139,19 @@ document.querySelector('.b-7').onclick = t7;
 let a8 = [[1, 2, 3], [3, 4, 9], [5, 6]];
 
 function t8(a8) {
-
+    let max = 0;
+    for(let i = 0; i < a8.length; i++){
+        for(let j = 0; j < a8[i].length; j++){
+            if(max < a8[i][j] ){
+                max = a8[i][j]; 
+            }
+        }
+    }
+    return max;
 }
 
 document.querySelector('.b-8').onclick = function () {
-    t8(a8);
+    document.querySelector('.out-8').innerHTML = t8(a8);
 }
 
 
@@ -152,7 +160,19 @@ document.querySelector('.b-8').onclick = function () {
 
 let a9 = [4, 6, 9, "hello"];
 
+
+
 function t9(a9) {
+    let a9_res ='';
+    let a9_1 = {};
+
+    for(let i = 0; i < a9.length; i++){
+        a9_1[a9[[i]]] = a9[i];
+    }
+    for(let key in a9_1){
+        document.querySelector('.out-9').innerHTML += key + '---' + a9_1[key] + '<br>';
+    }
+    
 
 }
 
