@@ -41,8 +41,20 @@ document.querySelector('.b-2').onclick = t2;
 
 // Task 3 ============================================
 /* При нажатии кнопки, получите div.u-3 с помощью getElementsByClassName, переберите циклом for, допишите в каждый из div цифру 3 (без пробелов). Действия запускаются при вызове функции t3. */
+// let elem = '';
+//     let elemDiv = document.getElementsByClassName('u-3');
+//     for(let i = 0; i < elemDiv.length; i++){
+//         elemDiv.innerHTML += 3;
+//     }
+//     console.log(elemDiv.innerHTML);
+    // document.querySelector('.out-3').innerHTML += elemDiv.innerHTML;
 
 function t3() {
+    let elemDiv = document.getElementsByClassName('u-3');
+    for(let i = 0; i < elemDiv.length; i++){
+        elemDiv[i].innerHTML += 3;
+    }
+    document.querySelector('.out-3').innerHTML = elemDiv[i].innerHTML;
 
 }
 
