@@ -209,7 +209,11 @@ document.querySelector('.b-10').onclick = function () {
 let a11 = [5, 7, 9, 11, 13, 15];
 
 function t11(a11) {
-
+    let a11_res = '';
+    for(let key in a11){
+         a11_res += key + ' -- ' + a11[key] + '<br>';
+    }
+    document.querySelector('.out-11').innerHTML = a11_res;
 
 }
 
