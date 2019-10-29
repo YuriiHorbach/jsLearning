@@ -80,22 +80,22 @@ document.querySelector('.b-4').onclick = t4;
 /*  Создайте div с помощью createElement. Получите все div.u-3 с помощью getElementsByClassName в "массив". Попробуйте добавить в "массив" созданный div с помощью метода push. В комментарии к задаче опишите результат.
 
  Действия должны запускаться при вызове функции t5. */
- let newDiv = document.createElement('div');
- console.log(newDiv);
- let arr = document.getElementsByClassName('u-3');
- console.log(arr);
- arr.push(newDiv);
 
 
 
-// function t5() {
-//     let newDiv = document.createElement('div');
-//     let arr = document.getElementsByClassName('u-3');
-//     arr.push(newDiv);
 
-// }
+function t5() {
+    let newDiv = document.createElement('div');
+    let arr = document.getElementsByClassName('u-3');
+    arr.push(newDiv);
 
-// document.querySelector('.b-5').onclick = t5;
+}
+
+document.querySelector('.b-5').onclick = t5;
+
+ /*
+ При добавлении нового элемента в HTML колекцию появляется ошибка. Думаю, что ошибка появляется потому что происходит добавление элемента в объект и метод push тут неуместен. В данном случае нужно использовать insert before insert after appendChild
+ */
 
 
 // Task 6 ============================================
