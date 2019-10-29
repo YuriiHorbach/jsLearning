@@ -101,18 +101,34 @@ document.querySelector('.b-5').onclick = t5;
 // Task 6 ============================================
 /*  Создайте div с помощью createElement. Получите все div.u-3 с помощью querySelectorAll в "массив". Попробуйте добавить в "массив" созданный div с помощью метода push. В комментарии к задаче опишите результат. Действия должны запускаться при вызове функции t6. */
 
-function t6() {
 
+function t6() {
+    let newDiv = document.createElement('div');
+    let arr = document.querySelectorAll('.u-3');
+    // arr.push(newDiv);
+    document.querySelector('.out-6').innerHTML = arr;
 }
 
-document.querySelector('.b-6').onclick = t6;
+ document.querySelector('.b-6').onclick = t6;
+
+/*
+Ошибка. Или я делаю ошибку или метод push для работы с NodeList не подхотит.
+*/
 
 
 // Task 7 ============================================
 /*  Дан массив a7 = [ [1,2], [3,4], [5,6]], напишите функцию которая делает из него массив [1,2,3,4,5,6]. Используем for. Действия должны запускаться при вызове функции t7. Результат - выведите на страницу и сохраните в массив a7_res. */
 
 function t7() {
-
+    let a7 = [ [1,2], [3,4], [5,6]];
+    let a7new = [];
+    for(let i = 0; i < a7.length; i++){
+        for(let j = 0 ; j < a7[i].length; j++ ){
+            a7new.push(a7[i][j]);
+        }
+    
+    }
+    document.querySelector('.out-7').innerHTML = a7new;
 }
 
 document.querySelector('.b-7').onclick = t7;
