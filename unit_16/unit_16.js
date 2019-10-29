@@ -31,10 +31,9 @@ document.querySelector('.b-1').onclick = t1;
 function t2() {
     a2 = [5, 7, 9, 11, 13, 15];
     for (let i = 0; i < a2.length; i++) {
-        a2_res += i + '-' + a2[i];
-        document.querySelector('.out-2').innerHTML = a2_res;
+        a2_res += i + ' ' +a2[i] + '<br>';
     }
-    document.querySelector('.out-2').innerHTML += '<br>';
+    document.querySelector('.out-2').innerHTML = a2_res;
 }
 
 document.querySelector('.b-2').onclick = t2;
