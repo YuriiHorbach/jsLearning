@@ -259,7 +259,15 @@ document.querySelector('.b-13').onclick = t13;
 let a14 = [[1, 2], [3, 4], [5, 6]];
 
 function t14(a14) {
-
+   
+    let a14new = [];
+    for(let key in a14){
+        for(let k in a14[key]){
+            a14new.push(a14[key][k]);
+        }
+    }
+    
+    document.querySelector('.out-14').innerHTML = a14new;
 
 }
 
