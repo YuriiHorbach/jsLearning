@@ -164,6 +164,7 @@ function t9(a9) {
     for(let i = 0; i < a9.length; i++){
         a9_1[a9[[i]]] = a9[i];
     }
+
     for(let key in a9_1){
         document.querySelector('.out-9').innerHTML += key + '---' + a9_1[key] + '<br>';
     }
@@ -376,7 +377,12 @@ document.querySelector('.b-18').onclick = function () { t18(a18, out_18) };
 
 
 function t19() {
-
+    let elem = document.querySelectorAll('.u-19');
+    
+    for(item of elem){
+        item.innerHTML += 19;
+    }
+    document.querySelector('.out-19').innerHTML = '';
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -388,7 +394,16 @@ document.querySelector('.b-19').onclick = t19;
 
 let a20 = [4, 6, 9, "hello"];
 
+
+
 function t20(a20) {
+
+    for(item of a20){
+        let key = item;
+        document.querySelector('.out-20').innerHTML += key + ' -- ' + item + '<br>';
+    }
+    
+    
 }
 
 document.querySelector('.b-20').onclick = function () {
