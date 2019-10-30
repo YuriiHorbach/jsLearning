@@ -310,14 +310,15 @@ document.querySelector('.b-15').onclick = function () {
 let a16 = [4, 6, 9, "hello"];
 
 function t16(a16) {
-    
+    let a16_1 = {};
 
     for(let i in a16){
-        i = a16[i];
-        document.querySelector('.out-16').innerHTML += i + '---' + a16[i] + '<br>';
+        a16_1[i] = a16[i];
     }
-  
 
+    for(let j in a16_1){
+        document.querySelector('.out-16').innerHTML += j + ' ' + a16_1[j] + '<br>';
+    }
 }
 
 document.querySelector('.b-16').onclick = function () {
@@ -332,7 +333,9 @@ document.querySelector('.b-16').onclick = function () {
 let a17 = [5, 7, 9, 11, 13, 15];
 
 function t17(a17) {
-
+    for(item of a17){
+        document.querySelector('.out-17').innerHTML += item + ' ';
+    }
 
 }
 
