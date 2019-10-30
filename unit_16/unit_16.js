@@ -349,14 +349,25 @@ document.querySelector('.b-17').onclick = function () {
     Действия должны запускаться при вызове функции t18.
  */
 
+let out_18 = document.querySelector('.out-18');
 let a18 = [5, 7, 9, 11, 13, 15];
+let set18 = new Set(a18);
 
-function t18(a18) {
-
-
+function t18(arr,elem){
+    let count = 0;
+    
+    for(let item of arr){
+        console.log(count +' - '+ item);
+        count++;
+       
+        elem.innerHTML += count +' - '+ item + '<br>';
+    }
+    return elem.innerHTML;
 }
 
-document.querySelector('.b-18').onclick = function () { t18(a18) };
+
+
+document.querySelector('.b-18').onclick = function () { t18(a18, out_18) };
 
 // Task 19 ============================================!!!
 /*  Напишите функцию, которая выполняет: при нажатии кнопки div.u-19 с помощью getElementsByClassName, переберите циклом for of, допишите в каждый из div цифры 19 (без пробелов). Если это невозможно - напишите в комментарии.
