@@ -17,8 +17,15 @@ document.querySelector('.b-1').onclick = t1;
 /*  Дан массив a2= [2,3,4,5,10,11,12] - с помощью map переберите массив и создайте новый массив a2_res куда добавьте элементы данного массива возведенные во вторую степень. Действия должны запускаться при вызове функции t2.</p>  Действия должны
 запускаться при вызове функции t2.*/
 
-function t2() {
 
+function t2() {
+        let a2= [2,3,4,5,10,11,12];
+        let out = a2.map(function(item){
+         a2_res += item * item + ' '; 
+        });
+        
+    
+    document.querySelector('.out-2').innerHTML = a2_res;
 }
 
 document.querySelector('.b-2').onclick = t2;
