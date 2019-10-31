@@ -35,7 +35,13 @@ document.querySelector('.b-2').onclick = t2;
 /*  Дан массив a3 = [4,"3",6,7,"12",34,"56",78,90,11] - с помощью map переберите массив и создайте новый массив a3_res куда добавьте все элементы приведенные к числу. Действия должны запускаться при вызове функции t3. */
 
 function t3() {
-
+    let a3 = [4,"3",6,7,"12",34,"56",78,90,11];
+    let out3 = a3.map(function(item){
+        let a3_res = 0;
+        a3_res += item * 1 ;
+        return a3_res;
+    });
+    document.querySelector('.out-3').innerHTML = out3;
 }
 
 document.querySelector('.b-3').onclick = t3;
