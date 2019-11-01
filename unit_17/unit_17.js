@@ -115,6 +115,14 @@ document.querySelector('.b-6').onclick = t6;
 /*  Дан массив b7 = ["php-7", "html", "css", 92, "6", "5", "hello", 32]. C помощью filter переберите массив b7 и создайте новый b7_res, который содержит только строки из b7, длина которых больше 3. Действия должны запускаться при вызове функции t7. */
 
 function t7() {
+    let b7 = ["php-7", "html", "css", 92, "6", "5", "hello", 32];
+    let b7_res = b7.filter(function(item){
+        if(typeof(item) == 'string'){
+            return true;
+        }
+    });
+
+    document.querySelector('.out-7').innerHTML = b7_res;
 
 }
 
