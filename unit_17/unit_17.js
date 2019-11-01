@@ -74,6 +74,15 @@ document.querySelector('.b-4').onclick = t4;
 /*  Дан массив b1 = [3, 14, 15, 92]. C помощью filter переберите массив и создайте новый b1_res, который содержит только четные числа из b1. Действия должны запускаться при вызове функции t5. */
 
 function t5() {
+    let b1 = [3, 14, 15, 92];
+    let b1_res = b1.filter(function(item){
+        if(item % 2 == 0){
+            return true;
+        }
+    });
+
+    document.querySelector('.out-5').innerHTML = b1_res;
+
 
 }
 
@@ -88,7 +97,7 @@ document.querySelectorAll('.b-5').forEach(elem => {
 
 
 function t6() {
-    b6 = [3, 14, 15, 92, "6", "5", "hello", 32];
+    let b6 = [3, 14, 15, 92, "6", "5", "hello", 32];
     let b6_res1 = b6.filter(function(item){
         if(typeof(item) != 'string'){
             return true;
