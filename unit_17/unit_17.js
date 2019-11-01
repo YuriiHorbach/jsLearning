@@ -117,7 +117,7 @@ document.querySelector('.b-6').onclick = t6;
 function t7() {
     let b7 = ["php-7", "html", "css", 92, "6", "5", "hello", 32];
     let b7_res = b7.filter(function(item){
-        if(typeof(item) == 'string'){
+        if(typeof(item) == 'string' && item.length > 3){
             return true;
         }
     });
@@ -130,8 +130,49 @@ document.querySelector('.b-7').onclick = t7;
 
 // Task 8 ============================================
 /* Дан массив b8 = [3, 14, 15, 92, "6", "5", "hello", 32]. С помощью filter, переберите массив b8 и создайте новый массив b8_res, который содержит индексы четных элементов. Действия должны запускаться при вызове функции t8 */
+// let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
+
+// let newArr = [];
+//         for(let i in b8){
+//             if(b8[i] % 2 == 0){
+//                 newArr.push(i);
+//             }
+//         }
+//         console.log(newArr);
+
+// function getEvenElementIndex(){
+//     let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
+//     let newArr = [];
+//     for(let i in b8){
+//         if(b8[i] % 2 == 0){
+//             newArr.push(i);
+//         }
+//     }
+//     return newArr;
+// }
+
+
+// let b8_res1 = b8.filter(getEvenElementIndex());
+
+// console.log(b8_res1);
+
+
 
 function t8() {
+    let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
+    // let newArr = [];
+
+    let b8_res = b8.filter(function(){
+        let newArr = [];
+        for(let i in b8){
+            if(b8[i] % 2 == 0){
+                newArr.push(i);
+            }
+        }
+        return newArr;
+    });
+
+    document.querySelector('.out-8').innerHTML = b8_res;
 
 }
 
