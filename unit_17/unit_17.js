@@ -54,14 +54,14 @@ function t4() {
     let a4 = [4,"3",6,7,"12",34,"56",78,90,11];
     let res = a4.map(function(item){ 
     if(typeof(item) != 'number'){
-            item = 0;
+            item = 'str';
         }
         return item;
     });
     let newRes = [];
 
     for(let i = 0; i < res.length; i++){
-        if(res[i] != 0){
+        if(res[i] != 'str'){
             newRes.push(res[i]);
         }
     }
@@ -69,8 +69,6 @@ function t4() {
 }
 
 document.querySelector('.b-4').onclick = t4;
-
-
 
 // Task 5 ============================================
 /*  Дан массив b1 = [3, 14, 15, 92]. C помощью filter переберите массив и создайте новый b1_res, который содержит только четные числа из b1. Действия должны запускаться при вызове функции t5. */
@@ -88,7 +86,16 @@ document.querySelectorAll('.b-5').forEach(elem => {
 // Task 6 ============================================
 /*  Дан массив b6 = [3, 14, 15, 92, "6", "5", "hello", 32]. C помощью filter переберите массив b6 и создайте новый b6_res, который содержит только числа из b6. Действия должны запускаться при вызове функции t6. */
 
+
 function t6() {
+    b6 = [3, 14, 15, 92, "6", "5", "hello", 32];
+    let b6_res1 = b6.filter(function(item){
+        if(typeof(item) != 'string'){
+            return true;
+        }
+    });
+
+    document.querySelector('.out-6').innerHTML = b6_res1;
 
 }
 
