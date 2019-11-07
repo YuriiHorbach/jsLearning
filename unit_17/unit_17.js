@@ -20,10 +20,10 @@ document.querySelector('.b-1').onclick = t1;
 
 function t2() {
         let a2= [2,3,4,5,10,11,12];
-        let out = a2.map(function(item){
-         a2_res += item * item + ' '; 
-        });
         
+        let a2_res = a2.map(function(item){
+            return item * item + ' '; 
+        });
     
     document.querySelector('.out-2').innerHTML = a2_res;
 }
@@ -36,12 +36,12 @@ document.querySelector('.b-2').onclick = t2;
 
 function t3() {
     let a3 = [4,"3",6,7,"12",34,"56",78,90,11];
-    let out3 = a3.map(function(item){
-        let a3_res = 0;
-        a3_res += item * 1 ;
-        return a3_res;
+    let a3_res = a3.map(function(item){
+        let out3 = 0;
+        out3 += item * 1 ;
+        return out3;
     });
-    document.querySelector('.out-3').innerHTML = out3;
+    document.querySelector('.out-3').innerHTML = a3_res;
 }
 
 document.querySelector('.b-3').onclick = t3;
@@ -58,14 +58,13 @@ function t4() {
         }
         return item;
     });
-    let newRes = [];
-
+    
     for(let i = 0; i < res.length; i++){
         if(res[i] != 'str'){
-            newRes.push(res[i]);
+            a4_res.push(res[i]);
         }
     }
-    document.querySelector('.out-4').innerHTML = newRes;
+    document.querySelector('.out-4').innerHTML = a4_res;
 }
 
 document.querySelector('.b-4').onclick = t4;
@@ -130,7 +129,9 @@ document.querySelector('.b-7').onclick = t7;
 
 // Task 8 ============================================
 /* Дан массив b8 = [3, 14, 15, 92, "6", "5", "hello", 32]. С помощью filter, переберите массив b8 и создайте новый массив b8_res, который содержит индексы четных элементов. Действия должны запускаться при вызове функции t8 */
-// let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
+let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
+
+
 
 // let newArr = [];
 //         for(let i in b8){
@@ -152,24 +153,21 @@ document.querySelector('.b-7').onclick = t7;
 // }
 
 
+
 // let b8_res1 = b8.filter(getEvenElementIndex());
 
-// console.log(b8_res1);
+// console.log(getEvenElementIndex());
 
 
 
 function t8() {
     let b8 = [3, 14, 15, 92, "6", "5", "hello", 32];
-    // let newArr = [];
-
-    let b8_res = b8.filter(function(){
-        let newArr = [];
-        for(let i in b8){
-            if(b8[i] % 2 == 0){
-                newArr.push(i);
-            }
+    
+    let b8_res = b8.filter(function(item, index){
+        if(item % 2 == 0 && typeof(item) != 'string'){
+            return 1;
         }
-        return newArr;
+        
     });
 
     document.querySelector('.out-8').innerHTML = b8_res;
