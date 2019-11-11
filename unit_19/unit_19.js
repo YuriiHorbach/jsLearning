@@ -109,11 +109,16 @@ document.querySelector('.div-7').oncontextmenu = t7;
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
 function t8() {
-
+    if(document.querySelector('.ch-8').checked){
+        document.querySelector('.ch-8').oncontextmenu = false;
+    }
+    else{
+        document.querySelector('.ch-8').oncontextmenu = true;
+    }
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-8').onchange = t8;
 
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
