@@ -94,10 +94,16 @@ document.querySelector('.div-6').ondblclick = t6;
 /*  Дан блок .div-7. При клике правой кнопкой мыши на блоке добавляйте ему класс .active. При повторном клике - удаляйте. */
 
 function t7() {
-
+    if(document.querySelector('.div-7').classList.contains("active")){
+        document.querySelector('.div-7').classList.remove("active");
+    }
+    else{
+        document.querySelector('.div-7').classList.add("active");
+    }
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-7').oncontextmenu = t7;
 
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
