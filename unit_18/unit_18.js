@@ -117,15 +117,12 @@ document.querySelector('.b-8').onclick = t8;
 function t9() {
     let a9 = [['hi', 'mahai'], ['test', 'best']];
     let temp = [];
-    let temp2 = '';
 
     for(let i in a9){
         temp.push(a9[i].join('-'));
     }
     a9_res = temp.join('-');
-    document.querySelector('.out-9').innerHTML = a9_res;
 }
-
 
 document.querySelector('.b-9').onclick = t9;
 
@@ -134,7 +131,15 @@ document.querySelector('.b-9').onclick = t9;
 /*  Дан массив a10 = {name: ivan, age: 15, sex: 1, id: 45} - преобразуйте его в GET строку (GET параметры). Найдите описание что такое GET строка самостоятельно. Разделитель - амперсанд. Результат присвойте a10_res. Запускаться решение должно при вызове функции t10. Допускается лишний амперсанд в конце строки!!! */
 
 function t10() {
+    let a10 = {name: 'ivan', age: 15, sex: 1, id: 45};
+    let temp = [];
+    for(let i in a10){
+        temp.push(i + '=' + a10[i]);
+    }
+    a10_res = temp.join('&');
+    document.querySelector('.out-10').innerHTML = a10_res;
 
 }
+
 
 document.querySelector('.b-10').onclick = t10;

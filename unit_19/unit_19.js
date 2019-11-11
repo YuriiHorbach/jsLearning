@@ -34,10 +34,10 @@ document.querySelector('.div-2').onclick = t2;
 let w3 = 75;
 
 function t3() {
-    document.querySelector('.div-3').onclick = (e) => {
-        document.querySelector('.div-3').style.width = w3 + 50 + 'px';
+    document.querySelector('.div-3').onclick = () => {
+        document.querySelector('.div-3').style.width = document.querySelector('.div-3').offsetWidth + 5 + 'px';
     }
-    // document.querySelector('.out-3').innerHTML += document.querySelector('.div-3').offsetWidth;
+    document.querySelector('.out-3').innerHTML = document.querySelector('.div-3').offsetWidth;
 }
 
 // ваше событие здесь!!!
