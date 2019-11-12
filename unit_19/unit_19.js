@@ -110,15 +110,21 @@ document.querySelector('.div-7').oncontextmenu = t7;
 
 function t8() {
     if(document.querySelector('.ch-8').checked){
-        document.querySelector('.ch-8').oncontextmenu = false;
+        window.oncontextmenu = function () {
+            console.log("Right Click Off");
+            return false;
+        }
     }
     else{
-        document.querySelector('.ch-8').oncontextmenu = true;
+        window.oncontextmenu = function () {
+            console.log("Right Click On");
+            return true;
+        }
     }
 }
 
 // ваше событие здесь!!!
-document.querySelector('.div-8').onchange = t8;
+document.querySelector('.ch-8').onchange = t8;
 
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
