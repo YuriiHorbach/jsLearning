@@ -149,11 +149,21 @@ document.querySelector('.div-10').onmouseenter = t10;
 // Task 11 ============================================
 /*  Дан блок .div-11. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши - mouseleave - возвращайте исходное изображение. */
 
+let flag = false;
 function t11() {
-
+    if (flag === true) {
+        document.querySelector('.div-11 img').src  = 'img/1.png';
+    } else {
+        document.querySelector('.div-11 img').src = 'img/2.png';
+      
+    }
+    flag = !flag; 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-11 img').onmouseenter = t11;
+document.querySelector('.div-11 img').onmouseleave = t11;
+
 
 // Task 12 ============================================
 /*  Дан блок .div-12. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. */
