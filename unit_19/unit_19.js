@@ -130,7 +130,7 @@ document.querySelector('.ch-8').onchange = t8;
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
 function t9() {
-    document.querySelector('img').src = "img/2.png";
+    document.querySelector('.div-9 img').src = "img/2.png";
 }
 
 // ваше событие здесь!!!
@@ -140,11 +140,11 @@ document.querySelector('.div-9').oncontextmenu = t9;
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
 
 function t10() {
-
-
+    document.querySelector('.div-10 img').src = "img/2.png";
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-10').onmouseenter = t10;
 
 // Task 11 ============================================
 /*  Дан блок .div-11. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. При уведении мыши - mouseleave - возвращайте исходное изображение. */
