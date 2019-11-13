@@ -178,23 +178,25 @@ document.querySelector('.div-12').onmousedown = t12;
 // Task 13 ============================================
 /*  Дан блок .div-13. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. Добавьте ему событие mouseup - при отпускании мыши - удаляйте класс active. */
 
-// () =>  {
+function t13(){
+    document.querySelector('.div-13').classList.add('active');
+}
 
-// }
+function t13_1(){
+    document.querySelector('.div-13').classList.remove('active');
+}
 
-// () =>  {
-
-// }
 // ваше событие здесь!!!
-
+document.querySelector('.div-13').onmousedown = t13;
+document.querySelector('.div-13').onmouseup = t13_1;
 
 // Task 14 ============================================
 /*  Дан блок .div-14. При нажатии кнопки b-14 добавляйте к нему событие onclick - которое, при клике добавляем блоку div-14 класс active. */
 
 function t14() {
-
+    document.querySelector('.div-14').classList.add('active');
 }
-// document.querySelector('t-14').onclick = t14;
+document.querySelector('.b-14').onclick = t14;
 
 
 // Task 15 ============================================
