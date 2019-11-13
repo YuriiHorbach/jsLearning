@@ -168,12 +168,12 @@ document.querySelector('.div-11 img').onmouseleave = t11;
 // Task 12 ============================================
 /*  Дан блок .div-12. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. */
 
-// () => {
-
-// }
+function t12(){
+    document.querySelector('.div-12').classList.add('active');
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-12').onmousedown = t12;
 
 // Task 13 ============================================
 /*  Дан блок .div-13. Добавьте на него событие mousedown - при нажатии кнопки мыши - добавляйте ему класс active. Добавьте ему событие mouseup - при отпускании мыши - удаляйте класс active. */
