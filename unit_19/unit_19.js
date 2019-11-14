@@ -36,8 +36,10 @@ let w3 = 75;
 function t3() {
     document.querySelector('.div-3').onclick = () => {
         document.querySelector('.div-3').style.width = document.querySelector('.div-3').offsetWidth + 5 + 'px';
+        w3 += 5;
+        document.querySelector('.out-3').innerHTML = w3 + 'px';
     }
-    document.querySelector('.out-3').innerHTML = document.querySelector('.div-3').offsetWidth;
+    
 }
 
 // ваше событие здесь!!!
