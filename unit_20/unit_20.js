@@ -6,38 +6,56 @@
 // document.querySelector('.out-1').onkeypress = document.querySelector('.i-1').value;
 
 function t1() {
-    return function() {
-        document.querySelector('.out-1').innerHTML = this.value;
-   }
+    document.querySelector('.out-1').innerHTML = this.value;
 }
 
 // ваше событие здесь!!!
-document.querySelector('.i-1').onkeypress = t1();
+document.querySelector('.i-1').onkeypress = t1;
 
 
 // Task 2 ============================================
 /*  Дан input .i-2. Напишите функцию t2, которая выводит в .out-2 код символа и возвращает его. */
 
-function t2() {
-   return function(e) {
-        document.querySelector('.out-2').innerHTML += e.keyCode + ' ';
-   }
+function t2(e) {
+    document.querySelector('.out-2').innerHTML += e.keyCode + ' ';
 }
 
 // ваше событие здесь!!!
-document.querySelector('.i-2').onkeypress = t2();
+document.querySelector('.i-2').onkeypress = t2;
 
 // Task 3 ============================================
 /*  Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения - используйте код клавиши. */
 
-let w3 = 75;
+// let w3 = 75;
 
-function t3() {
+console.log(document.querySelector('.out-3').innerHTML = document.querySelector('.i-3').onkeypress);
 
+// let k_Code = [48,49,50,51,52,53,54,55,56,57];
+//         for(let i in k_Code){
+//             if(document.querySelector('.i-3').value = k_Code[i]){
+//                 res = true;
+//                 console.log(document.querySelector('.i-3').onkeypress);
+//                 console.log(k_Code[i]);
+                
+//             }
+//             else{
+//                 res = false;
+//             }
+//         }
+
+function t3(e){
+  
+    var chr = document.querySelector('.i-3').value;
+  
+    if (chr >= '48' || chr <= '57') {
+      console.log('ffff');
+        return false;
+
+    }
 }
 
-// ваше событие здесь!!!
-
+// // ваше событие здесь!!!
+document.querySelector('.i-3').onkeypress = t3();
 
 // Task 4 ============================================
 /*  Дан input .i-4. Напишите функцию t4, которая выводит в .out-4 только символы в нижнем регистре. Т.е. ввели ab4Bci в out получаем ab4bci. */
