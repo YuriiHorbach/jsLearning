@@ -19,11 +19,13 @@ document.querySelector('.i-1').onkeypress = t1();
 /*  Дан input .i-2. Напишите функцию t2, которая выводит в .out-2 код символа и возвращает его. */
 
 function t2() {
-
+   return function(e) {
+        document.querySelector('.out-2').innerHTML += e.keyCode + ' ';
+   }
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.i-2').onkeypress = t2();
 
 // Task 3 ============================================
 /*  Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения - используйте код клавиши. */
