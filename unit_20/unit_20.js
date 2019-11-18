@@ -27,35 +27,16 @@ document.querySelector('.i-2').onkeypress = t2;
 /*  Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения - используйте код клавиши. */
 
 // let w3 = 75;
-
-console.log(document.querySelector('.out-3').innerHTML = document.querySelector('.i-3').onkeypress);
-
-// let k_Code = [48,49,50,51,52,53,54,55,56,57];
-//         for(let i in k_Code){
-//             if(document.querySelector('.i-3').value = k_Code[i]){
-//                 res = true;
-//                 console.log(document.querySelector('.i-3').onkeypress);
-//                 console.log(k_Code[i]);
-                
-//             }
-//             else{
-//                 res = false;
-//             }
-//         }
-
 function t3(e){
-  
-    var chr = document.querySelector('.i-3').value;
-  
-    if (chr >= '48' || chr <= '57') {
-      console.log('ffff');
-        return false;
-
+    if(e.charCode > 47 && e.charCode < 57){
+        document.querySelector('.out-3').innerHTML += false;
+    }
+    else{
+        document.querySelector('.out-3').innerHTML += true;
     }
 }
 
-// // ваше событие здесь!!!
-document.querySelector('.i-3').onkeypress = t3();
+document.querySelector('.i-3').onkeypress = t3;
 
 // Task 4 ============================================
 /*  Дан input .i-4. Напишите функцию t4, которая выводит в .out-4 только символы в нижнем регистре. Т.е. ввели ab4Bci в out получаем ab4bci. */
