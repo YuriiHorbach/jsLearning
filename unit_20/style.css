@@ -34,3 +34,7 @@ section {
 table, th, td {
     border: 1px solid black;
 }
+
+.dark {
+    background-color: black;
+}
