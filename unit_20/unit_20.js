@@ -42,10 +42,11 @@ document.querySelector('.i-3').onkeypress = t3;
 /*  Дан input .i-4. Напишите функцию t4, которая выводит в .out-4 только символы в нижнем регистре. Т.е. ввели ab4Bci в out получаем ab4bci. */
 
 function t4() {
-
+    document.querySelector('.out-4').innerHTML =this.value.toLowerCase();
 }
 
 // ваше событие здесь!!!
+document.querySelector('.i-4').onkeypress = t4;
 
 // Task 5 ============================================
 /*  Дан input .i-5. Напишите функцию t5, которая выводит в .out-5 все вводимые символы в верхнем регистре. Т.е. пользователь ввел AbCd и функция выведет ABCD. */
