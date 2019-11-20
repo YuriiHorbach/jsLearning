@@ -63,11 +63,11 @@ document.querySelector('.i-5').onkeypress = t5;
 /*  Дан input .i-6. Напишите функцию t6, которая выводит в .i-6 только символы в нижнем регистре.  */
 
 function t6() {
-
+    document.querySelector('.i-6').value = this.value.toLowerCase();
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.i-6').onkeypress = t6;
 
 // Task 7 ============================================
 /*  Дан input .i-7. Напишите функцию t7, которая выводит в .out-7 случаный символ из массива a7 при каждом вводе символа. */
