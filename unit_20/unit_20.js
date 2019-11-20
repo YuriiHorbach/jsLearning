@@ -84,12 +84,31 @@ document.querySelector('.i-7').onkeypress = t7;
 // Task 8 ============================================
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
 
-function t8() {
+function t8(e) {
+    // if(e.keyCode == 105){
+    //     document.querySelector('.out-8').innerHTML += 1;
+    // } else if(e.keyCode == 108){
+    //     document.querySelector('.out-8').innerHTML += 0;
+    // } else if(e.keyCode == 111){
+    //     document.querySelector('.out-8').innerHTML += 7;
+    // }
+       
 
+    switch(e.charCode){
+        case 105:
+            document.querySelector('.out-8').innerHTML += 1;
+            break;
+        case 108:
+            document.querySelector('.out-8').innerHTML += 0;
+            break;
+        case 111:
+            document.querySelector('.out-8').innerHTML += 7;
+            break;
+    }
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.i-8').onkeypress = t8;
 
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t8, выводит в .out-9 количество нажатых клавиш стрелка вниз. */
