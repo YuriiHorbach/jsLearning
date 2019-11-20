@@ -22,3 +22,15 @@ section {
 .hide {
     display: none;
 }
+
+
+
+.table  td {
+    width: 10px;
+    height: 10px;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
