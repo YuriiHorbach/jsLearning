@@ -73,12 +73,14 @@ document.querySelector('.i-6').onkeypress = t6;
 /*  Дан input .i-7. Напишите функцию t7, которая выводит в .out-7 случаный символ из массива a7 при каждом вводе символа. */
 
 function t7() {
-    const a7 = [];
+    const a7 = Array.from({length: 10}, () => Math.floor(Math.random() * 10));
+    console.log(a7);
 
+    document.querySelector('.out-7').innerHTML = a7[Math.floor(Math.random()*a7.length)]
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.i-7').onkeypress = t7;
 // Task 8 ============================================
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
 
