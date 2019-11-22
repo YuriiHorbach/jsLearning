@@ -85,26 +85,22 @@ document.querySelector('.i-7').onkeypress = t7;
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
 
 function t8(e) {
-    // if(e.keyCode == 105){
-    //     document.querySelector('.out-8').innerHTML += 1;
-    // } else if(e.keyCode == 108){
-    //     document.querySelector('.out-8').innerHTML += 0;
-    // } else if(e.keyCode == 111){
-    //     document.querySelector('.out-8').innerHTML += 7;
-    // }
-       
-
-    switch(e.charCode){
-        case 105:
-            document.querySelector('.out-8').innerHTML += 1;
-            break;
-        case 108:
-            document.querySelector('.out-8').innerHTML += 0;
-            break;
-        case 111:
-            document.querySelector('.out-8').innerHTML += 7;
-            break;
-    }
+  let res = ' ';
+  if (e.keyCode == 105) {
+    this.value = 1;
+    res += this.value;
+  }else if(e.keyCode == 111){
+    this.value = 0;
+    res += this.value;
+  }
+  else if(e.keyCode == 108){
+    this.value = 7;
+    res += this.value;
+  }
+  else{
+    res = e.key;
+  }
+  document.querySelector('.out-8').innerHTML += res;
 }
 
 // ваше событие здесь!!!
@@ -142,12 +138,12 @@ document.querySelector('.i-10').onkeydown = t10;
 /*  Проект. Дан input .i-11. Используя знания html и css нарисуйте клавиатуру (можно схематически). Изображение должно содержать числа, символьные клавиши, пробел, enter, caps lock, shift, tab, alt. При вводе текста в input в момент нажатия клавиши - затемняйте ее, в момент отпускания - возвращайте к первоначальному состоянию. Аналогично при нажатии enter, space, alt, shift, ctrl. Затемнение реализуйте через добавление класса CSS. Для удобства рекомендую каждой клавише добавить атрибут data с символом. Если нажата клавиша caps lock - то присвоить ей затемнение, которое работает до последующего отжатия клавиши. */
 
 function t11(e) {
-    const key = document.querySelectorAll('.key');
+    const key = document.querySelectorAll('.btn');
     key.forEach(attr => {
-        let attrKey = attr.getAttribute('data-key');
+        let attrKey = attr.getAttribute('data-btn');
         if (e.key == attrKey) {
             attr.classList.add('dark');
-            this.onkeyup = (e) => {
+            this.onkeyup = function(e){
                 key.forEach(attr => {
                     if (e.key == attrKey) {
                        attr.classList.remove('dark'); 
@@ -157,10 +153,10 @@ function t11(e) {
         } 
     });
     this.value = '';
-    console.log(e);
 }
 
-document.querySelector('.i-11').onkeydown = t11;
 
 // ваше событие здесь!!!
+
+document.querySelector('.i-11').onkeydown = t11;
 

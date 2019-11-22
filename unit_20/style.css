@@ -29,6 +29,7 @@ section {
     width: 10px;
     height: 10px;
     text-align: center;
+    font-weight: bold;
 }
 
 table, th, td {
@@ -37,4 +38,6 @@ table, th, td {
 
 .dark {
     background-color: black;
+    color: white;
 }
+
