@@ -2,18 +2,16 @@
 // Task 1 ============================================
 /* Создайте блок div-1. Добавьте на него событие touchstart. Выведите в out-1 слово  touch если событие сработает. */
 
-document.querySelector('.div-1').addEventListener('touchstart', t1);
-
 function t1() {
     document.querySelector('.out-1').innerHTML = 'touch';
 }
 
 // ваше событие здесь!!!
 
+document.querySelector('.div-1').addEventListener('touchstart', t1);
+
 // Task 2 ============================================
 /* Создайте блок div-2. Добавьте на него событие touchstart. Выведите в out-2 число срабатываний события. */
-
-document.querySelector('.div-2').addEventListener('touchstart', t2);
 
 
 let count = 0;
@@ -24,15 +22,11 @@ function t2() {
 
 // ваше событие здесь!!!
 
+document.querySelector('.div-2').addEventListener('touchstart', t2);
+
 
 // Task 3 ============================================
 /*  Создайте блок div-3_1 и div-3_2. Добавьте на них событие touchstart. Выведите в out-3 номер блока 1 или 2 на котором сработало событие. */
-
-document.querySelector('.div-3_1').addEventListener('touchstart', t3);
-document.querySelector('.div-3_2').addEventListener('touchstart', t3);
-
-
-
 
 function t3() {
     document.querySelector('.out-3').innerHTML = this.innerHTML;
@@ -40,15 +34,21 @@ function t3() {
 
 // ваше событие здесь!!!
 
+document.querySelector('.div-3_1').addEventListener('touchstart', t3);
+document.querySelector('.div-3_2').addEventListener('touchstart', t3);
 
 // Task 4 ============================================
 /*  Создайте блок div-4. И кнопку b-4. При нажатии кнопки - добавляйте событие ontouchstart на блок div-4. При событии происходит вывод текста touch в out-4.  */
 
 function t4() {
-
+    document.querySelector('.div-4').addEventListener('touchstart', ()=>{
+        document.querySelector('.out-4').innerHTML = 'touch';
+    });
 }
 
 // ваше событие здесь!!!
+document.querySelector('.b-4').onclick = t4;
+
 
 // Task 5 ============================================
 /*  Дана кнопка b-5. При ее нажатии очищайте событие ontouchstart на блоке div-4. */
