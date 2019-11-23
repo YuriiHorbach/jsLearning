@@ -79,10 +79,14 @@ t6();
 /*  Дан блок div-7. Добавьте событие touch, при срабатывании которого окрашивайте блок в красный цвет. */
 
 function t7() {
-
+    document.querySelector('.div-7').addEventListener('touchstart', () => {
+        document.querySelector('.div-7').style.background = 'red';
+    });
 }
 
 // ваше событие здесь!!!
+t7();
+
 
 // Task 8 ============================================
 /*  Дан блок div-8. Добавьте на него событие touch, которое при срабатывании окрашивает блок случаным цветом из массива a8=[red, green, blue, orange, pink, yellow] */
