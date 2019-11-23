@@ -67,11 +67,13 @@ function t5() {
 /*  Добавьте событие ontouchend на div-4. При его срабатывании выведите в out-6 слово touchend. */
 
 function t6() {
-
+    document.querySelector('.div-4').addEventListener('touchend', () => {
+        document.querySelector('.out-6').innerHTML = 'touchend';
+    });
 }
 
 // ваше событие здесь!!!
-
+t6();
 
 // Task 7 ============================================
 /*  Дан блок div-7. Добавьте событие touch, при срабатывании которого окрашивайте блок в красный цвет. */
