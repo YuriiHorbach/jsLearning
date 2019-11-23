@@ -67,36 +67,34 @@ function t5() {
 /*  Добавьте событие ontouchend на div-4. При его срабатывании выведите в out-6 слово touchend. */
 
 function t6() {
-    document.querySelector('.div-4').addEventListener('touchend', () => {
-        document.querySelector('.out-6').innerHTML = 'touchend';
-    });
+   document.querySelector('.out-6').innerHTML = 'touchend';
 }
 
 // ваше событие здесь!!!
-t6();
+document.querySelector('.div-4').addEventListener('touchend', t6);
 
 // Task 7 ============================================
 /*  Дан блок div-7. Добавьте событие touch, при срабатывании которого окрашивайте блок в красный цвет. */
 
 function t7() {
-    document.querySelector('.div-7').addEventListener('touchstart', () => {
-        document.querySelector('.div-7').style.background = 'red';
-    });
+   document.querySelector('.div-7').style.background = 'red';
 }
 
 // ваше событие здесь!!!
-t7();
+document.querySelector('.div-7').addEventListener('touchstart',t7);
 
 
 // Task 8 ============================================
 /*  Дан блок div-8. Добавьте на него событие touch, которое при срабатывании окрашивает блок случаным цветом из массива a8=[red, green, blue, orange, pink, yellow] */
 
 function t8() {
-
+    let a8=['red', 'green', 'blue', 'orange', 'pink', 'yellow'];
+    let rand = Math.floor(Math.random() * a8.length);
+    document.querySelector('.div-8').style.background = a8[rand];
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-8').addEventListener('touchstart', t8);
 
 // Task 9 ============================================
 /* Дан блок div-9. Добавьте событие ontouch. Выводите количество одновременных касаний в out-9. */
