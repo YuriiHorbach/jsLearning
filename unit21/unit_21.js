@@ -121,11 +121,21 @@ document.querySelector('.div-10').addEventListener('touchmove', t10);
 // Task 11 ============================================
 /*  Дан блок div-11. Добавьте на него событие touch. При срабатывании выводите радиус события radiusX, radiusY. */
 
-function t11() {
 
+function t11(e) {
+   
+    let touchX = e.changedTouches[0].radiusX;
+    let touchY = e.changedTouches[0].radiusY;
+      // Turn off default event handling
+    // e.preventDefault();
+    console.log(e);
+   
+    document.querySelector('.out-11').innerHTML = touchX + ' ' + touchY;
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-11').addEventListener("touchstart", t11);
+
 
 // Task 12 ============================================
 /*  Мини проект. Ознакомьтесь с версткой в задании 12. Добавьте touch события так, чтобы при клике на img-12-min картинка появлялась в блоке div-12-max. Если нажимается кнопка prev - то появляется изображение идущее перед текущим. Если нажимается кнопка next - то после текущего. Выбор изображений зациклен.  Изображение, которое сейчас дублируется в большом блоке должно выделяться классом .active-img. Добавьте кнопку reset для сброса состояния, когда выводится первое изображение. Все изображения и начальное состояние - выводится из массива 
@@ -134,9 +144,9 @@ function t11() {
     Источник иконок https://www.iconfinder.com/iconsets/unigrid-phantom-halloween
 */
 
-function t11() {
+// function t11() {
 
-}
+// }
 
 // ваше событие здесь!!!
 
