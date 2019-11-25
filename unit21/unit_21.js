@@ -144,10 +144,39 @@ document.querySelector('.div-11').addEventListener("touchstart", t11);
     Источник иконок https://www.iconfinder.com/iconsets/unigrid-phantom-halloween
 */
 
-// function t11() {
+function t12(e) {
+    let a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']
+    document.querySelector('.div-12-max').append('<img src ="'+ a[0] +'">');
+}
 
+document.querySelector('.img-12-min').addEventListener("touchstart", t12);
+
+// // ваше событие здесь!!!
+
+// let myImg = document.querySelector('.imgwww');
+// let block = document.querySelector('.div-12-max');
+
+// block.append(myImg);
+// let outBlock = document.querySelector('.div-12-max img');
+// console.log(document.querySelector('.div-12-max img'));
+// outBlock.classList.remove("img-12-min");
+// outBlock.classList.add("img-12-max");
+// block.append(myImg.classList.add("img-12-max"));
+
+
+
+// function Pic(){
+//     let picture = document.querySelectorAll('.img-12-min');
+//     let btn = document.querySelectorAll('.next');
+//     console.log(picture);
+
+//     btn.onclick = console.log(picture[this.picture]);
+
+//     // for(let i in picture){
+
+//     // }   
 // }
 
-// ваше событие здесь!!!
+// Pic();
 
 
