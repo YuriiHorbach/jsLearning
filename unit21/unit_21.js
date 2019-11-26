@@ -1,4 +1,3 @@
-
 // Task 1 ============================================
 /* Создайте блок div-1. Добавьте на него событие touchstart. Выведите в out-1 слово  touch если событие сработает. */
 
@@ -144,12 +143,12 @@ document.querySelector('.div-11').addEventListener("touchstart", t11);
     Источник иконок https://www.iconfinder.com/iconsets/unigrid-phantom-halloween
 */
 
-function t12(e) {
-    let a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']
-    document.querySelector('.div-12-max').append('<img src ="'+ a[0] +'">');
-}
+// function t12(e) {
+//     let a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']
+//     document.querySelector('.div-12-max').append('<img src ="'+ a[0] +'">');
+// }
 
-document.querySelector('.img-12-min').addEventListener("touchstart", t12);
+// document.querySelector('.img-12-min').addEventListener("touchstart", t12);
 
 // // ваше событие здесь!!!
 
@@ -179,4 +178,130 @@ document.querySelector('.img-12-min').addEventListener("touchstart", t12);
 
 // Pic();
 
+// x=document.querySelectorAll('.img-12-min');
 
+// for(var i = 0; i < x.length; i++){
+//     x[i].addEventListener("click", function(){
+//         let block = document.querySelector('.div-12-max');
+//         block.append(this);
+//         let outBlock = document.querySelector('.div-12-max img');
+//         outBlock.classList.remove("img-12-min");
+//         outBlock.classList.add("img-12-max");
+//         block.append(this.classList.add("img-12-max"));
+//              console.log('fff');
+//     });
+// }
+
+// let myContainer = document.querySelector("div-12-max");
+// let pict = document.querySelectorAll('.img-12-min');
+
+
+
+// for (i = 0; i < pict.length; i++) {
+//     let myimg = document.createElement("img");
+//     myimg.src= pict[i];
+//     myimg.width="100";
+//     myimg.height="100";
+
+//     myContainer.appendChild(myimg);
+// }
+
+// function t12() {
+//     const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+//     let images = document.querySelectorAll('div-12-wrapper > img');
+//     let bigImage = document.querySelector('.div-12-max > img');
+//     let textImage = document.querySelector('.img-12-text');
+    
+    // let resetButton = document.createElement('button');
+    // resetButton.textContent = 'Сброс';
+    // resetButton.classList.add('button-primary');
+    // document.querySelector('.next').after(resetButton);
+    // resetButton.ontouchstart = () => {
+    //   bigImage.src = `img/${a[0]}`;
+    //   textImage.textContent = bigImage.src;
+    // }
+  
+  
+    // images.forEach((elem, index) => {
+    //   elem.classList.remove('active-img');
+    //   elem.addEventListener('touchstart', function () {
+    //     bigImage.src = `img/${a[index]}`;
+    //     this.classList.add('active-img');
+    //     textImage.textContent = this.src;
+    //   });
+    //   if (elem.src == bigImage.src) {
+    //     elem.classList.add('active-img');
+    //   } else {
+    //     elem.classList.remove('active-img');
+        
+    //   }
+      
+     
+      /* Buttons */
+    //   document.querySelector('.prev').ontouchstart = function () {
+    //     index--;
+    //     if (index < 0) {
+    //       index = a.length - 1;
+    //     }
+    //     bigImage.src = `img/${a[index]}`;
+    //   };
+    //   document.querySelector('.next').ontouchstart = function () {
+    //     index++;
+    //     if (index > a.length - 1) {
+    //       index = 0;
+    //     }
+    //     bigImage.src = `img/${a[index]}`;
+    //   };
+      /* end buttons */
+      
+     
+    // });
+    /* end foreach */
+    
+   
+//   }
+//   t12()
+
+
+
+let images = document.querySelectorAll('img.img-12-min');
+console.log(images);
+let imgMax = document.querySelector('.img-12-max');
+console.log(imgMax);
+const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+
+function changeImg(){
+
+    images.forEach(function(image, i){
+        
+  
+       console.log(image);
+       
+       image.addEventListener('touchstart', function(){
+        imgMax.src = `img/${a[i]}`;
+        
+        // console.log(image);
+        //  for(let i in images){
+        //     // this.classList.remove('active-img');
+        //     if(image.getAttribute("class") == 'active-img'){
+        //         image.className = 'img-12-min';
+        //     }
+        //     else{
+        //         image.className = 'img-12-min active-img';
+        //     }
+        //  }
+       
+       });
+       if (image.src == imgMax.src) {
+            image.classList.add('active-img');
+        } else {
+            image.classList.remove('active-img');
+        }
+
+       
+    });
+}
+
+
+
+changeImg();
