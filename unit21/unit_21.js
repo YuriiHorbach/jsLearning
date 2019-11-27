@@ -143,165 +143,76 @@ document.querySelector('.div-11').addEventListener("touchstart", t11);
     Источник иконок https://www.iconfinder.com/iconsets/unigrid-phantom-halloween
 */
 
-// function t12(e) {
-//     let a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png']
-//     document.querySelector('.div-12-max').append('<img src ="'+ a[0] +'">');
-// }
-
-// document.querySelector('.img-12-min').addEventListener("touchstart", t12);
-
-// // ваше событие здесь!!!
-
-// let myImg = document.querySelector('.imgwww');
-// let block = document.querySelector('.div-12-max');
-
-// block.append(myImg);
-// let outBlock = document.querySelector('.div-12-max img');
-// console.log(document.querySelector('.div-12-max img'));
-// outBlock.classList.remove("img-12-min");
-// outBlock.classList.add("img-12-max");
-// block.append(myImg.classList.add("img-12-max"));
-
-
-
-// function Pic(){
-//     let picture = document.querySelectorAll('.img-12-min');
-//     let btn = document.querySelectorAll('.next');
-//     console.log(picture);
-
-//     btn.onclick = console.log(picture[this.picture]);
-
-//     // for(let i in picture){
-
-//     // }   
-// }
-
-// Pic();
-
-// x=document.querySelectorAll('.img-12-min');
-
-// for(var i = 0; i < x.length; i++){
-//     x[i].addEventListener("click", function(){
-//         let block = document.querySelector('.div-12-max');
-//         block.append(this);
-//         let outBlock = document.querySelector('.div-12-max img');
-//         outBlock.classList.remove("img-12-min");
-//         outBlock.classList.add("img-12-max");
-//         block.append(this.classList.add("img-12-max"));
-//              console.log('fff');
-//     });
-// }
-
-// let myContainer = document.querySelector("div-12-max");
-// let pict = document.querySelectorAll('.img-12-min');
-
-
-
-// for (i = 0; i < pict.length; i++) {
-//     let myimg = document.createElement("img");
-//     myimg.src= pict[i];
-//     myimg.width="100";
-//     myimg.height="100";
-
-//     myContainer.appendChild(myimg);
-// }
-
-// function t12() {
-//     const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
-//     let images = document.querySelectorAll('div-12-wrapper > img');
-//     let bigImage = document.querySelector('.div-12-max > img');
-//     let textImage = document.querySelector('.img-12-text');
-    
-    // let resetButton = document.createElement('button');
-    // resetButton.textContent = 'Сброс';
-    // resetButton.classList.add('button-primary');
-    // document.querySelector('.next').after(resetButton);
-    // resetButton.ontouchstart = () => {
-    //   bigImage.src = `img/${a[0]}`;
-    //   textImage.textContent = bigImage.src;
-    // }
-  
-  
-    // images.forEach((elem, index) => {
-    //   elem.classList.remove('active-img');
-    //   elem.addEventListener('touchstart', function () {
-    //     bigImage.src = `img/${a[index]}`;
-    //     this.classList.add('active-img');
-    //     textImage.textContent = this.src;
-    //   });
-    //   if (elem.src == bigImage.src) {
-    //     elem.classList.add('active-img');
-    //   } else {
-    //     elem.classList.remove('active-img');
-        
-    //   }
-      
-     
-      /* Buttons */
-    //   document.querySelector('.prev').ontouchstart = function () {
-    //     index--;
-    //     if (index < 0) {
-    //       index = a.length - 1;
-    //     }
-    //     bigImage.src = `img/${a[index]}`;
-    //   };
-    //   document.querySelector('.next').ontouchstart = function () {
-    //     index++;
-    //     if (index > a.length - 1) {
-    //       index = 0;
-    //     }
-    //     bigImage.src = `img/${a[index]}`;
-    //   };
-      /* end buttons */
-      
-     
-    // });
-    /* end foreach */
-    
-   
-//   }
-//   t12()
-
-
 
 let images = document.querySelectorAll('img.img-12-min');
-console.log(images);
 let imgMax = document.querySelector('.img-12-max');
-console.log(imgMax);
-const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
+let imgText = document.querySelector('.img-12-text');
+let arrText = [];
+// const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+const a = [1,2,3,4,5,6];
 
-function changeImg(){
-
-    images.forEach(function(image, i){
-        
+function unique(arr) {
+    let result = [];
   
-       console.log(image);
-       
-       image.addEventListener('touchstart', function(){
-        imgMax.src = `img/${a[i]}`;
+    for (let str of arr) {
+      if (!result.includes(str)) {
+        result.push(str);
+      }
+    }
+  
+    return result;
+  }
+
+images.forEach(function(elem, i){
+    elem.addEventListener('touchstart', function(){
         
-        // console.log(image);
-        //  for(let i in images){
-        //     // this.classList.remove('active-img');
-        //     if(image.getAttribute("class") == 'active-img'){
-        //         image.className = 'img-12-min';
-        //     }
-        //     else{
-        //         image.className = 'img-12-min active-img';
-        //     }
-        //  }
-       
-       });
-       if (image.src == imgMax.src) {
-            image.classList.add('active-img');
-        } else {
-            image.classList.remove('active-img');
-        }
-
-       
+        imgMax.src = 'img/' + a[i] +'.png';
+        if (minImg = document.querySelector('.active-img')) {
+            minImg.classList.remove('active-img');
+          };
+        this.classList.add('active-img');
+        imgText.innerHTML = this.dataset.text;
+        arrText.push(this.dataset.text);
+        console.log(unique(arrText.sort()));
+        
     });
-}
 
+    next.addEventListener('touchstart', function(){
+        if(a[i] != a[a.length - 1]){
+            imgMax.src = 'img/' + a[++i] +'.png';
+        }else{
+            imgMax.src = 'img/' + a[a.length - 1] +'.png';
+        }
+        
 
+    });
 
-changeImg();
+    
+    prev.addEventListener('touchstart', function(){
+        if(a[i] != a[a.length - a.length]){
+            imgMax.src = 'img/' + a[--i] +'.png';
+            imgText.innerHTML = this.dataset.text;
+   
+        }else{
+             imgMax.src = 'img/' + a[a.length - 1] +'.png';
+        }
+    });
+
+     
+
+      
+});
+
+let resetBtn = document.createElement('button');
+    resetBtn.classList.add('button-primary');
+    resetBtn.innerHTML = 'Reset';
+    document.body.append(resetBtn);      
+    resetBtn.ontouchstart = () => {
+         imgMax.src = 'img/' + a[0] +'.png';
+        if (minImg = document.querySelector('.active-img')) {
+            minImg.classList.remove('active-img');
+          };
+        images[0].classList.add('active-img');
+    }  
