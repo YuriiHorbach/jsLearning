@@ -152,6 +152,14 @@ let imgText = document.querySelector('.img-12-text');
 let arrText = [];
 // const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
 const a = [1,2,3,4,5,6];
+const a1 = {
+    1 : 'data1',
+    2 : 'data2',
+    3 : 'data3',
+    4 : 'data4',
+    5 : 'data5',
+    6 : 'data6'
+};
 
 function unique(arr) {
     let result = [];
@@ -167,43 +175,62 @@ function unique(arr) {
 
 images.forEach(function(elem, i){
     elem.addEventListener('touchstart', function(){
+        console.log(a1[1]);
         
-        imgMax.src = 'img/' + a[i] +'.png';
+        imgMax.src = 'img/' + ++i +'.png';
         if (minImg = document.querySelector('.active-img')) {
             minImg.classList.remove('active-img');
           };
         this.classList.add('active-img');
-        imgText.innerHTML = this.dataset.text;
+        // imgText.innerHTML = this.dataset.text;
+        imgText.innerHTML = a1[i];
         arrText.push(this.dataset.text);
         console.log(unique(arrText.sort()));
-        
-    });
 
-    next.addEventListener('touchstart', function(){
-        if(a[i] != a[a.length - 1]){
-            imgMax.src = 'img/' + a[++i] +'.png';
-        }else{
-            imgMax.src = 'img/' + a[a.length - 1] +'.png';
-        }
-        
-
-    });
-
-    
-    prev.addEventListener('touchstart', function(){
-        if(a[i] != a[a.length - a.length]){
-            imgMax.src = 'img/' + a[--i] +'.png';
+        next.ontouchstart  = function(e){
+            if(a1[i] != a1[a1.length - 1]){
+                imgMax.src = 'img/' + a1[++i] +'.png';
+            }else{
+                imgMax.src = 'img/' + a1[a1.length - 1] +'.png';
+            }
             imgText.innerHTML = this.dataset.text;
-   
-        }else{
-             imgMax.src = 'img/' + a[a.length - 1] +'.png';
-        }
+        } 
+        
+       
+
+
+
+        
+        
     });
 
+    // next.addEventListener('touchstart', function(){
+    //     if(a[i] != a[a.length - 1]){
+    //         imgMax.src = 'img/' + a[++i] +'.png';
+    //     }else{
+    //         imgMax.src = 'img/' + a[a.length - 1] +'.png';
+    //     }
+        
+    
+    // });
+    
+    
+    // prev.addEventListener('touchstart', function(){
+    //     if(a[i] != a[a.length - a.length]){
+    //         imgMax.src = 'img/' + a[--i] +'.png';
+    //         imgText.innerHTML = this.dataset.text;
+    
+    //     }else{
+    //          imgMax.src = 'img/' + a[a.length - 1] +'.png';
+    //     }
+    // });
+    
      
 
       
 });
+
+
 
 let resetBtn = document.createElement('button');
     resetBtn.classList.add('button-primary');
