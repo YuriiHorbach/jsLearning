@@ -168,17 +168,26 @@ const a1 = {
     5 : 'data6'
 };
 
+
+function changeImg(e){
+
+    // console.log(e);
+    console.log(this.src);
+
+    imgMax.src = this.src;
+    imgText.innerHTML = this.dataset.text;
+
+    if (minImg = document.querySelector('.active-img')) {
+        minImg.classList.remove('active-img');
+    };
+    this.classList.add('active-img');
+
+}
+
 for (const key in images) {
     console.log(images);
-    images[key].addEventListener('touchstart',function(e){
-
-        console.log(e);
-        console.log(this.src);
-
-        imgMax.src = this.src;
-        imgText.innerHTML = this.dataset.text;
-
-    });
+    images[key].addEventListener('touchstart',changeImg);
+    next.addEventListener('touchstart',changeImg);
 } 
 
 
