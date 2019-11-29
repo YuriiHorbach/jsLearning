@@ -169,7 +169,7 @@ const a1 = {
 };
 
 
-function changeImg(e){
+function changeImg(){
 
     // console.log(e);
     console.log(this.src);
@@ -184,11 +184,18 @@ function changeImg(e){
 
 }
 
+// images.foreach(function(el){
+//     el.addEventListener('touchstart', changeImg);
+// });
+
 for (const key in images) {
-    console.log(images);
+    console.log(images[key]);
+    next.ontouchstart = console.log('imgMax.src');
+
     images[key].addEventListener('touchstart',changeImg);
-    next.addEventListener('touchstart',changeImg);
 } 
+
+// next.ontouchstart = images[key].addEventListener('touchstart',changeImg);
 
 
 
