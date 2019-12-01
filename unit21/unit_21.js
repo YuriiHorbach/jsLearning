@@ -146,10 +146,13 @@ document.querySelector('.div-11').addEventListener("touchstart", t11);
 
 let images = document.querySelectorAll('.img-12-min');
 let imgMax = document.querySelector('.img-12-max');
-let prev = document.querySelector('.prev');
-let next = document.querySelector('.next');
 let imgText = document.querySelector('.img-12-text');
 let arrText = [];
+// let pText = document.querySelector('.img-12-text');
+// Кнопки
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
+let reset = document.querySelector('.reset');
 
 const a3 ={'1.png': 'data1',
            '2.png': 'data2',
@@ -184,18 +187,48 @@ function changeImg(){
 
 }
 
-// images.foreach(function(el){
-//     el.addEventListener('touchstart', changeImg);
-// });
 
-for (const key in images) {
-    console.log(images[key]);
-    next.ontouchstart = console.log('imgMax.src');
+let n = 0;
+function preV() {
 
-    images[key].addEventListener('touchstart',changeImg);
-} 
+    images.forEach(function (elem) {
+      elem.classList.remove('active-img');
+   })
 
-// next.ontouchstart = images[key].addEventListener('touchstart',changeImg);
+   n--;
+
+   if (n < 0) {
+      n = images.length-1;
+   }
+      
+   let img1 = images[n].attributes[1].value;
+   let text1 = images[n].attributes['data-text'].value;
+   imgMax.innerHTML = '<img src="' + img1 + '" alt="#" class="img-12-max"></img>' + '<br>';
+   //  и текста
+   imgText.innerHTML = text1;
+   images[n].classList.add('active-img');
+      
+} // preV()
+
+
+for (var i = 0 ; i < images.length; i++) {
+    images[i].addEventListener('touchstart' , changeImg) ; 
+}
+
+
+next.ontouchstart = function(){
+    for (var i = 0 ; i < images.length; i++) {
+        images[i].addEventListener('touchstart' , changeImg) ; 
+    }
+}
+
+console.log(next);
+
+preV();
+// next.onclick = preV;
+prev.onclick = preV;
+
+// images[key].addEventListener('touchstart',changeImg);
 
 
 
