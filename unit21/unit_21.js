@@ -153,6 +153,7 @@ let arrText = [];
 let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
 let reset = document.querySelector('.reset');
+let globalSrc = '';
 
 const a3 ={'1.png': 'data1',
            '2.png': 'data2',
@@ -172,11 +173,7 @@ const a1 = {
 };
 
 
-function changeImg(){
-
-    // console.log(e);
-    console.log(this.src);
-
+function changeImg(images){
     imgMax.src = this.src;
     imgText.innerHTML = this.dataset.text;
 
@@ -184,32 +181,69 @@ function changeImg(){
         minImg.classList.remove('active-img');
     };
     this.classList.add('active-img');
-
 }
 
 
 for (var i = 0 ; i < images.length; i++) {
-    images[i].addEventListener('touchstart' , changeImg) ; 
+    images[i].addEventListener('touchstart' , changeImg);
 }
 
 
-images.forEach(function(elem, index){
-    console.log(elem.getAttribute('class'));
-    console.log(elem);
-    console.log(index);
 
-    // if(elem.getAttribute('class') == 'img-12-min active-img'){
-    //     console.log('true');
-    //     minImg.classList.remove('active-img');
-    // }
-    // else{
-    //     console.log('false');
-    // }
-    if (minImg = document.querySelector('.active-img')) {
-        minImg.classList.remove('active-img');
+function activeChange(){
+    if (images[i] == document.querySelector('.active-img')) {
+        console.log(images[i]);
+        images[i].classList.remove('active-img');
+        images[i-1].classList.add('active-img');
     };
-});
+}
 
 
+let counter = 0;
+function prev1(){
+    counter--;
+
+        for (var i = 0 ; i < images.length; i++) {
+            // images[i].addEventListener('touchstart' , changeImg); 
+            if(counter <= 0){
+                counter = images.length;
+            }else{
+                if (images[i] == document.querySelector('.active-img')) {
+                    console.log(images[i]);
+                    imgMax.src = images[i-1].src;
+                    imgText.innerHTML = images[i-1].dataset.text;
+                   
+                    images[i].classList.remove('active-img');
+                    images[i-1].classList.add('active-img');
+                };
+            }
+        }
+}
 
 
+function next1(){
+    counter++;
+    console.log(counter);
+        for (var i = 0; i < images.length; i++) {
+            if(counter > images.length){
+                counter = 0;
+            }
+            else{
+                if (images[i] == document.querySelector('.active-img')) {
+                    console.log(images[i]);
+
+                    images[i].classList.remove('active-img');
+                    // images[i].classList.add('active-img');
+                    // imgMax.src = images[i+1].src;
+                    // console.log(images[i+1].src);
+                    // imgText.innerHTML = images[i+1].dataset.text;
+                    
+                    
+                    
+                };
+            }
+        }
+}
+
+ prev.onclick = prev1;
+ next.onclick = next1;
