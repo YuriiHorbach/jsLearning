@@ -199,20 +199,27 @@ function activeChange(){
 }
 
 
-let counter = 0;
+let counterP = images.length+1;
+console.log(counterP);
+
 function prev1(){
-    counter++;
-    console.log(counter);
+    
         for (var i = 0 ; i < images.length; i++) {
-            if(counter = 0 || images[i] != document.querySelector('.active-img')){
-                // images[i].src = 'fffffffffffffff';
-                console.log(images[i].src);
-                counter = images.length;
+            counterP--;
+            if(counterP <= images.length-1 || images[i] != document.querySelector('.active-img')){
+                // counterP == images.length;
+                // images[6].src = 'img/6.png';
+                // images[6].classList.add('active-img');
+                
+                // console.log(images[i].src);
+                // counterP = images.length;
+                // console.log(counterP);
+                
             }else{
                 if (images[i] == document.querySelector('.active-img')) {
                     // console.log(images[i]);
                     images[i].classList.remove('active-img');
-                    images[counter].classList.add('active-img');
+                    images[i-1].classList.add('active-img');
 
                     imgMax.src = images[i-1].src;
                     imgText.innerHTML = images[i-1].dataset.text;
@@ -225,23 +232,23 @@ function prev1(){
 }
 
 
-
+let counterN = 0;
 function next1(){
-    counter++;
-    console.log(counter);
+    counterN++;
+    console.log(counterN);
         for (var i = 0; i < images.length; i++) {
-            if(counter > images.length-1 && images[i] != document.querySelector('.active-img')){
-                counter = 0;
+            if(counterN > images.length-1 && images[i] != document.querySelector('.active-img')){
+                counterN = 0;
             }
             else{
                 if (images[i] == document.querySelector('.active-img')) {
                     console.log(images[i]);
 
                     images[i].classList.remove('active-img');
-                    images[counter].classList.add('active-img');
-                    imgMax.src = images[counter].src;
-                    console.log(images[counter].src);
-                    imgText.innerHTML = images[counter].dataset.text;
+                    images[counterN].classList.add('active-img');
+                    imgMax.src = images[counterN].src;
+                    console.log(images[counterN].src);
+                    imgText.innerHTML = images[counterN].dataset.text;
                     
                     
                     
