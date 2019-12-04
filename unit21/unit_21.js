@@ -199,14 +199,14 @@ function activeChange(){
 }
 
 
-let counterP = images.length+1;
-console.log(counterP);
+let counter = 0;
+// console.log(counterP);
 
 function prev1(){
     
         for (var i = 0 ; i < images.length; i++) {
-            counterP--;
-            if(counterP <= images.length-1 || images[i] != document.querySelector('.active-img')){
+            counter--;
+            if(counter <= images.length-1 || images[i] != document.querySelector('.active-img')){
                 // counterP == images.length;
                 // images[6].src = 'img/6.png';
                 // images[6].classList.add('active-img');
@@ -232,23 +232,23 @@ function prev1(){
 }
 
 
-let counterN = 0;
+// let counterN = 0;
 function next1(){
-    counterN++;
-    console.log(counterN);
+    counter++;
+    console.log(counter);
         for (var i = 0; i < images.length; i++) {
-            if(counterN > images.length-1 && images[i] != document.querySelector('.active-img')){
-                counterN = 0;
+            if(counter > images.length-1 && images[i] != document.querySelector('.active-img')){
+                counter = 0;
             }
             else{
                 if (images[i] == document.querySelector('.active-img')) {
                     console.log(images[i]);
 
                     images[i].classList.remove('active-img');
-                    images[counterN].classList.add('active-img');
-                    imgMax.src = images[counterN].src;
-                    console.log(images[counterN].src);
-                    imgText.innerHTML = images[counterN].dataset.text;
+                    images[counter].classList.add('active-img');
+                    imgMax.src = images[counter].src;
+                    console.log(images[counter].src);
+                    imgText.innerHTML = images[counter].dataset.text;
                     
                     
                     
