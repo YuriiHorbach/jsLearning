@@ -204,7 +204,7 @@ function prev1(){
     counter--;
 
         for (var i = 0 ; i < images.length; i++) {
-            // images[i].addEventListener('touchstart' , changeImg); 
+            images[i].addEventListener('touchstart' , changeImg); 
             if(counter <= 0){
                 counter = images.length;
             }else{
@@ -225,6 +225,7 @@ function next1(){
     counter++;
     console.log(counter);
         for (var i = 0; i < images.length; i++) {
+            images[i].addEventListener('touchstart' , changeImg); 
             if(counter > images.length){
                 counter = 0;
             }
