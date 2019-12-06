@@ -154,6 +154,8 @@ let prev = document.querySelector('.prev');
 let next = document.querySelector('.next');
 let reset = document.querySelector('.reset');
 let globalSrc = '';
+let globalImg = '';
+let out12 = document.querySelector('.out-12');
 
 const a3 ={'1.png': 'data1',
            '2.png': 'data2',
@@ -173,7 +175,7 @@ const a1 = {
 };
 
 
-function changeImg(images){
+function changeImg(){
     imgMax.src = this.src;
     imgText.innerHTML = this.dataset.text;
 
@@ -184,9 +186,8 @@ function changeImg(images){
 }
 
 
-for (var i = 0 ; i < images.length; i++) {
-    images[i].addEventListener('touchstart' , changeImg);
-}
+
+
 
 
 
@@ -203,7 +204,7 @@ let counter = 0;
 function prev1(){
     counter--;
 
-        for (var i = 0 ; i < images.length; i++) {
+        for (let i = 0 ; i < images.length; i++) {
             images[i].addEventListener('touchstart' , changeImg); 
             if(counter <= 0){
                 counter = images.length;
@@ -219,32 +220,120 @@ function prev1(){
             }
         }
 }
+function prev3(){
+    counter--;
+            images[counter].addEventListener('touchstart' , changeImg); 
+            if(counter <= 0){
+                counter = images.length;
+            }else{
+                if (images[counter] == document.querySelector('.active-img')) {
+                    console.log(images[counter]);
+                    imgMax.src = images[counter-1].src;
+                    imgText.innerHTML = images[counter-1].dataset.text;
+                   
+                    images[counter].classList.remove('active-img');
+                    images[counter-1].classList.add('active-img');
+                };
+            }
+}
 
 
 function next1(){
-    counter++;
-    console.log(counter);
-        for (var i = 0; i < images.length; i++) {
-            images[i].addEventListener('touchstart' , changeImg); 
-            if(counter > images.length){
-                counter = 0;
-            }
-            else{
-                if (images[i] == document.querySelector('.active-img')) {
-                    console.log(images[i]);
+    counter +=1;
 
-                    images[i].classList.remove('active-img');
-                    // images[i].classList.add('active-img');
-                    // imgMax.src = images[i+1].src;
-                    // console.log(images[i+1].src);
-                    // imgText.innerHTML = images[i+1].dataset.text;
-                    
-                    
-                    
-                };
-            }
-        }
+    // for(let i = 0 ; i < images.length; i++){
+          
+       
+    
+    if(counter > images.length){
+        counter = -1;
+    }
+    else{
+        if (images[counter] == document.querySelector('.active-img')){
+            images[counter].addEventListener('touchstart' , changeImg);
+            imgMax.src = images[counter].src;
+            // out12.src = "img src = img/'" + images[counter] + "'.png";
+            console.log(images[counter].src);
+            // console.log(images);
+            // imgMax.src = images[counter-1].src;
+            console.log(imgMax.src);
+            // imgText.innerHTML = images[counter-1].dataset.text;
+            
+            images[counter].classList.remove('active-img');
+            images[counter+1].classList.add('active-img');
+        } 
+    }
 }
 
+/*
+
+https://codepen.io/webhubua/pen/NWWQEVg
+*/
+
+function next2(){
+    counter +=1;
+        // console.log(images[i].src);
+        // images[1].src = "img/2.png";
+        // console.log(images[1].src);
+        console.log(counter);
+        if(counter < images.length-1){
+            console.log(images[counter]);
+            // images[counter] = images.length-1;
+            img = "<img src='img/'"+images[counter]+"'.png' >";
+            out12.innerHTML = "img/";
+        }
+        // else{
+        //     if (images[counter] == document.querySelector('.active-img')){
+        //         // images[counter].classList.add('active-img');
+        //         // images[counter-1].classList.remove('active-img');
+                
+        //         // images[counter].addEventListener('touchstart' , changeImg);
+        //         imgMax.src = images[counter].src;
+        //         // out12.src = "img src = img/'" + images[counter] + "'.png";
+        //         console.log(images[counter].src);
+        //         // console.log(images);
+        //         // imgMax.src = images[counter-1].src;
+        //         console.log(imgMax.src);
+        //         // imgText.innerHTML = images[counter-1].dataset.text;
+                
+                
+        //     } 
+        // }
+}
+
+function prev2(){
+    counter--;
+
+    // for(let i = 0 ; i < images.length; i++){
+          
+       
+    
+    if(counter <= 0){
+        counter = images.length-1;
+    }
+    else{
+        if (images[counter] == document.querySelector('.active-img')){
+            images[counter].addEventListener('touchstart' , changeImg);
+            imgMax.src = images[counter].src;
+            // out12.src = "img src = img/'" + images[counter] + "'.png";
+            console.log(images[counter].src);
+            // console.log(images);
+            // imgMax.src = images[counter-1].src;
+            console.log(imgMax.src);
+            // imgText.innerHTML = images[counter-1].dataset.text;
+            
+            images[counter].classList.remove('active-img');
+            images[counter-1].classList.add('active-img');
+        } 
+    }
+}
+       
+
+counter -= 1;
+
+
  prev.onclick = prev1;
- next.onclick = next1;
+//  prev.onclick = prev2;
+ next.onclick = next2;
+
+
