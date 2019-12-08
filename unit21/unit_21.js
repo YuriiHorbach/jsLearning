@@ -147,30 +147,9 @@ document.querySelector('.div-11').addEventListener("touchstart", t11);
 let images = document.querySelectorAll('.img-12-min');
 let imgMax = document.querySelector('.img-12-max');
 let imgText = document.querySelector('.img-12-text');
-let arrText = [];
-// let pText = document.querySelector('.img-12-text');
-// Кнопки
-let prev = document.querySelector('.prev');
-let next = document.querySelector('.next');
-let reset = document.querySelector('.reset');
-let globalSrc = '';
-
-const a3 ={'1.png': 'data1',
-           '2.png': 'data2',
-           '3.png': 'data3', 
-           '4.png': 'data4',
-           '5.png': 'data5',
-           '6.png': 'data6'
-        };
-const a = [1,2,3,4,5,6];
-const a1 = {
-    0 : 'data1',
-    1 : 'data2',
-    2 : 'data3',
-    3 : 'data4',
-    4 : 'data5',
-    5 : 'data6'
-};
+let prevBtn = document.querySelector('.prev');
+let nextBtn = document.querySelector('.next');
+let resetBtn = document.querySelector('.reset');
 
 
 function changeImg(images){
@@ -188,74 +167,76 @@ for (var i = 0 ; i < images.length; i++) {
     images[i].addEventListener('touchstart' , changeImg);
 }
 
+// function activeChange(){
+//     if (images[i] == document.querySelector('.active-img')) {
+//         console.log(images[i]);
+//         images[i].classList.remove('active-img');
+//         images[i-1].classList.add('active-img');
+//     };
+// }
 
+function next1() {
+    let active = document.querySelector(".img-12-min.active-img");  //select active img
+    if (active == null) { //if no active  select the 1st img
+        let firstElem = document.querySelector(".img-12-min[data-num='1']").className += " active-img";
+        // console.log(document.querySelector(".img-12-min[data-num='1']").src);
+        imgMax.src = document.querySelector(".img-12-min[data-num='1']").src;
+        imgText.innerHTML = document.querySelector(".img-12-min[data-num='1']").dataset.text;
+    } else {
+        active.className = "img-12-min";
+        let currentId = active.getAttribute("data-num"); //data-num of selected image
+        // console.log(curId);
 
-function activeChange(){
-    if (images[i] == document.querySelector('.active-img')) {
-        console.log(images[i]);
+        let next = document.querySelector(".img-12-min[data-num='" + (++currentId) + "']"); //next image. if there is no next image select the first
+        console.log(next);
+        console.log(next.src);
+        imgMax.src = next.src;
+        imgText.innerHTML = next.dataset.text;
+        if (next == null){
+            document.querySelector(".img-12-min[data-num='1']").className += " active-img";
+        } 
+        else{
+            next.className += " active-img";
+        } 
+    }
+}
+
+function prev1() {
+    let active = document.querySelector(".img-12-min.active-img");  //select active img
+    if (active == null) { //if no active image select the last
+        let lastElem = document.querySelector(".img-12-min[data-num='6']").className += " active-img";
+        imgMax.src = document.querySelector(".img-12-min[data-num='6']").src;
+        imgText.innerHTML = document.querySelector(".img-12-min[data-num='6']").dataset.text;
+    } else {
+        active.className = "img-12-min";
+        let currentId = active.getAttribute("data-num"); //data-num of selected img
+        let prev = document.querySelector(".img-12-min[data-num='" + (--currentId) + "']"); //prev image. if there is no prev image select the last
+        imgMax.src = prev.src;
+        imgText.innerHTML = prev.dataset.text;
+        if (prev == null){
+            document.querySelector(".img-12-min[data-num='5']").className += " active-img";
+        } 
+        else{
+            prev.className += " active-img";
+        } 
+    }
+}
+
+function reset(){
+    for(let i in images){
         images[i].classList.remove('active-img');
-        images[i-1].classList.add('active-img');
-    };
+        let active = document.querySelector(".img-12-min.active-img");  //select active img
+        let firstElem = document.querySelector(".img-12-min[data-num='1']").className += " active-img";
+        // console.log(document.querySelector(".img-12-min[data-num='1']").src);
+        imgMax.src = document.querySelector(".img-12-min[data-num='1']").src;
+        imgText.innerHTML = document.querySelector(".img-12-min[data-num='1']").dataset.text;
+    }
 }
 
 
-let counter = 0;
-// console.log(counterP);
-
-function prev1(){
-    
-        for (var i = 0 ; i < images.length; i++) {
-            counter--;
-            if(counter <= images.length-1 || images[i] != document.querySelector('.active-img')){
-                // counterP == images.length;
-                // images[6].src = 'img/6.png';
-                // images[6].classList.add('active-img');
-                
-                // console.log(images[i].src);
-                // counterP = images.length;
-                // console.log(counterP);
-                
-            }else{
-                if (images[i] == document.querySelector('.active-img')) {
-                    // console.log(images[i]);
-                    images[i].classList.remove('active-img');
-                    images[i-1].classList.add('active-img');
-
-                    imgMax.src = images[i-1].src;
-                    imgText.innerHTML = images[i-1].dataset.text;
-                   
-                    // images[i].classList.remove('active-img');
-                    // images[i-1].classList.add('active-img');
-                };
-            }
-}
-}
+ nextBtn.addEventListener('touchstart', next1);
+ prevBtn.addEventListener('touchstart', prev1);
+ resetBtn.addEventListener('touchstart', reset);
 
 
-// let counterN = 0;
-function next1(){
-    counter++;
-    console.log(counter);
-        for (var i = 0; i < images.length; i++) {
-            if(counter > images.length-1 && images[i] != document.querySelector('.active-img')){
-                counter = 0;
-            }
-            else{
-                if (images[i] == document.querySelector('.active-img')) {
-                    console.log(images[i]);
 
-                    images[i].classList.remove('active-img');
-                    images[counter].classList.add('active-img');
-                    imgMax.src = images[counter].src;
-                    console.log(images[counter].src);
-                    imgText.innerHTML = images[counter].dataset.text;
-                    
-                    
-                    
-                };
-            }
-}
-}
-
- prev.onclick = prev1;
- next.onclick = next1;
