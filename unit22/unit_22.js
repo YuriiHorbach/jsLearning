@@ -3,40 +3,42 @@
 /* Создайте блок div-1. Добавьте на него событие onclick. При срабатывании события  выводите в out-1 количество срабатываний события. В комментариях опишите результат. */
 a1 = 0;
 function t1() {
-    document.querySelector('.out-1').innerHTML =  a1++;
+    document.querySelector('.out-1').innerHTML ='click ' + a1++;
 }
 
 // ваше событие здесь!!!
-document.querySelector('.div-1').onclick = t1;
+document.querySelector('.div-1').onclick =  t1;
 
 // Task 2 ============================================
 /* Создайте блок div-2. Добавьте на него событие ondblclick. При срабатывании события  выводите в out-2 количество срабатываний события. В комментариях опишите результат. */
-
+a2 = 0;
 function t2() {
-
+    document.querySelector('.out-2').innerHTML ='dblclick ' + a2++;
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-2').ondblclick =  t2;
 
 
 // Task 3 ============================================
 /*  Создайте блок div-3. Добавьте на него событие onmousemove. При срабатывании события выводите в out-3 количество срабатываний события. В комментариях опишите результат. */
-
+a3 = 0;
 function t3() {
-
+    document.querySelector('.out-3').innerHTML ='mousemove ' + a3++;
 }
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-3').onmousemove =  t3;
 
 // Task 4 ============================================
 /*  Создайте блок div-4. Добавьте на него событие oncontextmenu. При срабатывании события выводите в out-4 количество срабатываний события. В комментариях опишите результат. */
-
+a4 = 0;
 function t4() {
-
+    document.querySelector('.out-4').innerHTML ='contextmenu ' + a4++;
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-4').oncontextmenu =  t4;
 
 // Task 5 ============================================
 /*   Создайте блок div-5. Добавьте на него событие onmousedown. При срабатывании события выводите в out-5 количество срабатываний события. В комментариях опишите результат. */
