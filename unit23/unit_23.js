@@ -16,10 +16,14 @@ document.querySelector('.b-1').onclick = t1;
 /* Создайте функцию t2 которая записывает  в LS  массив a2 = [7,6,5]. Ключ a2. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-2. */
 
 function t2() {
-
+    let a2 = [7,6,5];
+    localStorage.setItem('a2', a2);
+    let val = localStorage.getItem('a2');
+    console.log(val);
 }
 
 // ваше событие здесь!!!
+document.querySelector('.b-2').onclick = t2;
 
 
 // Task 3 ============================================
