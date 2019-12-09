@@ -17,9 +17,7 @@ document.querySelector('.b-1').onclick = t1;
 let a2 = [7,6,5];
 
 function t2() {
-    localStorage.setItem('a2', a2);
-    let val = localStorage.getItem('a2');
-    console.log(val);
+    localStorage.setItem('a2', JSON.stringify(a2));
 }
 
 // ваше событие здесь!!!
@@ -31,10 +29,12 @@ document.querySelector('.b-2').onclick = t2;
 
 function t3() {
     let out3 = document.querySelector('.out-3');
+    // console.log(localStorage.getItem('a2'));
     let val = localStorage.getItem('a2');
     val = JSON.parse(val);
+    console.log(val);
     for(let i in val){
-        out3.innerHTML += i +'-'+ val[i] +'<br>';
+        out3.innerHTML += i +' '+ val[i] +'<br>';
     }
 }
 // ваше событие здесь!!!
@@ -55,19 +55,28 @@ document.querySelector('.b-4').onclick = t4;
 /*   При нажатии кнопки t5 выведите из LS сохранненный массив a24. Выведите в out-4 в формате ключ пробел значение перенос строки. */
 
 function t5() {
-
+    let out5 = document.querySelector('.out-5');
+    let val = localStorage.getItem('a4');
+    val = JSON.parse(val);
+    for(let i in val){
+        out5.innerHTML += i +' '+ val[i] +'<br>';
+    }
 }
 
 // ваше событие здесь!!!
+
+document.querySelector('.b-5').onclick = t5;
+
 
 // Task 6 ============================================
 /*  Создайте функцию t6 которая очищает весь LS. Запуск по кнопке b-6*/
 
 function t6() {
-
+    localStorage.clear();
 }
 
 // ваше событие здесь!!!
+document.querySelector('.b-6').onclick = t6;
 
 
 // Task 7 ============================================
