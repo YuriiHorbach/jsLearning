@@ -14,9 +14,9 @@ document.querySelector('.b-1').onclick = t1;
 
 // Task 2 ============================================
 /* Создайте функцию t2 которая записывает  в LS  массив a2 = [7,6,5]. Ключ a2. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-2. */
+let a2 = [7,6,5];
 
 function t2() {
-    let a2 = [7,6,5];
     localStorage.setItem('a2', a2);
     let val = localStorage.getItem('a2');
     console.log(val);
@@ -30,11 +30,16 @@ document.querySelector('.b-2').onclick = t2;
 /*  При нажатии кнопки t3 выведите из LS сохранненный массив a2. Выведите в out-3 в формате ключ пробел значение перенос строки.  */
 
 function t3() {
-
+    let out3 = document.querySelector('.out-3');
+    console.log(localStorage.getItem('a2'));
+    let val = localStorage.getItem('a2');
+    val = JSON.parse(val);
+    for(let i in val){
+        out3.innerHTML += i +'-'+ val[i] +'<br>';
+    }
 }
-
 // ваше событие здесь!!!
-
+document.querySelector('.b-3').onclick = t3;
 
 // Task 4 ============================================
 /*  Создайте функцию t4 которая записывает  в LS  массив a4 = {hello: world, hi:mahai}. Ключ a4. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-4.*/
