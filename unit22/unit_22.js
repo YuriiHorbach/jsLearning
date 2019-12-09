@@ -66,20 +66,26 @@ document.querySelector('.div-6').onmouseenter = t6;
 // Task 7 ============================================
 /*   Создайте блок div-7. Добавьте на него событие onmouseleave. При срабатывании события выводите в out-7 количество срабатываний события. В комментариях опишите результат.*/
 
+a7 = 0;
 function t7() {
+    document.querySelector('.out-7').innerHTML ='mouseleave ' + a7++;
 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-7').onmouseleave = t7;
 
 // Task 8 ============================================
 /*   Создайте блок div-8. Добавьте на него событие onmouseout. При срабатывании события выводите в out-8 количество срабатываний события. В комментариях опишите результат.*/
 
+a8 = 0;
 function t8() {
+    document.querySelector('.out-8').innerHTML ='mouseout ' + a8++;
 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-8').onmouseout = t8;
 
 
 // Task 9 ============================================
