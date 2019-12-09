@@ -53,12 +53,14 @@ document.querySelector('.div-5').onmousedown = t5;
 
 // Task 6 ============================================
 /*  Создайте блок div-6. Добавьте на него событие onmouseenter. При срабатывании события выводите в out-6 количество срабатываний события. В комментариях опишите результат. */
-
+a6 = 0;
 function t6() {
+    document.querySelector('.out-6').innerHTML ='mouseenter ' + a6++;
 
 }
 
 // ваше событие здесь!!!
+document.querySelector('.div-6').onmouseenter = t6;
 
 
 // Task 7 ============================================
