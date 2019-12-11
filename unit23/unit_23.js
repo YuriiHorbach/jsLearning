@@ -112,12 +112,21 @@ document.querySelector('.b-8').onclick = t8;
 // Task 9 ============================================
 /* Создайте 3 radiobutton c именем rb-9. Задайте для каждого value: #fff, #c0c0c0, #555. При изменении radibutton записывайте значение value в LS с ключем bg. Добавьте слушатель событий на изменение LS. Если есть ключ bg то при наступлении события изменять цвет фона на заданный в LS. */
 
-function t9() {
 
-}
+
+window.addEventListener('storage', function(e){
+    document.querySelector('fieldset').style.backgroundColor = localStorage.getItem('bg');
+document.querySelector('.out91').innerHTML = localStorage.getItem('bg');
+});
+
+
+
+
+
+
 
 // ваше событие здесь!!!
-
+// t9();
 
 // Task 10 ============================================
 /*  Проект. Дана переменная card - корзина. Добавьте кнопку b-10 и функцию t10, которые сохраняют card в LS.*/
