@@ -35,3 +35,16 @@ section {
 .active-img {
     border: 3px solid black;
 }
+
+table td, table th{
+    text-align: center;
+    width: 400px;
+    margin: 0;
+}
+table{
+    margin: 0;
+}
+
+.btnMinus, .btnPlus{
+    background: rgb(189, 14, 14);
+}

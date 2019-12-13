@@ -137,26 +137,67 @@ const card = {
 }
 
 function t10() {
-
+    let btn = document.querySelector('.b-10');
+    localStorage.setItem('card', JSON.stringify(card));
 }
+
+t10();
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
 function t11() {
+    let card = localStorage.getItem('card');
 
+    val = JSON.parse(card);
+    console.log(val);
+    document.querySelector('.out-10').innerHTML = 
+        `<table class="table1" border="2" cellspacing="1">
+            <tr>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Quantity
+                </th>
+            </tr>`
+            for(let i in val){
+                // console.log(i);
+                // console.log(val[i]);
+             `  <tr>
+                    <td widh = "300px">
+                        ${i}
+                    </td>
+                    <td widh = "300px">
+                        ${val[i]}
+                    </td>
+                </tr>`
+            }
+         `</table>`
 }
 
 // ваше событие здесь!!!
+t11();
 
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12() {
+    let cardTable = document.querySelector('.table2');
+    let btnPlus = document.createElement('button');
+    btnPlus.className = 'btnPlus';
+    let btnMinus = document.createElement('button');
+    btnMinus.className = 'btnMinus';
+    // cardTable.append(btnMinus);
+    for(let i in cardTable){
+        // cardTable.append(btnPlus);
+        cardTable.append(btnMinus);
+    }
+    
 
 }
 
 // ваше событие здесь!!!
-
+t12();
 // Task 13 ============================================
 /*  Добавьте в таблицу footer который считает общее количество товара. */
 
