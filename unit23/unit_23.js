@@ -154,23 +154,50 @@ function t11() {
     val = JSON.parse(card);
     console.log(val);
 
-    let table = document.createElement('table'),
-    tr = table.appendChild(document.createElement('tbody'))
-              .appendChild(document.createElement('tr'));
+    // let table = document.createElement('table'),
+    // tr = table.appendChild(document.createElement('tbody'))
+    //           .appendChild(document.createElement('tr'));
     // for (let i in val) {
     //     tr.appendChild(document.createElement('td'));
     // }
+    let table = document.createElement('table');
+    let th = document.createElement('th');
+    th.innerHTML = `
+                <tr>
+                <th>
+                    Product
+                </th>
+                <th>
+                    Quantity
+                </th>
+            </tr> `
+    
+    
+    console.log(table);
+    table.append(th);
+    for(let i in val){
+        table.innerHTML += `<table>
+           
+            <tr>
+                <td>
+                    ${i}
+                </td>
+                <td>
+                    ${val[i]}
+                </td>
+
+            </tr>
+        </table>`
+    }
 
     document.querySelector('.out-10').append(table);
     let getEmptyTableTr = document.querySelector('table tr');
     
-    for(let i in val){
-
-        let td = `<td> ${i}</td> <td> ${val[i]}</td>`;
-        console.log(i + ' ' + val[i]);
-        getEmptyTableTr.innerHTML += td + '<br>';
-
-    }
+    // for(let i in val){
+    //     let td = `<td> ${i}</td> <td> ${val[i]}</td>`;
+    //     console.log(i + ' ' + val[i]);
+    //     getEmptyTableTr.innerHTML += td + '<br>';
+    // }
     
     // let getEmptyTable = document.querySelector('table');
     // let getEmptyTableTrTd = document.querySelector('.productTd');
