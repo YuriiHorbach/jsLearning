@@ -146,96 +146,42 @@ t10();
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
 function t11() {
-
-
     let card = localStorage.getItem('card');
-    console.log(card);
 
     val = JSON.parse(card);
-    console.log(val);
 
-    // let table = document.createElement('table'),
-    // tr = table.appendChild(document.createElement('tbody'))
-    //           .appendChild(document.createElement('tr'));
-    // for (let i in val) {
-    //     tr.appendChild(document.createElement('td'));
-    // }
     let table = document.createElement('table');
-    let th = document.createElement('th');
-    th.innerHTML = `
-                <tr>
-                <th>
-                    Product
-                </th>
-                <th>
-                    Quantity
-                </th>
-            </tr> `
+    let thead = document.createElement('thead');
+    let prodTitle = 'Product';
+    let quantTitle = 'Quantity';
+    thead.innerHTML += `
+        <tr>
+            <th>
+                ${prodTitle}
+            </th>
+            <th>
+                ${quantTitle}
+            </th>
+        </tr> 
+        `
     
-    
-    console.log(table);
-    table.append(th);
     for(let i in val){
-        table.innerHTML += `<table>
-           
+        table.innerHTML += `<table class="prodTable">
             <tr>
-                <td>
+                <td class="prod">
                     ${i}
                 </td>
-                <td>
+                <td class="quant">
                     ${val[i]}
                 </td>
 
             </tr>
         </table>`
     }
+    table.append(thead);
 
     document.querySelector('.out-10').append(table);
     let getEmptyTableTr = document.querySelector('table tr');
-    
-    // for(let i in val){
-    //     let td = `<td> ${i}</td> <td> ${val[i]}</td>`;
-    //     console.log(i + ' ' + val[i]);
-    //     getEmptyTableTr.innerHTML += td + '<br>';
-    // }
-    
-    // let getEmptyTable = document.querySelector('table');
-    // let getEmptyTableTrTd = document.querySelector('.productTd');
-    // console.log(getEmptyTableTrTd);
-
-    
-    // for(let i in val){
-
-    //     getEmptyTableTrTd.append(val[i]);
-
-    // }
-
-
-    // function generateTableHead(table, data) {
-    //     let thead = table.createTHead();
-    //     let row = thead.insertRow();
-    //     for (let key of data) {
-    //       let th = document.createElement("th");
-    //       let text = document.createTextNode(key);
-    //       th.appendChild(text);
-    //       row.appendChild(th);
-    //     }
-    // }
-
-    // function generateTable(table, data) {
-    //     for (let element of data) {
-    //       let row = table.insertRow();
-    //       for (key in element) {
-    //         let cell = row.insertCell();
-    //         let text = document.createTextNode(element[key]);
-    //         cell.appendChild(text);
-    //       }
-    //     }
-    // }
-
-    // generateTableHead(table, val);
-    // generateTable(table, val);
-   
 }
 
 // ваше событие здесь!!!
@@ -245,12 +191,12 @@ t11();
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12() {
-    let cardTable = document.querySelector('.table2');
+    let cardTable = document.querySelector('.prodTable');
     let btnPlus = document.createElement('button');
     btnPlus.className = 'btnPlus';
     let btnMinus = document.createElement('button');
     btnMinus.className = 'btnMinus';
-    // cardTable.append(btnMinus);
+    cardTable.append(btnMinus);
     for(let i in cardTable){
         // cardTable.append(btnPlus);
         cardTable.append(btnMinus);
