@@ -151,6 +151,7 @@ function t11() {
     val = JSON.parse(card);
 
     let table = document.createElement('table');
+    table.className = "prodTable";
     let thead = document.createElement('thead');
     let prodTitle = 'Product';
     let quantTitle = 'Quantity';
@@ -166,7 +167,7 @@ function t11() {
         `
     
     for(let i in val){
-        table.innerHTML += `<table class="prodTable">
+        table.innerHTML += `<table>
             <tr>
                 <td class="prod">
                     ${i}
@@ -191,15 +192,16 @@ t11();
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12() {
-    let cardTable = document.querySelector('.prodTable');
+    let prodTable = document.querySelector('.prodTable');
+    let product = document.querySelectorAll('.prod');
+
+    console.log(product);
     let btnPlus = document.createElement('button');
     btnPlus.className = 'btnPlus';
     let btnMinus = document.createElement('button');
     btnMinus.className = 'btnMinus';
-    cardTable.append(btnMinus);
-    for(let i in cardTable){
-        // cardTable.append(btnPlus);
-        cardTable.append(btnMinus);
+    for(let i in product){
+        console.log(product[i]);
     }
     
 
