@@ -37,9 +37,8 @@ section {
 }
 
 table td, table th{
-    text-align: center;
-    width: 400px;
-    margin: 0;
+   
+    border: 1px solid black;
 }
 table{
     margin: 0;

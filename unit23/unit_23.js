@@ -146,33 +146,69 @@ t10();
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
 function t11() {
+
+
     let card = localStorage.getItem('card');
+    console.log(card);
 
     val = JSON.parse(card);
     console.log(val);
-    document.querySelector('.out-10').innerHTML = 
-        `<table class="table1" border="2" cellspacing="1">
-            <tr>
-                <th>
-                    Product
-                </th>
-                <th>
-                    Quantity
-                </th>
-            </tr>`
-            for(let i in val){
-                // console.log(i);
-                // console.log(val[i]);
-             `  <tr>
-                    <td widh = "300px">
-                        ${i}
-                    </td>
-                    <td widh = "300px">
-                        ${val[i]}
-                    </td>
-                </tr>`
-            }
-         `</table>`
+
+    let table = document.createElement('table'),
+    tr = table.appendChild(document.createElement('tbody'))
+              .appendChild(document.createElement('tr'));
+    // for (let i in val) {
+    //     tr.appendChild(document.createElement('td'));
+    // }
+
+    document.querySelector('.out-10').append(table);
+    let getEmptyTableTr = document.querySelector('table tr');
+    
+    for(let i in val){
+
+        let td = `<td> ${i}</td> <td> ${val[i]}</td>`;
+        console.log(i + ' ' + val[i]);
+        getEmptyTableTr.innerHTML += td + '<br>';
+
+    }
+    
+    // let getEmptyTable = document.querySelector('table');
+    // let getEmptyTableTrTd = document.querySelector('.productTd');
+    // console.log(getEmptyTableTrTd);
+
+    
+    // for(let i in val){
+
+    //     getEmptyTableTrTd.append(val[i]);
+
+    // }
+
+
+    // function generateTableHead(table, data) {
+    //     let thead = table.createTHead();
+    //     let row = thead.insertRow();
+    //     for (let key of data) {
+    //       let th = document.createElement("th");
+    //       let text = document.createTextNode(key);
+    //       th.appendChild(text);
+    //       row.appendChild(th);
+    //     }
+    // }
+
+    // function generateTable(table, data) {
+    //     for (let element of data) {
+    //       let row = table.insertRow();
+    //       for (key in element) {
+    //         let cell = row.insertCell();
+    //         let text = document.createTextNode(element[key]);
+    //         cell.appendChild(text);
+    //       }
+    //     }
+    // }
+
+    // generateTableHead(table, val);
+    // generateTable(table, val);
+   
 }
 
 // ваше событие здесь!!!
