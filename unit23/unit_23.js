@@ -193,22 +193,37 @@ t11();
 
 function t12() {
     let prodTable = document.querySelector('.prodTable');
+    // console.log(prodTable);
     let product = document.querySelectorAll('.prod');
+   
+   
 
-    console.log(product);
-    let btnPlus = document.createElement('button');
-    btnPlus.className = 'btnPlus';
-    let btnMinus = document.createElement('button');
-    btnMinus.className = 'btnMinus';
     for(let i in product){
-        console.log(product[i]);
+        
+        let btnPlus = document.createElement('button');
+        btnPlus.className = 'button-primary btnPlus';
+        btnPlus.innerHTML = '+';
+        let btnMinus = document.createElement('button');
+        btnMinus.className = 'button-primary btnMinus';
+        btnMinus.innerHTML = '-';
+        product[i][0].append(btnPlus);
+        product[i][0].append(btnMinus);
+        console.log(product[i][0]);
+        
+        
     }
-    
+
+    console.log(this.btnMinus);
 
 }
 
 // ваше событие здесь!!!
 t12();
+
+bPlus = document.querySelectorAll('.btnPlus');
+bPlus.onclick = console.log('aaaaaaaaaaa');
+console.log(bPlus);
+
 // Task 13 ============================================
 /*  Добавьте в таблицу footer который считает общее количество товара. */
 
