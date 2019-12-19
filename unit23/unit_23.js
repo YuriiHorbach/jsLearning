@@ -152,19 +152,19 @@ function t11() {
 
     let table = document.createElement('table');
     table.className = "prodTable";
-    let thead = document.createElement('thead');
-    let prodTitle = 'Product';
-    let quantTitle = 'Quantity';
-    thead.innerHTML += `
-        <tr>
-            <th>
-                ${prodTitle}
-            </th>
-            <th>
-                ${quantTitle}
-            </th>
-        </tr> 
-        `
+    // let thead = document.createElement('thead');
+    // let prodTitle = 'Product';
+    // let quantTitle = 'Quantity';
+    // thead.innerHTML += `
+    //     <tr>
+    //         <th>
+    //             ${prodTitle}
+    //         </th>
+    //         <th>
+    //             ${quantTitle}
+    //         </th>
+    //     </tr> 
+    //     `
     
     for(let i in val){
         table.innerHTML += `<table>
@@ -179,7 +179,7 @@ function t11() {
             </tr>
         </table>`
     }
-    table.append(thead);
+    // table.append(thead);
 
     document.querySelector('.out-10').append(table);
     let getEmptyTableTr = document.querySelector('table tr');
@@ -193,36 +193,45 @@ t11();
 
 function t12() {
     let prodTable = document.querySelector('.prodTable');
-    // console.log(prodTable);
+    console.log(prodTable);
     let product = document.querySelectorAll('.prod');
+    console.log(product);
+    var trs = prodTable.getElementsByTagName("tr");
+    console.log(trs);
+
+
    
+
+    for (var i = 0; i < trs.length; i++){
+            tds = trs[i].querySelector("td");
+            console.log(tds);
+            let btnPlus = document.createElement('button');
+            btnPlus.className = 'button-primary btnPlus';
+            btnPlus.innerHTML = '+';
+            let btnMinus = document.createElement('button');
+            btnMinus.className = 'button-primary btnMinus';
+            btnMinus.innerHTML = '-';
+            tds.prepend(btnPlus);
+            tds.append(btnMinus);
+            
+        // for (var n = 0; n < trs.length; n++){
+        //      tds[n].innerHTML = "<div>Hi!</div>";
+        // }
+    }   
+
+    
+
+    
+
    
-
-    for(let i in product){
-        
-        let btnPlus = document.createElement('button');
-        btnPlus.className = 'button-primary btnPlus';
-        btnPlus.innerHTML = '+';
-        let btnMinus = document.createElement('button');
-        btnMinus.className = 'button-primary btnMinus';
-        btnMinus.innerHTML = '-';
-        product[i][0].append(btnPlus);
-        product[i][0].append(btnMinus);
-        console.log(product[i][0]);
-        
-        
-    }
-
-    console.log(this.btnMinus);
-
 }
+
+
 
 // ваше событие здесь!!!
 t12();
 
-bPlus = document.querySelectorAll('.btnPlus');
-bPlus.onclick = console.log('aaaaaaaaaaa');
-console.log(bPlus);
+
 
 // Task 13 ============================================
 /*  Добавьте в таблицу footer который считает общее количество товара. */
