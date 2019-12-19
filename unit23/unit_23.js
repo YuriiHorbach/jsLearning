@@ -199,9 +199,6 @@ function t12() {
     var trs = prodTable.getElementsByTagName("tr");
     console.log(trs);
 
-
-   
-
     for (var i = 0; i < trs.length; i++){
             tds = trs[i].querySelector("td");
             console.log(tds);
@@ -213,23 +210,24 @@ function t12() {
             btnMinus.innerHTML = '-';
             tds.prepend(btnPlus);
             tds.append(btnMinus);
-            
-        // for (var n = 0; n < trs.length; n++){
-        //      tds[n].innerHTML = "<div>Hi!</div>";
-        // }
-    }   
+    } 
 
+
+    let btnsPlus = document.querySelectorAll('.btnPlus');
     
-
-    
-
-   
+    for(let k = 0; k < btnsPlus.length; k++){
+        btnsPlus[k].addEventListener('click', function(e){
+            console.log('ffff');//increase cart item
+        });
+        console.log(btnsPlus[k]);
+    }  
 }
-
-
 
 // ваше событие здесь!!!
 t12();
+
+
+// console.log(btnPlus);
 
 
 
