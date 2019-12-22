@@ -147,12 +147,35 @@ document.querySelector('.div-11').addEventListener("touchstart", t11);
 let images = document.querySelectorAll('.img-12-min');
 let imgMax = document.querySelector('.img-12-max');
 let imgText = document.querySelector('.img-12-text');
-let prevBtn = document.querySelector('.prev');
-let nextBtn = document.querySelector('.next');
-let resetBtn = document.querySelector('.reset');
+let arrText = [];
+// let pText = document.querySelector('.img-12-text');
+// Кнопки
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
+let reset = document.querySelector('.reset');
+let globalSrc = '';
+let globalImg = '';
+let out12 = document.querySelector('.out-12');
+
+const a3 ={'1.png': 'data1',
+           '2.png': 'data2',
+           '3.png': 'data3', 
+           '4.png': 'data4',
+           '5.png': 'data5',
+           '6.png': 'data6'
+        };
+const a = [1,2,3,4,5,6];
+const a1 = {
+    0 : 'data1',
+    1 : 'data2',
+    2 : 'data3',
+    3 : 'data4',
+    4 : 'data5',
+    5 : 'data6'
+};
 
 
-function changeImg(images){
+function changeImg(){
     imgMax.src = this.src;
     imgText.innerHTML = this.dataset.text;
 
@@ -163,80 +186,154 @@ function changeImg(images){
 }
 
 
-for (var i = 0 ; i < images.length; i++) {
-    images[i].addEventListener('touchstart' , changeImg);
-}
 
-// function activeChange(){
-//     if (images[i] == document.querySelector('.active-img')) {
-//         console.log(images[i]);
-//         images[i].classList.remove('active-img');
-//         images[i-1].classList.add('active-img');
-//     };
-// }
 
-function next1() {
-    let active = document.querySelector(".img-12-min.active-img");  //select active img
-    if (active == null) { //if no active  select the 1st img
-        let firstElem = document.querySelector(".img-12-min[data-num='1']").className += " active-img";
-        // console.log(document.querySelector(".img-12-min[data-num='1']").src);
-        imgMax.src = document.querySelector(".img-12-min[data-num='1']").src;
-        imgText.innerHTML = document.querySelector(".img-12-min[data-num='1']").dataset.text;
-    } else {
-        active.className = "img-12-min";
-        let currentId = active.getAttribute("data-num"); //data-num of selected image
-        // console.log(curId);
 
-        let next = document.querySelector(".img-12-min[data-num='" + (++currentId) + "']"); //next image. if there is no next image select the first
-        console.log(next);
-        console.log(next.src);
-        imgMax.src = next.src;
-        imgText.innerHTML = next.dataset.text;
-        if (next == null){
-            document.querySelector(".img-12-min[data-num='1']").className += " active-img";
-        } 
-        else{
-            next.className += " active-img";
-        } 
-    }
-}
 
-function prev1() {
-    let active = document.querySelector(".img-12-min.active-img");  //select active img
-    if (active == null) { //if no active image select the last
-        let lastElem = document.querySelector(".img-12-min[data-num='6']").className += " active-img";
-        imgMax.src = document.querySelector(".img-12-min[data-num='6']").src;
-        imgText.innerHTML = document.querySelector(".img-12-min[data-num='6']").dataset.text;
-    } else {
-        active.className = "img-12-min";
-        let currentId = active.getAttribute("data-num"); //data-num of selected img
-        let prev = document.querySelector(".img-12-min[data-num='" + (--currentId) + "']"); //prev image. if there is no prev image select the last
-        imgMax.src = prev.src;
-        imgText.innerHTML = prev.dataset.text;
-        if (prev == null){
-            document.querySelector(".img-12-min[data-num='5']").className += " active-img";
-        } 
-        else{
-            prev.className += " active-img";
-        } 
-    }
-}
 
-function reset(){
-    for(let i in images){
+function activeChange(){
+    if (images[i] == document.querySelector('.active-img')) {
+        console.log(images[i]);
         images[i].classList.remove('active-img');
-        let active = document.querySelector(".img-12-min.active-img");  //select active img
-        let firstElem = document.querySelector(".img-12-min[data-num='1']").className += " active-img";
-        // console.log(document.querySelector(".img-12-min[data-num='1']").src);
-        imgMax.src = document.querySelector(".img-12-min[data-num='1']").src;
-        imgText.innerHTML = document.querySelector(".img-12-min[data-num='1']").dataset.text;
-    }
+        images[i-1].classList.add('active-img');
+    };
 }
 
 
- nextBtn.addEventListener('touchstart', next1);
- prevBtn.addEventListener('touchstart', prev1);
- resetBtn.addEventListener('touchstart', reset);
+let counter = 0;
+function prev1(){
+    counter--;
 
+        for (let i = 0 ; i < images.length; i++) {
+            images[i].addEventListener('touchstart' , changeImg); 
+            if(counter <= 0){
+                counter = images.length;
+            }else{
+                if (images[i] == document.querySelector('.active-img')) {
+                    console.log(images[i]);
+                    imgMax.src = images[i-1].src;
+                    imgText.innerHTML = images[i-1].dataset.text;
+                   
+                    images[i].classList.remove('active-img');
+                    images[i-1].classList.add('active-img');
+                };
+            }
+        }
+}
+function prev3(){
+    counter--;
+            images[counter].addEventListener('touchstart' , changeImg); 
+            if(counter <= 0){
+                counter = images.length;
+            }else{
+                if (images[counter] == document.querySelector('.active-img')) {
+                    console.log(images[counter]);
+                    imgMax.src = images[counter-1].src;
+                    imgText.innerHTML = images[counter-1].dataset.text;
+                   
+                    images[counter].classList.remove('active-img');
+                    images[counter-1].classList.add('active-img');
+                };
+            }
+}
+
+
+function next1(){
+    counter +=1;
+
+    // for(let i = 0 ; i < images.length; i++){
+          
+       
+    
+    if(counter > images.length){
+        counter = -1;
+    }
+    else{
+        if (images[counter] == document.querySelector('.active-img')){
+            images[counter].addEventListener('touchstart' , changeImg);
+            imgMax.src = images[counter].src;
+            // out12.src = "img src = img/'" + images[counter] + "'.png";
+            console.log(images[counter].src);
+            // console.log(images);
+            // imgMax.src = images[counter-1].src;
+            console.log(imgMax.src);
+            // imgText.innerHTML = images[counter-1].dataset.text;
+            
+            images[counter].classList.remove('active-img');
+            images[counter+1].classList.add('active-img');
+        } 
+    }
+}
+
+/*
+
+https://codepen.io/webhubua/pen/NWWQEVg
+*/
+
+function next2(){
+    counter +=1;
+        // console.log(images[i].src);
+        // images[1].src = "img/2.png";
+        // console.log(images[1].src);
+        console.log(counter);
+        if(counter < images.length-1){
+            console.log(images[counter]);
+            // images[counter] = images.length-1;
+            img = "<img src='img/'"+images[counter]+"'.png' >";
+            out12.innerHTML = "img/";
+        }
+        // else{
+        //     if (images[counter] == document.querySelector('.active-img')){
+        //         // images[counter].classList.add('active-img');
+        //         // images[counter-1].classList.remove('active-img');
+                
+        //         // images[counter].addEventListener('touchstart' , changeImg);
+        //         imgMax.src = images[counter].src;
+        //         // out12.src = "img src = img/'" + images[counter] + "'.png";
+        //         console.log(images[counter].src);
+        //         // console.log(images);
+        //         // imgMax.src = images[counter-1].src;
+        //         console.log(imgMax.src);
+        //         // imgText.innerHTML = images[counter-1].dataset.text;
+                
+                
+        //     } 
+        // }
+}
+
+function prev2(){
+    counter--;
+
+    // for(let i = 0 ; i < images.length; i++){
+          
+       
+    
+    if(counter <= 0){
+        counter = images.length-1;
+    }
+    else{
+        if (images[counter] == document.querySelector('.active-img')){
+            images[counter].addEventListener('touchstart' , changeImg);
+            imgMax.src = images[counter].src;
+            // out12.src = "img src = img/'" + images[counter] + "'.png";
+            console.log(images[counter].src);
+            // console.log(images);
+            // imgMax.src = images[counter-1].src;
+            console.log(imgMax.src);
+            // imgText.innerHTML = images[counter-1].dataset.text;
+            
+            images[counter].classList.remove('active-img');
+            images[counter-1].classList.add('active-img');
+        } 
+    }
+}
+       
+
+counter -= 1;
+
+
+ prev.onclick = prev1;
+//  prev.onclick = prev2;
+ next.onclick = next2;
 
 
