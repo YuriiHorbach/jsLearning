@@ -149,9 +149,12 @@ function t11() {
     let card = localStorage.getItem('card');
 
     val = JSON.parse(card);
+    console.log(val);
 
-    let table = document.createElement('table');
-    table.className = "prodTable";
+    
+
+    // let table = document.createElement('table');
+    // table.className = "prodTable";
     // let thead = document.createElement('thead');
     // let prodTitle = 'Product';
     // let quantTitle = 'Quantity';
@@ -166,24 +169,52 @@ function t11() {
     //     </tr> 
     //     `
     
-    for(let i in val){
-        table.innerHTML += `<table>
-            <tr>
-                <td class="prod">
-                    ${i}
-                </td>
-                <td class="quant">
-                    ${val[i]}
-                </td>
+//     for(let i in val){
+//         table.innerHTML += `<table>
+//             <tr>
+//                 <td class="plus" data-plus = "${i}">
+                    
+//                 </td>
+//                 <td class="prod">
+//                     ${i}
+//                 </td>
+//                 <td class="minus" data-minus = "${i}">
+                    
+//                 </td>
+//                 <td class="quant" data-quant = "${i}">
+//                     ${val[i]}
+//                 </td>
 
-            </tr>
-        </table>`
-    }
-    // table.append(thead);
+//             </tr>
+//         </table>`
+//     }
+//     // table.append(thead);
 
-    document.querySelector('.out-10').append(table);
-    let getEmptyTableTr = document.querySelector('table tr');
+//     document.querySelector('.out-10').append(table);
+//     let getEmptyTableTr = document.querySelector('table tr');
+
+/*-------------------------------------*/
+
+let out = '';
+
+for(let i in val){
+    
+    out += '<div class="minCart">';
+    out += `<p class = "prod" data-prod = "${i}">  ${i} </p>`;
+    out += `<p class = "prod" data-prod = "${i}">  ${val[i]} </p>`;
+
+    out += '</div>';
 }
+
+ 
+
+document.querySelector('.out-10').append('minCart');
+/*-------------------------------------*/
+
+
+}
+
+
 
 // ваше событие здесь!!!
 t11();
@@ -192,43 +223,80 @@ t11();
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12() {
-    let prodTable = document.querySelector('.prodTable');
-    console.log(prodTable);
-    let product = document.querySelectorAll('.prod');
-    console.log(product);
-    var trs = prodTable.getElementsByTagName("tr");
-    console.log(trs);
+    // let prodTable = document.querySelector('.prodTable');
+    // console.log(prodTable);
+    // let productPlus = document.querySelectorAll('.plus');
+    // let productMinus = document.querySelectorAll('.minus');
+    // var trs = prodTable.getElementsByTagName("tr");
+    // console.log(trs);
 
-    for (var i = 0; i < trs.length; i++){
-            tds = trs[i].querySelector("td");
-            console.log(tds);
-            let btnPlus = document.createElement('button');
-            btnPlus.className = 'button-primary btnPlus';
-            btnPlus.innerHTML = '+';
-            let btnMinus = document.createElement('button');
-            btnMinus.className = 'button-primary btnMinus';
-            btnMinus.innerHTML = '-';
-            tds.prepend(btnPlus);
-            tds.append(btnMinus);
-    } 
+    // for (var i = 0; i < trs.length; i++){
+    //         tdsp = trs[i].querySelector(".plus");
+    //         tdsm = trs[i].querySelector(".minus");
+    //         console.log(tdsp);
+    //         console.log(tdsm);
+    //         let btnPlus = document.createElement('button');
+    //         btnPlus.className = 'button-primary btnPlus';
+    //         btnPlus.innerHTML = '+';
+    //         let btnMinus = document.createElement('button');
+    //         btnMinus.className = 'button-primary btnMinus';
+    //         btnMinus.innerHTML = '-';
+    //         tdsp.append(btnPlus);
+    //         tdsm.append(btnMinus);
+    // } 
 
+    // prodTable.onclick = function(event) {
+    //     let td = event.target.closest('td'); // (1)
+      
+    //     if (!td) return; // (2)
+      
+    //     if (!prodTable.contains(td)) return; // (3)
+        
 
-    let btnsPlus = document.querySelectorAll('.btnPlus');
-    
-    for(let k = 0; k < btnsPlus.length; k++){
-        btnsPlus[k].addEventListener('click', function(e){
-            console.log('ffff');//increase cart item
-        });
-        console.log(btnsPlus[k]);
-    }  
+    //      if(this.dataset.plus === this.dataset.quant){
+    //          document.querySelector('.quant').innerHTML++;
+    //      }
+    //      else if(this.dataset.minus === this.dataset.quant){
+    //         document.querySelector('.quant').innerHTML--;
+    //         if(document.querySelector('.quant').innerHTML = 0 ){
+    //             document.querySelector('.quant').innerHTML = 0;
+    //         }
+    //      }
+      
+    //     console.log(td); // (4)
+    //     console.log(td.dataset.plus); // (4)
+    //     console.log(td.dataset.minus); // (4)
+    // };
+    // console.log(prodTable);
+
 }
 
 // ваше событие здесь!!!
 t12();
 
+// let prodTable = document.querySelector('.prodTable');
 
-// console.log(btnPlus);
 
+// prodTable.onclick = function(event) {
+//     let td = event.target.closest('td'); // (1)
+  
+//     if (!td) return; // (2)
+  
+//     if (!prodTable.contains(td)) return; // (3)
+//     console.log(td.dataset.prod);
+//     console.log(td.dataset.quant);
+
+//      if(td.dataset.prod === td.dataset.quant){
+//          document.querySelector('.quant').innerHTML++;
+//      }
+//      console.log(td.dataset.quant);
+//   };
+
+
+
+
+
+     
 
 
 // Task 13 ============================================

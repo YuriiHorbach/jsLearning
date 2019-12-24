@@ -47,3 +47,26 @@ table{
 .btnMinus, .btnPlus{
     background: rgb(189, 14, 14);
 }
+
+.prod{
+    border-right-style: hidden;
+    border-left-style: hidden;
+    float: left;
+}
+
+.out-10{
+    border: 1px solid black;
+
+}
+
+.minCart {
+    width: 0 auto;
+    
+    margin: 10px;
+    float: left;
+    text-align: center;
+}
+.minCart button {
+    display: block;
+    margin: 20px auto;
+}
