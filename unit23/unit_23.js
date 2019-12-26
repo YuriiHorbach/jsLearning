@@ -151,67 +151,26 @@ function t11() {
     val = JSON.parse(card);
     console.log(val);
 
-    
+    let out = '';
 
-    // let table = document.createElement('table');
-    // table.className = "prodTable";
-    // let thead = document.createElement('thead');
-    // let prodTitle = 'Product';
-    // let quantTitle = 'Quantity';
-    // thead.innerHTML += `
-    //     <tr>
-    //         <th>
-    //             ${prodTitle}
-    //         </th>
-    //         <th>
-    //             ${quantTitle}
-    //         </th>
-    //     </tr> 
-    //     `
-    
-//     for(let i in val){
-//         table.innerHTML += `<table>
-//             <tr>
-//                 <td class="plus" data-plus = "${i}">
-                    
-//                 </td>
-//                 <td class="prod">
-//                     ${i}
-//                 </td>
-//                 <td class="minus" data-minus = "${i}">
-                    
-//                 </td>
-//                 <td class="quant" data-quant = "${i}">
-//                     ${val[i]}
-//                 </td>
+    for(let i in val){
+        
+        out += `<div class="minCart">`;
+        out += `<button class="button-primary plus" data-prod = "${i}" >+</button>`; 
+        
 
-//             </tr>
-//         </table>`
-//     }
-//     // table.append(thead);
+        out += `<p class = "prod" data-prod = "${i}">  ${i} </p>`;
 
-//     document.querySelector('.out-10').append(table);
-//     let getEmptyTableTr = document.querySelector('table tr');
+        out += `<button class="button-primary minus"  data-prod = "${i}">-</button>`;
+        
+        out += `<p class = "quantity" data-prod = "${i}"> &nbsp ${val[i]} </p>`;
+        out += `<br>`;
 
-/*-------------------------------------*/
+        out += `</div>`;
+        out += `<br>`;
+    }
 
-let out = '';
-
-for(let i in val){
-    
-    out += '<div class="minCart">';
-    out += `<p class = "prod" data-prod = "${i}">  ${i} </p>`;
-    out += `<p class = "prod" data-prod = "${i}">  ${val[i]} </p>`;
-
-    out += '</div>';
-}
-
- 
-
-document.querySelector('.out-10').append('minCart');
-/*-------------------------------------*/
-
-
+    document.querySelector('.out-10').innerHTML += out;
 }
 
 
@@ -223,74 +182,40 @@ t11();
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12() {
-    // let prodTable = document.querySelector('.prodTable');
-    // console.log(prodTable);
-    // let productPlus = document.querySelectorAll('.plus');
-    // let productMinus = document.querySelectorAll('.minus');
-    // var trs = prodTable.getElementsByTagName("tr");
-    // console.log(trs);
 
-    // for (var i = 0; i < trs.length; i++){
-    //         tdsp = trs[i].querySelector(".plus");
-    //         tdsm = trs[i].querySelector(".minus");
-    //         console.log(tdsp);
-    //         console.log(tdsm);
+        // for (var j = 0; i < prod.length; j++){
+    //     console.log(prod[j]);
+    //     console.log(prod);
     //         let btnPlus = document.createElement('button');
     //         btnPlus.className = 'button-primary btnPlus';
     //         btnPlus.innerHTML = '+';
+    //         btnPlus.setAttribute('data', 'prod');
     //         let btnMinus = document.createElement('button');
     //         btnMinus.className = 'button-primary btnMinus';
     //         btnMinus.innerHTML = '-';
-    //         tdsp.append(btnPlus);
-    //         tdsm.append(btnMinus);
+    //         btnMinus.setAttribute('data', 'quant');
+    //         prod[i].prepend(btnPlus);
+    //         prod[i].append(btnMinus);
     // } 
 
-    // prodTable.onclick = function(event) {
-    //     let td = event.target.closest('td'); // (1)
-      
-    //     if (!td) return; // (2)
-      
-    //     if (!prodTable.contains(td)) return; // (3)
-        
 
-    //      if(this.dataset.plus === this.dataset.quant){
-    //          document.querySelector('.quant').innerHTML++;
-    //      }
-    //      else if(this.dataset.minus === this.dataset.quant){
-    //         document.querySelector('.quant').innerHTML--;
-    //         if(document.querySelector('.quant').innerHTML = 0 ){
-    //             document.querySelector('.quant').innerHTML = 0;
-    //         }
-    //      }
-      
-    //     console.log(td); // (4)
-    //     console.log(td.dataset.plus); // (4)
-    //     console.log(td.dataset.minus); // (4)
-    // };
-    // console.log(prodTable);
 
+    allButtonsPlus = document.querySelectorAll('.plus');
+    allButtonsMinus = document.querySelectorAll('.minus');
+    console.log(allButtonsPlus);
+    console.log(allButtonsMinus);
+
+    for(let i = 0; i < allButtonsPlus.length; i++){
+        console.log(allButtonsPlus[i]);
+        console.log(this);
+    }
+
+  
 }
 
 // ваше событие здесь!!!
 t12();
 
-// let prodTable = document.querySelector('.prodTable');
-
-
-// prodTable.onclick = function(event) {
-//     let td = event.target.closest('td'); // (1)
-  
-//     if (!td) return; // (2)
-  
-//     if (!prodTable.contains(td)) return; // (3)
-//     console.log(td.dataset.prod);
-//     console.log(td.dataset.quant);
-
-//      if(td.dataset.prod === td.dataset.quant){
-//          document.querySelector('.quant').innerHTML++;
-//      }
-//      console.log(td.dataset.quant);
-//   };
 
 
 

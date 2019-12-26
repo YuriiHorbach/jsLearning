@@ -48,25 +48,29 @@ table{
     background: rgb(189, 14, 14);
 }
 
-.prod{
-    border-right-style: hidden;
-    border-left-style: hidden;
+
+.prod, .quantity{
+    border: 1px solid black;    
     float: left;
+    padding: 10px;
+    margin: 5px;
 }
 
-.out-10{
-    border: 1px solid black;
-
+.quantity{
+    border: 1px solid black;    
+    float: left;
+    padding: 10px;
+    margin: 5px;
+    height: 45px;
 }
 
-.minCart {
-    width: 0 auto;
-    
+.minCart{
+    /* padding: 30px; */
+    margin: 5px;
+    height: 90px;
+}
+
+.plus, .minus{
     margin: 10px;
     float: left;
-    text-align: center;
-}
-.minCart button {
-    display: block;
-    margin: 20px auto;
 }
