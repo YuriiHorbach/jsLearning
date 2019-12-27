@@ -145,72 +145,103 @@ t10();
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
+
 function t11() {
     let card = localStorage.getItem('card');
 
     val = JSON.parse(card);
-    console.log(val);
 
-    let out = '';
+    let table = document.createElement('table');
+    table.className = "prodTable";
+    // let thead = document.createElement('thead');
+    // let prodTitle = 'Product';
+    // let quantTitle = 'Quantity';
+    // thead.innerHTML += `
+    //     <tr>
+    //         <th>
+    //             ${prodTitle}
+    //         </th>
+    //         <th>
+    //             ${quantTitle}
+    //         </th>
+    //     </tr> 
+    //     `
 
     for(let i in val){
-        
-        out += `<div class="minCart">`;
-        out += `<button class="button-primary plus" data-prod = "${i}" >+</button>`; 
-        
-
-        out += `<p class = "prod" data-prod = "${i}">  ${i} </p>`;
-
-        out += `<button class="button-primary minus"  data-prod = "${i}">-</button>`;
-        
-        out += `<p class = "quantity" data-prod = "${i}"> &nbsp ${val[i]} </p>`;
-        out += `<br>`;
-
-        out += `</div>`;
-        out += `<br>`;
+        table.innerHTML += `
+            <tr>
+                <td >
+                    <button class="button-primary plus" id = "${i}" data-plus="${i}" >+</button>
+                </td>
+                <td class="prod" id = "${i}" >
+                    ${i}
+                </td>
+                <td >
+                    <button class="button-primary minus" id = "${i}" data-minus="${i}" >-</button>
+                </td>
+                <td>
+                    <div class="quant" id = "${i}" data-quant="${i}">${val[i]}</div> 
+                </td>
+            </tr>`
     }
+    // table.append(thead);
 
-    document.querySelector('.out-10').innerHTML += out;
+    document.querySelector('.out-10').append(table);
+    let getEmptyTableTr = document.querySelector('table tr');
 }
-
-
 
 // ваше событие здесь!!!
 t11();
 
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
-
 function t12() {
+    let prodTable = document.querySelector('.prodTable');
+    console.log(prodTable);
+    // var trs = prodTable.getElementsByTagName("tr");
+    // console.log(trs);
 
-        // for (var j = 0; i < prod.length; j++){
-    //     console.log(prod[j]);
-    //     console.log(prod);
+    // for (var i = 0; i < trs.length; i++){
+    //         tdsp = trs[i].querySelector(".plus");
+    //         tdsm = trs[i].querySelector(".minus");
+    //         console.log(tdsp);
+    //         console.log(tdsm);
     //         let btnPlus = document.createElement('button');
     //         btnPlus.className = 'button-primary btnPlus';
     //         btnPlus.innerHTML = '+';
-    //         btnPlus.setAttribute('data', 'prod');
     //         let btnMinus = document.createElement('button');
     //         btnMinus.className = 'button-primary btnMinus';
     //         btnMinus.innerHTML = '-';
-    //         btnMinus.setAttribute('data', 'quant');
-    //         prod[i].prepend(btnPlus);
-    //         prod[i].append(btnMinus);
+    //         tdsp.append(btnPlus);
+    //         tdsm.append(btnMinus);
     // } 
 
+    let btnPlus = document.querySelectorAll('.plus');
+    
 
+    for(let i = 0; i < btnPlus.length; i ++){
+        btnPlus[i].addEventListener('click',function(){
+            console.log(this.id);
+            // buttonControll(this, i);
+        });
 
-    allButtonsPlus = document.querySelectorAll('.plus');
-    allButtonsMinus = document.querySelectorAll('.minus');
-    console.log(allButtonsPlus);
-    console.log(allButtonsMinus);
-
-    for(let i = 0; i < allButtonsPlus.length; i++){
-        console.log(allButtonsPlus[i]);
-        console.log(this);
+        function buttonControll(btnPlus, i){
+            console.log(i);
+            console.log(btnPlus.id);
+        }
+        console.log(btnPlus[i]);
+        let quant = document.querySelectorAll('.quant');
+        // for(let j = 0; j < quant.length; j ++){
+            
+        //     if(this === quant[j].dataset.quant){
+        //         console.log('found ' + btnPlus[i]);
+        //     }
+        // }
     }
 
-  
+
+
+
 }
 
 // ваше событие здесь!!!
@@ -241,3 +272,15 @@ function t13() {
 }
 
 // ваше событие здесь!!!
+
+var buttons = document.querySelectorAll(".btn"); //returns a nodelist
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    buttonsControl(this, i);
+  }, false);
+}
+
+function buttonsControl(button, i) {
+  console.log(i);
+  console.log(button.className);
+}

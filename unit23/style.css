@@ -36,10 +36,11 @@ section {
     border: 3px solid black;
 }
 
-table td, table th{
+table tr{
     text-align: center;
     border: 1px solid black;
 }
+
 table{
     margin: 0;
 }
@@ -49,11 +50,20 @@ table{
 }
 
 
-.prod, .quantity{
+.prodTable{
+    border: 1px solid black; 
+}
+
+/* .prod, .quantity{
     border: 1px solid black;    
     float: left;
     padding: 10px;
     margin: 5px;
+} */
+
+.prod{
+    border-left-style: 1px solid black;
+    border-right-style: 1px solid black;
 }
 
 .quantity{
