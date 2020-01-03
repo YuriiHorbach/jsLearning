@@ -40,17 +40,8 @@ table td, table th{
     text-align: center;
     border: 1px solid black;
 }
-/* table{
+table{
     margin: 0;
-} */
-
-.tfoot{
-    width: auto;
-   
-}
-.tfoot tr{
-    /* width: auto; */
-    border: 1px solid black;
 }
 
 .btnMinus, .btnPlus{

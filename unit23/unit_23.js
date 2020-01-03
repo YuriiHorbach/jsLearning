@@ -137,104 +137,122 @@ const card = {
 }
 
 function t10() {
-    let btn = document.querySelector('.b-10');
+    
     localStorage.setItem('card', JSON.stringify(card));
+    t11();
+   
 }
-
-t10();
+t12();
+document.querySelector('.b-10').onclick = t10;
+// t10();
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
-
 
 function t11() {
     let card = localStorage.getItem('card');
 
     val = JSON.parse(card);
-    console.log(val);
 
-    let out = '';
+    let table = document.createElement('table');
+    table.className = "prodTable";
+    
+    let sum = 0;
+    if(val){
+        t12();
+        table.innerHTML += `
+            <thead>
+                <tr>
+                    <th colspan = "3">Name</th>
+                    <th colspan = "3">Quantity</th>
+                </tr>
+                </thead>
+             `;
 
-    for(let i in val){
+             for(let i in val){
+                table.innerHTML += `
+                    <tr>
+                        <td >
+                            <button class="button-primary btnPlus" id = "${i}">+</button>
+                        </td>
+                        <td class="prod">
+                            ${i}
+                        </td>
+                        <td>
+                        <button class="button-primary btnMinus" id = "${i}">-</button>
+                        </td>
+                        <td>
+                            <div class="quant" id = "${i}">
+                                ${val[i]}
+                            </div>
+                        </td>
         
-        out += `<div class="minCart">`;
-        out += `<button class="button-primary plus" data-prodplus = "${i}" >+</button>`; 
+                    </tr>`
+                sum += val[i];
+            }
+            table.innerHTML += `
+            <tr>
+            <td colspan = "3">Total</td>
+            <td class = "cartSum">${sum}</td>
+        </tr>`;
+           
         
-
-        out += `<p class = "prod" data-prod = "${i}">  ${i} </p>`;
-
-        out += `<button class="button-primary minus"  data-prodminus = "${i}">-</button>`;
-        
-        out += `<p class = "quantity" data-prodquant = "${i}"> &nbsp ${val[i]} </p>`;
-        out += `<br>`;
-
-        out += `</div>`;
-        out += `<br>`;
+    }else {
+        table.innerHTML = '<p >Cart is empty</p>'
     }
-
-    document.querySelector('.out-10').innerHTML += out;
+    
+    document.querySelector('.out-10').append(table);
+    
 }
 
 // ваше событие здесь!!!
-t11();
+
 
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12() {
+    
+    let btnsPlus = document.querySelectorAll('.btnPlus');
+    let btnsMinus = document.querySelectorAll('.btnMinus');
+    console.log(btnsPlus);
+    const cartLS = JSON.parse(localStorage.getItem('card'));
 
-    // for (var j = 0; i < prod.length; j++){
-//     console.log(prod[j]);
-//     console.log(prod);
-//         let btnPlus = document.createElement('button');
-//         btnPlus.className = 'button-primary btnPlus';
-//         btnPlus.innerHTML = '+';
-//         btnPlus.setAttribute('data', 'prod');
-//         let btnMinus = document.createElement('button');
-//         btnMinus.className = 'button-primary btnMinus';
-//         btnMinus.innerHTML = '-';
-//         btnMinus.setAttribute('data', 'quant');
-//         prod[i].prepend(btnPlus);
-//         prod[i].append(btnMinus);
-// } 
-
-
-
-let allButtonsPlus = document.querySelectorAll('.plus');
-let allButtonsMinus = document.querySelectorAll('.minus');
-let allProds = document.querySelectorAll('.prod');
-let allMinicards = document.getElementsByClassName('minCart');
-
-
-console.log(allMinicards);
-console.log(allMinicards.children.length);
-/*-------------------------------------*/
-for(let i = 0; i < allButtonsPlus.length; i++){
-    allButtonsPlus[i].onclick = function(){
-
-        for(let j in allProds){
-            if(this.dataset.prodplus == allProds[j].innerHTML){
+    for(let k = 0; k < btnsPlus.length; k++){
+         console.log(btnsPlus[k]);
+            btnsPlus[k].onclick = function(){
+                let currentButton = this.id;
+                let quantBlock = document.querySelectorAll('.quant');
+                for(let j = 0; j < quantBlock.length; j++){
+                   if(currentButton == quantBlock[j].id){
+                    quantBlock[j].innerHTML++;
+                     localStorage.setItem('cart', JSON.stringify(cartLS));
+                      t11();
+                   }
+                }
             }
+    } 
+
+    for(let p = 0; p < btnsMinus.length; p++){
+        // console.log(btnsPlus[k]);
+        btnsMinus[p].onclick = function(){
+                let currentButton = this.id;
+                let quantBlock = document.querySelectorAll('.quant');
+                for(let l = 0; l < quantBlock.length; l++){
+                   if(currentButton == quantBlock[l].id){
+                    quantBlock[l].innerHTML--;
+                    if(quantBlock[l].innerHTML < 0){
+                        quantBlock[l].innerHTML = 0;
+                    }
+                   }
+                }
         }
-        let dataAtrPlus = this.dataset.prodplus;
-        
-        
-        // if(dataAtr == ){}
-
     }
-}
-
-let product = document.querySelectorAll('.prod');
-for(let j = 0; j < product.length; j++ ){
-    console.log(this.innerHTML);
-}
 
 
+    
 }
 
 // ваше событие здесь!!!
-t12();
-
-
 
 
 
@@ -243,25 +261,37 @@ t12();
 
 function t13() {
 
+    let totalCells = document.querySelectorAll('.quant');
+    let sum = 0;
+    for(let key of totalCells){
+       sum += + key.innerHTML;
+    }
+    let tfoot = document.createElement('tfoot');
+    tfoot.className = 'tfoot';
+    tfoot.innerHTML = `
+        <tr>
+            <td colspan = "3">Total</td>
+            <td class = "cartSum">${sum}</td>
+        </tr>`;
+    
+    
+   
+    let prodTable = document.querySelector('.prodTable');
+    prodTable.append(tfoot);
+
+    let cartSum = document.querySelector('.cartSum');
+    console.log(cartSum.innerHTML);
+    localStorage.setItem('cart', JSON.stringify());
+
 }
 
 // ваше событие здесь!!!
-
+// t13();
 // Task 14 ============================================
 /*  Добавьте функцию t13, которая при загрузке страницы проверяет наличие card в LS и если есть -выводит его на страницу. Если нет - пишет корзина пуста. */
 
-function t13() {
+function t14() {
 
 }
 
 // ваше событие здесь!!!
-
-let probaBtns = document.querySelectorAll('.ww');
-console.log(probaBtns.innerHTML);
-
-for(let i = 0; i < probaBtns.length; i++){
-    probaBtns[i].onclick = function(){
-        console.log(this.innerHTML);
-    }
-}
-
