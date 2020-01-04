@@ -243,7 +243,7 @@ function t12() {
                     if(quantBlock[l].innerHTML < 0){
                         quantBlock[l].innerHTML = 0;
                     }
-                   }
+                   }   
                 }
         }
     }
