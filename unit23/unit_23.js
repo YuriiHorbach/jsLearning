@@ -141,6 +141,7 @@ function t10() {
     localStorage.setItem('card', JSON.stringify(card));
     t11();
     t12();
+    t13();  
    
 }
 document.querySelector('.b-10').onclick = t10;
@@ -155,8 +156,8 @@ function t11() {
 
     let table = document.createElement('table');
     table.className = "prodTable";
+
     
-    let sum = 0;
     if(val){
        
         table.innerHTML += `
@@ -184,25 +185,28 @@ function t11() {
                             <div class="quant" id = "${i}">
                                 ${val[i]}
                             </div>
-                        </td>
-        
-                    </tr>`
-                sum += val[i];
+                        </td>`;
+                
             }
-            table.innerHTML += `
-            <tr>
-            <td colspan = "3">Total</td>
-            <td class = "cartSum">${sum}</td>
-        </tr>`;
-           
         
     }else {
         table.innerHTML = '<p >Cart is empty</p>'
     }
     
     document.querySelector('.out-10').append(table);
-    
+
+    // let totalQuantity = document.querySelectorAll('.quant');
+    // console.log(totalQuantity);
+    // let sumTotal = 0;
+
+    // for(let j = 0; j < totalQuantity.length; j++){
+    //     sumTotal += parseInt(totalQuantity[j].innerText);
+    // }
+    table.innerHTML += `
+            `;
+   
 }
+
 
 // ваше событие здесь!!!
 
@@ -231,6 +235,7 @@ function t12() {
                         localStorage.setItem('cart', JSON.stringify(cartLS));
                       }
                    }
+                   t13();
                }
        } 
     }
@@ -251,11 +256,11 @@ function t12() {
                         }
                        }
                     }
+                    t13();
             }
         }
     }
 
-    
 
 
     
@@ -273,8 +278,12 @@ function t13() {
     let totalCells = document.querySelectorAll('.quant');
     let sum = 0;
     for(let key of totalCells){
-       sum += + key.innerHTML;
+       sum += parseInt(key.innerHTML);
     }
+
+    // let cartSum = document.querySelector('.cartSum').innerHTML;
+    // cartSum = sum;
+
     let tfoot = document.createElement('tfoot');
     tfoot.className = 'tfoot';
     tfoot.innerHTML = `
@@ -286,14 +295,14 @@ function t13() {
     
    
     let prodTable = document.querySelector('.prodTable');
-    prodTable.append(tfoot);
 
-    let cartSum = document.querySelector('.cartSum');
-    console.log(cartSum.innerHTML);
-    localStorage.setItem('cart', JSON.stringify());
+    prodTable.append(tfoot);
+    
+
+    // 
+    // localStorage.setItem('cartSum', JSON.stringify(cartSum));
 
 }
-
 // ваше событие здесь!!!
 // t13();
 // Task 14 ============================================
