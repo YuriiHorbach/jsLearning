@@ -50,8 +50,6 @@ table{
 
 
 .prod, .quantity{
-    border: 1px solid black;    
-    float: left;
     padding: 10px;
     margin: 5px;
 }
