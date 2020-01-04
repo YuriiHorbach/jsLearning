@@ -238,6 +238,7 @@ function t13() {
 
 function t13() {
 ///lkm/m,n
+console.log('fff');
 }
 
 // ваше событие здесь!!!
