@@ -234,7 +234,7 @@ function t12() {
                }
        } 
     }
-
+//adfasdf
     elemButtonMinus(btnsMinus);
 
     function elemButtonMinus(button){
