@@ -140,9 +140,9 @@ function t10() {
     
     localStorage.setItem('card', JSON.stringify(card));
     t11();
+    t12();
    
 }
-t12();
 document.querySelector('.b-10').onclick = t10;
 // t10();
 // Task 11 ============================================
@@ -158,7 +158,7 @@ function t11() {
     
     let sum = 0;
     if(val){
-        t12();
+       
         table.innerHTML += `
             <thead>
                 <tr>
@@ -214,39 +214,48 @@ function t12() {
     
     let btnsPlus = document.querySelectorAll('.btnPlus');
     let btnsMinus = document.querySelectorAll('.btnMinus');
-    console.log(btnsPlus);
     const cartLS = JSON.parse(localStorage.getItem('card'));
 
-    for(let k = 0; k < btnsPlus.length; k++){
-         console.log(btnsPlus[k]);
-            btnsPlus[k].onclick = function(){
-                let currentButton = this.id;
-                let quantBlock = document.querySelectorAll('.quant');
-                for(let j = 0; j < quantBlock.length; j++){
-                   if(currentButton == quantBlock[j].id){
-                    quantBlock[j].innerHTML++;
-                     localStorage.setItem('cart', JSON.stringify(cartLS));
-                      t11();
-                   }
-                }
-            }
-    } 
 
-    for(let p = 0; p < btnsMinus.length; p++){
-        // console.log(btnsPlus[k]);
-        btnsMinus[p].onclick = function(){
-                let currentButton = this.id;
-                let quantBlock = document.querySelectorAll('.quant');
-                for(let l = 0; l < quantBlock.length; l++){
-                   if(currentButton == quantBlock[l].id){
-                    quantBlock[l].innerHTML--;
-                    if(quantBlock[l].innerHTML < 0){
-                        quantBlock[l].innerHTML = 0;
-                    }
+    elemButtonPlus(btnsPlus);
+
+    function elemButtonPlus(button){
+        for(let k = 0; k < button.length; k++){
+            console.log(button[k]);
+            button[k].onclick = function(){
+                   let currentButton = this.id;
+                   let quantBlock = document.querySelectorAll('.quant');
+                   for(let j = 0; j < quantBlock.length; j++){
+                      if(currentButton == quantBlock[j].id){
+                       quantBlock[j].innerHTML++;
+                        localStorage.setItem('cart', JSON.stringify(cartLS));
+                      }
                    }
-                }
+               }
+       } 
+    }
+
+    elemButtonMinus(btnsMinus);
+
+    function elemButtonMinus(button){
+        for(let p = 0; p < button.length; p++){
+            // console.log(btnsPlus[k]);
+            button[p].onclick = function(){
+                    let currentButton = this.id;
+                    let quantBlock = document.querySelectorAll('.quant');
+                    for(let l = 0; l < quantBlock.length; l++){
+                       if(currentButton == quantBlock[l].id){
+                        quantBlock[l].innerHTML--;
+                        if(quantBlock[l].innerHTML < 1){
+                            quantBlock[l].innerHTML = 1;
+                        }
+                       }
+                    }
+            }
         }
     }
+
+    
 
 
     
