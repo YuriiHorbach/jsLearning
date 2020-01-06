@@ -141,10 +141,11 @@ function t10() {
     localStorage.setItem('card', JSON.stringify(card));
     t11();
     t12();
-    
+    document.querySelector('.b-10').disabled = true;
    
 }
 document.querySelector('.b-10').onclick = t10;
+
 // t10();
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
@@ -159,16 +160,14 @@ function t11() {
 
     
     if(val){
-       
         table.innerHTML += `
             <thead>
                 <tr>
                     <th colspan = "3">Name</th>
                     <th colspan = "3">Quantity</th>
                 </tr>
-                </thead>
-             `;
-
+            </thead>`;
+            let sum = 0;
              for(let i in val){
                 table.innerHTML += `
                     <tr>
@@ -186,25 +185,22 @@ function t11() {
                                 ${val[i]}
                             </div>
                         </td>`;
-                
+                sum += val[i];
+               
             }
-        
+            table.innerHTML += `
+                <tr>
+                    <td colspan = "3">Total</td>
+                    <td class = "totalSum">
+                        ${sum}
+                   </td>
+                </tr>
+            `;
     }else {
-        table.innerHTML = '<p >Cart is empty</p>'
+        table.innerHTML = '<p>Cart is empty</p>'
     }
     
     document.querySelector('.out-10').append(table);
-
-    // let totalQuantity = document.querySelectorAll('.quant');
-    // console.log(totalQuantity);
-    // let sumTotal = 0;
-
-    // for(let j = 0; j < totalQuantity.length; j++){
-    //     sumTotal += parseInt(totalQuantity[j].innerText);
-    // }
-    table.innerHTML += `
-            `;
-   
 }
 
 
@@ -260,53 +256,25 @@ function t12() {
             }
         }
     }
-
-
-
-    
 }
 
 // ваше событие здесь!!!
-
 
 
 // Task 13 ============================================
 /*  Добавьте в таблицу footer который считает общее количество товара. */
 
 function t13() {
-
     let totalCells = document.querySelectorAll('.quant');
+    let totalSum = document.querySelector('.totalSum');
+
     let sum = 0;
-    for(let key of totalCells){
-       sum += parseInt(key.innerHTML);
-    }
 
-    // let cartSum = document.querySelector('.cartSum').innerHTML;
-    // cartSum = sum;
-
-    let tfoot = document.createElement('tfoot');
-    tfoot.className = 'tfoot';
-    tfoot.innerHTML = `
-        <tr>
-            <td colspan = "3">Total</td>
-            <td class = "cartSum">${sum}</td>
-        </tr>`;
-    
-    
-   
-    let prodTable = document.querySelector('.prodTable');
-    if(document.querySelector('tfoor'))
-    {
-        prodTable.remove(tfoot);
-    } else{
-        prodTable.append(tfoot);
-    }
-    
-    
-
-    // 
-    // localStorage.setItem('cartSum', JSON.stringify(cartSum));
-
+    for(let i = 0; i < totalCells.length; i++){
+        sum += parseInt(totalCells[i].innerText);
+        console.log(sum);
+        totalSum.innerText = sum;
+    };
 }
 // ваше событие здесь!!!
 // t13();
