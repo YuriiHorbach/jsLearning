@@ -44,6 +44,10 @@ table{
     margin: 0;
 }
 
+.btnMinus, .btnPlus{
+    background: rgb(189, 14, 14);
+}
+
 
 .prod, .quantity{
     padding: 10px;
@@ -52,7 +56,7 @@ table{
 
 .quantity{
     border: 1px solid black;    
-    /* float: left; */
+    float: left;
     padding: 10px;
     margin: 5px;
     height: 45px;
@@ -65,8 +69,6 @@ table{
 }
 
 .plus, .minus{
-    background: rgb(189, 14, 14);
-    color:white;
-    margin: 0 40%;
+    margin: 10px;
     float: left;
 }

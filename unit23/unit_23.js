@@ -113,53 +113,73 @@ document.querySelector('.b-8').onclick = t8;
 /* Создайте 3 radiobutton c именем rb-9. Задайте для каждого value: #fff, #c0c0c0, #555. При изменении radibutton записывайте значение value в LS с ключем bg. Добавьте слушатель событий на изменение LS. Если есть ключ bg то при наступлении события изменять цвет фона на заданный в LS. */
 
 
+function t9(){
+   
+    let elem = document.getElementsByName('rb-9');
 
-window.addEventListener('storage', function(e){
-    document.querySelector('fieldset').style.backgroundColor = localStorage.getItem('bg');
-document.querySelector('.out91').innerHTML = localStorage.getItem('bg');
-});
+    for(i = 0; i < elem.length; i++) { 
+        elem[i].onchange = testR;
+    } 
 
+    function testR(){
+        localStorage.setItem('bg',this.value);
+        document.querySelector('.out91').innerHTML = localStorage.getItem('bg');
+        document.querySelector('fieldset').style.backgroundColor = localStorage.getItem('bg');
+        
+    }
+    // window.addEventListener('storage', function(e){
+    //     document.querySelector('fieldset').style.backgroundColor = localStorage.getItem('bg');
+    // });
 
-
-
-
+    // testR();
+    // window.addEventListener('storage', function(e){
+    //     document.querySelector('fieldset').style.backgroundColor = localStorage.getItem('bg');
+    // document.querySelector('.out91').innerHTML = localStorage.getItem('bg');
+    // });
+}
 
 
 // ваше событие здесь!!!
-// t9();
+ t9();
 
 // Task 10 ============================================
 /*  Проект. Дана переменная card - корзина. Добавьте кнопку b-10 и функцию t10, которые сохраняют card в LS.*/
 
-const card = {
-    'apple': 3,
-    'grape': 2
+const cart = {
+    'apple' : 3,
+    'grape' : 2
 }
 
 function t10() {
     
-    localStorage.setItem('card', JSON.stringify(card));
-    t11();
-    t12();
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    t14();
+
     document.querySelector('.b-10').disabled = true;
    
 }
 document.querySelector('.b-10').onclick = t10;
 
-// t10();
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
-function t11() {
-    let card = localStorage.getItem('card');
+function t11(){
+    // let card = localStorage.getItem('card');
 
-    val = JSON.parse(card);
+    // val = JSON.parse(card);
 
     let table = document.createElement('table');
-    table.className = "prodTable";
+    let out = document.querySelector('.out-10');
+    parentElement = out.parentElement;
 
-    
-    if(val){
+    out.append(table);
+
+    let btnPlus = document.createElement('button');
+    btnPlus.className = 'plus';
+    let sum = 0;
+   
+    if(cart){
         table.innerHTML += `
             <thead>
                 <tr>
@@ -167,95 +187,84 @@ function t11() {
                     <th colspan = "3">Quantity</th>
                 </tr>
             </thead>`;
-            let sum = 0;
-             for(let i in val){
-                table.innerHTML += `
-                    <tr>
-                        <td >
-                            <button class="button-primary btnPlus" id = "${i}">+</button>
-                        </td>
-                        <td class="prod">
-                            ${i}
-                        </td>
-                        <td>
-                        <button class="button-primary btnMinus" id = "${i}">-</button>
-                        </td>
-                        <td>
-                            <div class="quant" id = "${i}">
-                                ${val[i]}
-                            </div>
-                        </td>`;
-                sum += val[i];
-               
-            }
+        let sum = 0;
+        for(let i in cart){
+        
             table.innerHTML += `
                 <tr>
-                    <td colspan = "3">Total</td>
-                    <td class = "totalSum">
-                        ${sum}
-                   </td>
+                    <td>
+                        <button class = "plus">+</button>
+                    </td>
+                    <td class = "goods" data = "${i}">
+                        ${i}
+                    </td>
+                    <td>
+                        <button class = "minus">-</button>
+                    </td>
+                    <td class = "quantity">
+                        ${cart[i]}
+                    </td>
                 </tr>
             `;
-    }else {
-        table.innerHTML = '<p>Cart is empty</p>'
+            sum += cart[i];
+            t12();
+        }
     }
-    
-    document.querySelector('.out-10').append(table);
+    table.innerHTML += `
+    <tr>
+        <td colspan = "3">Total</td>
+        <td class = "totalSum">
+            ${sum}
+         </td>
+    </tr>
+`;
 }
-
-
 // ваше событие здесь!!!
 
 
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
-function t12() {
-    
-    let btnsPlus = document.querySelectorAll('.btnPlus');
-    let btnsMinus = document.querySelectorAll('.btnMinus');
-    const cartLS = JSON.parse(localStorage.getItem('card'));
+function t12(){
+   
+    let btnPlus = document.querySelectorAll('.plus'); 
+    for(let j = 0; j < btnPlus.length; j++){
 
-
-    elemButtonPlus(btnsPlus);
-
-    function elemButtonPlus(button){
-        for(let k = 0; k < button.length; k++){
-            console.log(button[k]);
-            button[k].onclick = function(){
-                   let currentButton = this.id;
-                   let quantBlock = document.querySelectorAll('.quant');
-                   for(let j = 0; j < quantBlock.length; j++){
-                      if(currentButton == quantBlock[j].id){
-                       quantBlock[j].innerHTML++;
-                        localStorage.setItem('cart', JSON.stringify(cartLS));
-                      }
-                   }
-                   t13();
-               }
-       } 
-    }
-//adfasdf
-    elemButtonMinus(btnsMinus);
-
-    function elemButtonMinus(button){
-        for(let p = 0; p < button.length; p++){
-            // console.log(btnsPlus[k]);
-            button[p].onclick = function(){
-                    let currentButton = this.id;
-                    let quantBlock = document.querySelectorAll('.quant');
-                    for(let l = 0; l < quantBlock.length; l++){
-                       if(currentButton == quantBlock[l].id){
-                        quantBlock[l].innerHTML--;
-                        if(quantBlock[l].innerHTML < 1){
-                            quantBlock[l].innerHTML = 1;
-                        }
-                       }
-                    }
-                    t13();
-            }
+        btnPlus[j].onclick = function(e){
+            console.log(cart);
+            let content = e.target.parentNode.parentNode.querySelector('.goods').innerText;
+            console.log(content);
+            console.log(cart[content]);
+            let content2 = e.target.parentNode.parentNode.querySelector('.quantity');
+            console.log(content2);
+            content2.innerHTML = ++cart[content];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            t13();
         }
     }
+    
+
+    let btnMinus = document.querySelectorAll('.minus'); 
+    for(let j = 0; j < btnMinus.length; j++){
+
+        btnMinus[j].onclick = function(e){
+            console.log(cart);
+            let content = e.target.parentNode.parentNode.querySelector('.goods').innerText;
+            console.log(content);
+            console.log(cart[content]);
+            let content2 = e.target.parentNode.parentNode.querySelector('.quantity');
+            console.log(content2);
+            let  numberQuantity = parseInt(content2.innerHTML);
+            content2.innerHTML = cart[content] -=1;
+            if(cart[content] < 1){
+                content2.innerHTML = 1;
+                cart[content] = 1;
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            t13();
+        }
+    }
+
 }
 
 // ваше событие здесь!!!
@@ -265,7 +274,7 @@ function t12() {
 /*  Добавьте в таблицу footer который считает общее количество товара. */
 
 function t13() {
-    let totalCells = document.querySelectorAll('.quant');
+    let totalCells = document.querySelectorAll('.quantity');
     let totalSum = document.querySelector('.totalSum');
 
     let sum = 0;
@@ -281,8 +290,14 @@ function t13() {
 // Task 14 ============================================
 /*  Добавьте функцию t13, которая при загрузке страницы проверяет наличие card в LS и если есть -выводит его на страницу. Если нет - пишет корзина пуста. */
 
-function t14() {
-
+function t14(){
+    let cart = localStorage.getItem('cart');
+    if(cart !== null){
+        t11();
+        t12();
+    }
+    else{
+        document.querySelector('.out-10').innerHTML = 'Cart is empty';
+    }
 }
-
 // ваше событие здесь!!!
