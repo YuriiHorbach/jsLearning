@@ -152,7 +152,7 @@ const cart = {
 
 function t10() {
     
-    localStorage.setItem('cart', JSON.stringify(cart));
+     localStorage.setItem('cart', JSON.stringify(cart));
 
     t14();
 
