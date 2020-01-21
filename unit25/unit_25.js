@@ -83,10 +83,23 @@ btn2.onclick = t2;
 // Task 3 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел.  Выведите в out-3 результат. Запускаться функция должна по нажатию b-3. */
 
-function t3() {
 
+function t3() {
+    let out3 = document.querySelector('.out-3');
+
+    let xhttp3 = new XMLHttpRequest();
+    xhttp3.onreadystatechange =  function(){
+        if(this.readyState == 4 && this.status == 200){
+            out3.innerHTML = this.responseText;
+        }
+    }
+    xhttp3.open("GET", "http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=3&num1=2&num2=3",true);
+    xhttp3.send();
 }
 
+let btn3 = document.querySelector('.b-3');
+
+btn3.onclick = t3;
 // ваше событие здесь!!!
 
 
@@ -94,8 +107,21 @@ function t3() {
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет случайное число в заданном диапазоне. Не забывайте указывать параметр auth (ключ в чате).  Выведите в out-4 результат. Запускаться функция должна по нажатию b-4. */
 
 function t4() {
+    let out4 = document.querySelector('.out-4');
 
+    let xhttp4 = new XMLHttpRequest();
+    xhttp4.onreadystatechange =  function(){
+        if(this.readyState == 4 && this.status == 200){
+            out4.innerHTML = this.responseText;
+        }
+    }
+    xhttp4.open("GET", "http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=4&num1=1&num2=5",true);
+    xhttp4.send();
 }
+
+let btn4 = document.querySelector('.b-4');
+
+btn4.onclick = t4;
 
 // ваше событие здесь!!!
 
@@ -103,8 +129,21 @@ function t4() {
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-5 результат. Запускаться функция должна по нажатию b-5. */
 
 function t5() {
+    let out5 = document.querySelector('.out-5');
 
+    let xhttp5 = new XMLHttpRequest();
+    xhttp5.onreadystatechange =  function(){
+        if(this.readyState == 4 && this.status == 200){
+            out5.innerHTML = this.responseText;
+        }
+    }
+    xhttp5.open("GET", "http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=5",true);
+    xhttp5.send();
 }
+
+let btn5 = document.querySelector('.b-5');
+
+btn5.onclick = t5;
 
 // ваше событие здесь!!!
 
