@@ -150,9 +150,23 @@ btn5.onclick = t5;
 // Task 6 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-6 результат. Запускаться функция должна по нажатию b-6. */
 
-function t6() {
 
+function t6() {
+    let out6 = document.querySelector('.out-6');
+
+    let xhttp6 = new XMLHttpRequest();
+    xhttp6.onreadystatechange =  function(){
+        if(this.readyState == 4 && this.status == 200){
+            out6.innerHTML = this.responseText;
+        }
+    }
+    xhttp6.open("GET", "http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=6&num1=1&num2=5",true);
+    xhttp6.send();
 }
+
+let btn6 = document.querySelector('.b-6');
+
+btn6.onclick = t6;
 
 // ваше событие здесь!!!
 
@@ -161,9 +175,21 @@ function t6() {
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-7 результат. Запускаться функция должна по нажатию b-7. */
 
 function t7() {
+    let out7 = document.querySelector('.out-7');
 
+    let xhttp7 = new XMLHttpRequest();
+    xhttp7.onreadystatechange =  function(){
+        if(this.readyState == 4 && this.status == 200){
+            out7.innerHTML = this.responseText;
+        }
+    }
+    xhttp7.open("GET", "http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=7",true);
+    xhttp7.send();
 }
 
+let btn7 = document.querySelector('.b-7');
+
+btn7.onclick = t7;
 // ваше событие здесь!!!
 
 // Task 8 ============================================
