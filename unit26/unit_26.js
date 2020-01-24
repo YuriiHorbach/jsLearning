@@ -1,9 +1,22 @@
 
+//http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=5/
 // Task 1 ============================================
 /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Выведите в out-1 результат. Запускаться функция должна по нажатию b-1. */
 
 function t1() {
+    fetch('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=1')
+    .then(data => {
+        console.log(data);
+        return data.text();
+    })
+    .then(data=>{
+        console.log(data);
+    });
+
+
 }
+
+document.querySelector('.b-1').onclick = t1;
 
 // ваше событие здесь!!!
 
