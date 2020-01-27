@@ -51,9 +51,32 @@ document.querySelector('.b-1').onclick = t1;
 */
 
 function t2() {
-
+    let promise1 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=3&num1=2&num2=5')
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=4&num1=2&num2=5')
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+     Promise.all([promise1, promise2]).then(values => { 
+            document.querySelector('.out-2').innerHTML = values;
+     });
 }
 
+document.querySelector('.b-2').onclick = t2;
 // ваше событие здесь!!!
 
 
@@ -71,9 +94,32 @@ function t2() {
                  */
 
 function t3() {
-
+    let promise1 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=5')
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=6&num1=2&num2=5')
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+     Promise.all([promise1, promise2]).then(values => { 
+            document.querySelector('.out-3').innerHTML = values;
+     });
 }
 
+document.querySelector('.b-3').onclick = t3;
 // ваше событие здесь!!!
 
 
@@ -91,8 +137,32 @@ function t3() {
 */
 
 function t4() {
-
+    let promise1 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=7')
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php?auth=5ADcB96BA48d3f80&action=8&year=1984')
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+     Promise.all([promise1, promise2]).then(values => { 
+            document.querySelector('.out-4').innerHTML = values;
+     });
 }
+
+document.querySelector('.b-4').onclick = t4;
 
 // ваше событие здесь!!!
 
@@ -108,7 +178,46 @@ POST запрос на сайт http://getpost.itgid.info/index2.php. В кач�
 
 function t5() {
 
+    let promise1 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            //'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'auth=5ADcB96BA48d3f80&action=1', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+    })
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                //'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'auth=5ADcB96BA48d3f80&action=2', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+        })
+            .then((data)=>{
+                resolve(data.text());
+            })
+            .then((data)=>{
+                return data;
+            });
+    });
+    
+     Promise.all([promise1, promise2]).then(values => { 
+            document.querySelector('.out-5').innerHTML = values;
+     });
 }
+
+document.querySelector('.b-5').onclick = t5;
 
 // ваше событие здесь!!!
 
@@ -128,9 +237,46 @@ function t5() {
 */
 
 function t6() {
-
+    let promise1 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            //'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'auth=5ADcB96BA48d3f80&action=3&num1=2&num2=5', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+    })
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                //'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'auth=5ADcB96BA48d3f80&action=4&num1=2&num2=5', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+        })
+            .then((data)=>{
+                resolve(data.text());
+            })
+            .then((data)=>{
+                return data;
+            });
+    });
+    
+     Promise.all([promise1, promise2]).then(values => { 
+            document.querySelector('.out-6').innerHTML = values;
+     });
 }
 
+document.querySelector('.b-6').onclick = t6;
 // ваше событие здесь!!!
 
 
@@ -147,9 +293,46 @@ function t6() {
 */
 
 function t7() {
-
+    let promise1 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            //'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'auth=5ADcB96BA48d3f80&action=5', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+    })
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                //'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'auth=5ADcB96BA48d3f80&action=6&num1=2&num2=5', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+        })
+            .then((data)=>{
+                resolve(data.text());
+            })
+            .then((data)=>{
+                return data;
+            });
+    });
+    
+     Promise.all([promise1, promise2]).then(values => { 
+            document.querySelector('.out-7').innerHTML = values;
+     });
 }
 
+document.querySelector('.b-7').onclick = t7;
 // ваше событие здесь!!!
 
 // Task 8 ============================================
@@ -166,8 +349,45 @@ function t7() {
 */
 
 function t8() {
-
+    let promise1 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            //'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'auth=5ADcB96BA48d3f80&action=7', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+    })
+        .then((data)=>{
+            resolve(data.text());
+        })
+        .then((data)=>{
+            return data;
+        });
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        fetch('http://getpost.itgid.info/index2.php', {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                //'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'auth=5ADcB96BA48d3f80&action=8&year=1984', // тип данных в body должен соответвовать значению заголовка "Content-Type"
+        })
+            .then((data)=>{
+                resolve(data.text());
+            })
+            .then((data)=>{
+                return data;
+            });
+    });
+    
+     Promise.all([promise1, promise2]).then(values => { 
+            document.querySelector('.out-8').innerHTML = values;
+     });
 }
 
+document.querySelector('.b-8').onclick = t8;
 // ваше событие здесь!!!
 
